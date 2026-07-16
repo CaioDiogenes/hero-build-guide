@@ -1,3 +1,43 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    title: 'Hero Build Guide',
+    loadComponent: () =>
+      import('./features/home/home')
+        .then(component => component.Home),
+  },
+  {
+    path: 'heroes',
+    title: 'Heroes | Hero Build Guide',
+    loadComponent: () =>
+      import('./features/heroes/hero-directory/hero-directory')
+        .then(component => component.HeroDirectory),
+  },
+  {
+    path: 'heroes/:slug',
+    title: 'Hero Details | Hero Build Guide',
+    loadComponent: () =>
+      import('./features/heroes/hero-detail/hero-detail')
+        .then(component => component.HeroDetail),
+  },
+  {
+    path: 'factions/:slug',
+    title: 'Faction | Hero Build Guide',
+    loadComponent: () =>
+      import('./features/factions/faction-details/faction-details')
+        .then(component => component.FactionDetails),
+  },
+  {
+    path: 'about',
+    title: 'About | Hero Build Guide',
+    loadComponent: () =>
+      import('./features/about/about/about')
+        .then(component => component.About),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
+];
