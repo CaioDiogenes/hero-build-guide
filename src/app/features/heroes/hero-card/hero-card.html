@@ -1,0 +1,64 @@
+<article class="hero-card">
+    <a class="hero-card__link" [routerLink]="['/heroes', hero().slug]"
+        [attr.aria-label]="'View build for ' + hero().name">
+        <header class="hero-card__header">
+            <div class="hero-card__identity">
+                <div class="hero-card__avatar" aria-hidden="true">
+                    {{ hero().name.charAt(0) }}
+                </div>
+
+                <div>
+                    <h2>{{ hero().name }}</h2>
+
+                    @if (hero().title) {
+                    <p>{{ hero().title }}</p>
+                    }
+                </div>
+            </div>
+
+            <app-tier-badge [tier]="hero().tier" />
+        </header>
+
+        <div class="hero-card__badges">
+            <app-faction-badge [faction]="hero().faction" />
+
+            @for (type of hero().types; track type) {
+            <app-chip>{{ type }}</app-chip>
+            }
+        </div>
+
+        <dl class="hero-card__details">
+            <div>
+                <dt>Placement</dt>
+                <dd>{{ hero().placement || 'Not specified' }}</dd>
+            </div>
+
+            <div>
+                <dt>Equipment</dt>
+                <dd>Level {{ hero().minimumExclusiveEquipment }}</dd>
+            </div>
+
+            @if (hero().minimumRelics !== undefined) {
+            <div>
+                <dt>Relics</dt>
+                <dd>{{ hero().minimumRelics }}</dd>
+            </div>
+            }
+        </dl>
+
+        <section class="hero-card__section">
+            <h3>Stat focus</h3>
+
+            <div class="hero-card__chips">
+                @for (stat of hero().statFocus; track stat) {
+                <app-chip>{{ stat }}</app-chip>
+                }
+            </div>
+        </section>
+
+        <footer class="hero-card__footer">
+            <span>View full build</span>
+            <span aria-hidden="true">→</span>
+        </footer>
+    </a>
+</article>

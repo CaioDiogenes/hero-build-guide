@@ -1,4 +1,6 @@
 import { Component, input, output } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { FACTION_NAVIGATION } from '../../core/constants/factions';

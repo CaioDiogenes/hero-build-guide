@@ -4,6 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     title: 'Hero Build Guide',
+    // [routerLinkActiveOptions]="{ exact: true }",
     loadComponent: () =>
       import('./features/home/home')
         .then(component => component.Home),

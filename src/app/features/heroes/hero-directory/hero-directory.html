@@ -1,31 +1,53 @@
-<section class="page-container">
-    <header class="page-header">
-        <h1>Heroes</h1>
-        <p>Temporary Phase 2 hero list.</p>
+<section class="hero-directory page-container">
+    <header class="hero-directory__header">
+        <div>
+            <p class="hero-directory__eyebrow">
+                Build database
+            </p>
+
+            <h1>Heroes</h1>
+
+            <p>
+                Browse recommended builds, equipment,
+                stigmata, artifacts, talents and gems.
+            </p>
+        </div>
     </header>
 
-    @if (heroes$ | async; as heroes) {
-    <p>Total heroes: {{ heroes.length }}</p>
+    @if (viewModel$ | async; as viewModel) {
+    <app-hero-filters [filters]="viewModel.filters" (filtersChanged)="onFiltersChanged($event)" />
 
-    <ul>
-        @for (hero of heroes; track hero.id) {
-        <li>
-            <a [routerLink]="['/heroes', hero.slug]">
-                <strong>{{ hero.name }}</strong>
-                — {{ hero.title }}
-            </a>
-
-            <span>
-                Tier {{ hero.tier }} |
-                {{ hero.faction }} |
-                {{ hero.types.join(', ') }}
-            </span>
-        </li>
-        } @empty {
-        <li>No heroes found.</li>
-        }
-    </ul>
+    @if (viewModel.error) {
+    <app-status-message type="error" title="Unable to load heroes" message="The hero data could not be loaded." />
     } @else {
-    <p>Loading heroes...</p>
+    <section class="hero-directory__summary" aria-live="polite">
+        <p>
+            Showing
+            <strong>{{ viewModel.visibleHeroes }}</strong>
+            of
+            <strong>{{ viewModel.totalHeroes }}</strong>
+            heroes
+        </p>
+    </section>
+
+    @if (viewModel.heroes.length > 0) {
+    <section class="hero-directory__grid">
+        @for (
+        hero of viewModel.heroes;
+        track hero.id
+        ) {
+        <app-hero-card [hero]="hero" />
+        }
+    </section>
+    } @else {
+    <app-status-message type="empty" title="No heroes found" message="Try changing or clearing your filters.">
+        <button type="button" class="button button--primary" (click)="onFiltersCleared()">
+            Clear filters
+        </button>
+    </app-status-message>
+    }
+    }
+    } @else {
+    <app-status-message type="loading" title="Loading heroes" message="Please wait while the hero builds are loaded." />
     }
 </section>
