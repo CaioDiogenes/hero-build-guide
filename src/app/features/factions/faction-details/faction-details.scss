@@ -1,0 +1,194 @@
+.faction-detail {
+    display: grid;
+    gap: var(--space-5);
+
+    &__header {
+        --faction-accent: var(--color-primary);
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: var(--space-5);
+
+        padding: var(--space-6);
+
+        background:
+            radial-gradient(circle at top left,
+                var(--color-primary-soft),
+                transparent 28rem),
+            var(--color-surface);
+
+        border: 1px solid color-mix(in srgb,
+                var(--faction-accent) 35%,
+                var(--color-border));
+
+        border-radius: var(--radius-xl);
+
+        box-shadow:
+            var(--shadow-md),
+            0 0 30px color-mix(in srgb,
+                var(--faction-accent) 18%,
+                transparent);
+
+        &[data-faction='superman'] {
+            --faction-accent:
+                var(--faction-superman);
+        }
+
+        &[data-faction='technology'] {
+            --faction-accent:
+                var(--faction-technology);
+        }
+
+        &[data-faction='dark'] {
+            --faction-accent:
+                var(--faction-dark);
+        }
+
+        &[data-faction='nature'] {
+            --faction-accent:
+                var(--faction-nature);
+        }
+
+        &[data-faction='god'] {
+            --faction-accent:
+                var(--faction-god);
+        }
+
+        &[data-faction='universe'] {
+            --faction-accent:
+                var(--faction-universe);
+        }
+    }
+
+    &__header-content {
+        display: grid;
+        gap: var(--space-3);
+
+        max-width: 45rem;
+
+        h1,
+        p {
+            margin: 0;
+        }
+    }
+
+    &__hero-count {
+        display: grid;
+        flex: 0 0 auto;
+        justify-items: center;
+
+        min-width: 7rem;
+        padding: var(--space-4);
+
+        background: rgba(0, 0, 0, 0.18);
+
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+
+        strong {
+            color: var(--faction-accent);
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        span {
+            margin-top: var(--space-2);
+
+            color: var(--color-text-muted);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+    }
+
+    &__tier-summary {
+        display: grid;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: var(--space-3);
+    }
+
+    &__tier-item {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+
+        padding: var(--space-4);
+
+        background: var(--color-surface);
+
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+
+        box-shadow: var(--shadow-sm);
+
+        div {
+            display: grid;
+        }
+
+        strong {
+            color: var(--color-text);
+            font-size: 1.25rem;
+        }
+
+        span {
+            color: var(--color-text-subtle);
+            font-size: 0.75rem;
+        }
+    }
+
+    &__results-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: var(--space-4);
+
+        h2,
+        p {
+            margin: 0;
+        }
+
+        p {
+            margin-top: var(--space-2);
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns:
+            repeat(auto-fit,
+                minmax(min(100%, 19rem), 1fr));
+
+        gap: var(--space-5);
+    }
+}
+
+@media (min-width: 700px) {
+    .faction-detail__tier-summary {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .faction-detail {
+        &__header {
+            align-items: flex-start;
+            flex-direction: column;
+
+            padding: var(--space-5);
+        }
+
+        &__hero-count {
+            width: 100%;
+        }
+
+        &__results-header {
+            align-items: stretch;
+            flex-direction: column;
+        }
+    }
+}

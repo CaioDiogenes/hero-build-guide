@@ -1,14 +1,105 @@
-import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { AsyncPipe } from "@angular/common";
+import { Component, inject, DestroyRef } from "@angular/core";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { Title } from "@angular/platform-browser";
+import { RouterLink, ActivatedRoute } from "@angular/router";
+import { map, switchMap, of, catchError, tap } from "rxjs";
+import { getFactionBySlug } from "../../../core/constants/factions";
+import { FactionTierSummary } from "../../../core/models/faction-tier-summary";
+import { Hero } from "../../../core/models/hero.model";
+import { HeroService } from "../../../core/services/hero.service";
+import { HeroCard } from "../../heroes/hero-card/hero-card";
+import { FactionBadgeComponent } from "../../../shared/components/faction-badge/faction-badge";
+import { StatusMessageComponent } from "../../../shared/components/status-message/status-message";
+import { TierBadgeComponent } from "../../../shared/components/tier-badge/tier-badge";
 
 @Component({
-  selector: 'app-faction-details',
-  imports: [],
+  selector: 'app-faction-detail',
+  standalone: true,
+  imports: [
+    AsyncPipe,
+    RouterLink,
+    FactionBadgeComponent,
+    HeroCard,
+    StatusMessageComponent,
+    TierBadgeComponent,
+  ],
   templateUrl: './faction-details.html',
   styleUrl: './faction-details.scss',
 })
 export class FactionDetails {
   private readonly route = inject(ActivatedRoute);
+  private readonly heroService = inject(HeroService);
+  private readonly title = inject(Title);
+  private readonly destroyRef = inject(DestroyRef);
 
-  readonly slug = this.route.snapshot.paramMap.get('slug');
+  readonly viewModel$ = this.route.paramMap.pipe(
+    map((params) => params.get('slug') ?? ''),
+
+    switchMap((slug) => {
+      const faction = getFactionBySlug(slug);
+
+      if (!faction) {
+        return of({
+          faction: undefined,
+          heroes: [] as Hero[],
+          tierSummary: [] as FactionTierSummary[],
+          error: false,
+        });
+      }
+
+      return this.heroService
+        .getHeroesByFaction(faction.id)
+        .pipe(
+          map((heroes) => ({
+            faction,
+            heroes: [...heroes].sort(
+              (first, second) =>
+                first.name.localeCompare(second.name),
+            ),
+            tierSummary:
+              this.createTierSummary(heroes),
+            error: false,
+          })),
+
+          catchError(() =>
+            of({
+              faction,
+              heroes: [] as Hero[],
+              tierSummary:
+                [] as FactionTierSummary[],
+              error: true,
+            }),
+          ),
+        );
+    }),
+
+    tap((viewModel) => {
+      this.title.setTitle(
+        viewModel.faction
+          ? `${viewModel.faction.name} | Hero Build Guide`
+          : 'Faction Not Found | Hero Build Guide',
+      );
+    }),
+
+    takeUntilDestroyed(this.destroyRef),
+  );
+
+  private createTierSummary(
+    heroes: Hero[],
+  ): FactionTierSummary[] {
+    const tiers: Hero['tier'][] = [
+      'S+',
+      'S',
+      'A',
+      'B',
+    ];
+
+    return tiers.map((tier) => ({
+      tier,
+      count: heroes.filter(
+        (hero) => hero.tier === tier,
+      ).length,
+    }));
+  }
 }
