@@ -1,0 +1,31 @@
+.style-guide {
+    display: grid;
+    gap: var(--space-5);
+
+    padding-block: var(--space-7);
+
+    &__header {
+        max-width: 45rem;
+    }
+
+    &__eyebrow {
+        margin-bottom: var(--space-2);
+
+        color: var(--color-primary);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+    }
+
+    &__statuses {
+        display: grid;
+        gap: var(--space-4);
+    }
+}
+
+@media (min-width: 900px) {
+    .style-guide__statuses {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -37,6 +37,13 @@ export const routes: Routes = [
         .then(component => component.About),
   },
   {
+  path: 'style-guide',
+  title: 'Style Guide | Hero Build Guide',
+  loadComponent: () =>
+    import('./features/style-guide/style-guide')
+      .then((component) => component.StyleGuide),
+},
+  {
     path: '**',
     redirectTo: '',
   },
