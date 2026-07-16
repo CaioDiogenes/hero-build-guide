@@ -1,4 +1,71 @@
 <section>
-    <h1>Hero Details</h1>
-    <p>Hero slug: {{ slug }}</p>
+    <a routerLink="/heroes">Back to heroes</a>
+
+    @if (hero$ | async; as hero) {
+    <header>
+        <h1>{{ hero.name }}</h1>
+
+        @if (hero.title) {
+        <p>{{ hero.title }}</p>
+        }
+    </header>
+
+    <dl>
+        <dt>Faction</dt>
+        <dd>{{ hero.faction }}</dd>
+
+        <dt>Tier</dt>
+        <dd>{{ hero.tier }}</dd>
+
+        <dt>Type</dt>
+        <dd>{{ hero.types.join(', ') }}</dd>
+
+        <dt>Minimum equipment</dt>
+        <dd>{{ hero.minimumExclusiveEquipment }}</dd>
+
+        @if (hero.minimumRelics !== undefined) {
+        <dt>Minimum relics</dt>
+        <dd>{{ hero.minimumRelics }}</dd>
+        }
+
+        @if (hero.placement) {
+        <dt>Placement</dt>
+        <dd>{{ hero.placement }}</dd>
+        }
+
+        <dt>Stat focus</dt>
+        <dd>{{ hero.statFocus.join(' | ') }}</dd>
+
+        <dt>Four-set stigmata</dt>
+        <dd>{{ hero.stigmataFourSet.join(' | ') }}</dd>
+
+        <dt>Two-set stigmata</dt>
+        <dd>{{ hero.stigmataTwoSet.join(' | ') }}</dd>
+
+        <dt>Artifacts</dt>
+        <dd>{{ hero.artifacts.join(' | ') }}</dd>
+
+        <dt>PVP talent</dt>
+        <dd>{{ hero.generalTalentsPvp.join(' | ') }}</dd>
+
+        <dt>Gems</dt>
+        <dd>{{ hero.gems.join(' | ') }}</dd>
+
+        <dt>Gem talent</dt>
+        <dd>{{ hero.gemTalents.join(' | ') }}</dd>
+    </dl>
+
+    @if (hero.notes?.length) {
+    <section>
+        <h2>Notes</h2>
+
+        @for (note of hero.notes; track note) {
+        <p>{{ note }}</p>
+        }
+    </section>
+    }
+    } @else {
+    <h1>Hero not found</h1>
+    <p>The requested hero does not exist in the current dataset.</p>
+    }
 </section>

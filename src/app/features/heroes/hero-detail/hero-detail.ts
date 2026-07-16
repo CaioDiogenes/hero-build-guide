@@ -1,14 +1,24 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { map, switchMap } from 'rxjs';
+import { HeroService } from '../../../core/services/hero.service';
 
 @Component({
   selector: 'app-hero-detail',
-  imports: [],
+  imports: [
+    AsyncPipe,
+    RouterLink,
+  ],
   templateUrl: './hero-detail.html',
   styleUrl: './hero-detail.scss',
 })
 export class HeroDetail {
   private readonly route = inject(ActivatedRoute);
+  private readonly heroService = inject(HeroService);
 
-  readonly slug = this.route.snapshot.paramMap.get('slug');
+  readonly hero$ = this.route.paramMap.pipe(
+    map((params) => params.get('slug') ?? ''),
+    switchMap((slug) => this.heroService.getHeroBySlug(slug)),
+  );
 }

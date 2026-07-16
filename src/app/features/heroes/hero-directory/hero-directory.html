@@ -1,4 +1,31 @@
 <section>
-    <h1>Heroes</h1>
-    <p>Hero directory page works.</p>
+    <header>
+        <h1>Heroes</h1>
+        <p>Temporary Phase 2 hero list.</p>
+    </header>
+
+    @if (heroes$ | async; as heroes) {
+    <p>Total heroes: {{ heroes.length }}</p>
+
+    <ul>
+        @for (hero of heroes; track hero.id) {
+        <li>
+            <a [routerLink]="['/heroes', hero.slug]">
+                <strong>{{ hero.name }}</strong>
+                — {{ hero.title }}
+            </a>
+
+            <span>
+                Tier {{ hero.tier }} |
+                {{ hero.faction }} |
+                {{ hero.types.join(', ') }}
+            </span>
+        </li>
+        } @empty {
+        <li>No heroes found.</li>
+        }
+    </ul>
+    } @else {
+    <p>Loading heroes...</p>
+    }
 </section>
