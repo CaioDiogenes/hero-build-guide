@@ -1,0 +1,21 @@
+<a class="skip-link" href="#main-content">
+    Skip to content
+</a>
+
+<div class="app-shell">
+    <app-header (menuToggle)="openMobileMenu()" />
+
+    <app-mobile-navigation [open]="mobileMenuOpen" (closeMenu)="closeMobileMenu()" />
+
+    <div class="app-shell__body">
+        <app-sidebar />
+
+        <div class="app-shell__content-column">
+            <main id="main-content" class="app-shell__main" tabindex="-1">
+                <router-outlet />
+            </main>
+
+            <app-footer />
+        </div>
+    </div>
+</div>

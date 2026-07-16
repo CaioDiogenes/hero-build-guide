@@ -1,0 +1,43 @@
+@if (open()) {
+<div class="mobile-navigation" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button type="button" class="mobile-navigation__backdrop" aria-label="Close navigation" (click)="close()"></button>
+
+    <aside class="mobile-navigation__panel">
+        <header class="mobile-navigation__header">
+            <strong>Navigation</strong>
+
+            <button type="button" class="mobile-navigation__close" aria-label="Close navigation" (click)="close()">
+                ×
+            </button>
+        </header>
+
+        <nav class="mobile-navigation__links">
+            <a routerLink="/" routerLinkActive="mobile-navigation__link--active"
+                [routerLinkActiveOptions]="{ exact: true }" class="mobile-navigation__link" (click)="close()">
+                Home
+            </a>
+
+            <a routerLink="/heroes" routerLinkActive="mobile-navigation__link--active" class="mobile-navigation__link"
+                (click)="close()">
+                All heroes
+            </a>
+
+            <a routerLink="/about" routerLinkActive="mobile-navigation__link--active" class="mobile-navigation__link"
+                (click)="close()">
+                About
+            </a>
+
+            <p class="mobile-navigation__section-title">
+                Factions
+            </p>
+
+            @for (faction of factions; track faction.id) {
+            <a [routerLink]="faction.route" routerLinkActive="mobile-navigation__link--active"
+                class="mobile-navigation__link" (click)="close()">
+                {{ faction.label }}
+            </a>
+            }
+        </nav>
+    </aside>
+</div>
+}

@@ -1,0 +1,110 @@
+.sidebar {
+    display: none;
+
+    position: sticky;
+    top: 4.5rem;
+
+    width: 16rem;
+    height: calc(100vh - 4.5rem);
+
+    padding: var(--space-5) var(--space-4);
+
+    background: rgba(16, 10, 25, 0.72);
+
+    border-right: 1px solid var(--color-border);
+
+    overflow-y: auto;
+
+    &__navigation {
+        display: grid;
+        gap: var(--space-6);
+    }
+
+    &__section {
+        display: grid;
+        gap: var(--space-2);
+    }
+
+    &__section-title {
+        margin: 0 0 var(--space-2);
+
+        color: var(--color-text-subtle);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+
+        min-height: 2.5rem;
+        padding: 0.55rem 0.75rem;
+
+        color: var(--color-text-muted);
+
+        border: 1px solid transparent;
+        border-radius: var(--radius-md);
+
+        font-size: 0.88rem;
+        font-weight: 650;
+
+        transition:
+            color var(--transition-fast),
+            background var(--transition-fast),
+            border-color var(--transition-fast);
+
+        &:hover {
+            color: var(--color-text);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        &--active {
+            color: var(--color-text);
+            background: var(--color-primary-soft);
+            border-color: rgba(155, 98, 255, 0.3);
+        }
+    }
+
+    &__faction-dot {
+        width: 0.55rem;
+        height: 0.55rem;
+
+        background: currentColor;
+        border-radius: 50%;
+
+        box-shadow: 0 0 10px currentColor;
+    }
+
+    [data-faction='superman'] {
+        color: var(--faction-superman);
+    }
+
+    [data-faction='technology'] {
+        color: var(--faction-technology);
+    }
+
+    [data-faction='dark'] {
+        color: var(--faction-dark);
+    }
+
+    [data-faction='nature'] {
+        color: var(--faction-nature);
+    }
+
+    [data-faction='god'] {
+        color: var(--faction-god);
+    }
+
+    [data-faction='universe'] {
+        color: var(--faction-universe);
+    }
+}
+
+@media (min-width: 900px) {
+    .sidebar {
+        display: block;
+    }
+}

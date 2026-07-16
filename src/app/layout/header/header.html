@@ -1,0 +1,26 @@
+<header class="header">
+    <div class="header__content">
+        <a class="header__brand" routerLink="/" aria-label="Hero Build Guide home">
+            <span class="header__brand-mark">
+                HBG
+            </span>
+
+            <span class="header__brand-copy">
+                <strong>Hero Build Guide</strong>
+                <small>Version 10.2</small>
+            </span>
+        </a>
+
+        <nav class="header__desktop-navigation" aria-label="Primary navigation">
+            <a routerLink="/">Home</a>
+            <a routerLink="/heroes">Heroes</a>
+            <a routerLink="/about">About</a>
+        </nav>
+
+        <button type="button" class="header__menu-button" aria-label="Open navigation menu" (click)="onMenuToggle()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>

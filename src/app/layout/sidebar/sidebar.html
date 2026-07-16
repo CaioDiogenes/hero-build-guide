@@ -1,0 +1,46 @@
+<aside class="sidebar">
+    <nav class="sidebar__navigation" aria-label="Guide navigation">
+        <section class="sidebar__section">
+            <p class="sidebar__section-title">
+                Guide
+            </p>
+
+            <a routerLink="/" routerLinkActive="sidebar__link--active" [routerLinkActiveOptions]="{ exact: true }"
+                class="sidebar__link">
+                Home
+            </a>
+
+            <a routerLink="/heroes" routerLinkActive="sidebar__link--active" class="sidebar__link">
+                All heroes
+            </a>
+
+            <a routerLink="/about" routerLinkActive="sidebar__link--active" class="sidebar__link">
+                About the guide
+            </a>
+        </section>
+
+        <section class="sidebar__section">
+            <p class="sidebar__section-title">
+                Factions
+            </p>
+
+            @for (faction of factions; track faction.id) {
+            <a [routerLink]="faction.route" routerLinkActive="sidebar__link--active" class="sidebar__link"
+                [attr.data-faction]="faction.id">
+                <span class="sidebar__faction-dot"></span>
+                {{ faction.label }}
+            </a>
+            }
+        </section>
+
+        <section class="sidebar__section">
+            <p class="sidebar__section-title">
+                Development
+            </p>
+
+            <a routerLink="/style-guide" routerLinkActive="sidebar__link--active" class="sidebar__link">
+                Style guide
+            </a>
+        </section>
+    </nav>
+</aside>

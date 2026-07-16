@@ -36,3 +36,20 @@
     border: 0;
     clip: rect(0, 0, 0, 0);
 }
+
+.page-container {
+    width: min(100%, 72rem);
+    margin-inline: auto;
+}
+
+.page-header {
+    display: grid;
+    gap: var(--space-2);
+
+    margin-bottom: var(--space-6);
+
+    h1,
+    p {
+        margin-bottom: 0;
+    }
+}

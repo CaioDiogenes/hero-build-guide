@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { AppShellComponent } from './layout/app-shell/app-shell';
 
 @Component({
   selector: 'app-root',
   imports: [
-    RouterLink,
-    RouterOutlet,
+    AppShellComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
