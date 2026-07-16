@@ -1,0 +1,15 @@
+<section class="build-section">
+    <h2>{{ title() }}</h2>
+
+    @if (items().length > 0) {
+    <div class="build-section__items">
+        @for (item of items(); track item) {
+        <app-chip>{{ item }}</app-chip>
+        }
+    </div>
+    } @else {
+    <p class="build-section__empty">
+        {{ emptyMessage() }}
+    </p>
+    }
+</section>

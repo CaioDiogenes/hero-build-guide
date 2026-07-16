@@ -1,71 +1,184 @@
-<section>
-    <a routerLink="/heroes">Back to heroes</a>
+<section class="hero-detail page-container">
+    @if (viewModel$ | async; as viewModel) {
+    @if (viewModel.error) {
+    <app-status-message type="error" title="Unable to load hero"
+        message="Something went wrong while loading the hero data.">
+        <a class="button button--primary" routerLink="/heroes">
+            Return to heroes
+        </a>
+    </app-status-message>
+    } @else if (viewModel.navigation; as navigation) {
+    @let hero = navigation.hero;
 
-    @if (hero$ | async; as hero) {
-    <header>
-        <h1>{{ hero.name }}</h1>
+    <a class="hero-detail__back" routerLink="/heroes">
+        <span aria-hidden="true">←</span>
+        Back to heroes
+    </a>
 
-        @if (hero.title) {
-        <p>{{ hero.title }}</p>
-        }
+    <header class="hero-detail__hero-header">
+        <div class="hero-detail__identity">
+            <div class="hero-detail__avatar" aria-hidden="true">
+                {{ hero.name.charAt(0) }}
+            </div>
+
+            <div>
+                <div class="hero-detail__badges">
+                    <app-faction-badge [faction]="hero.faction" />
+
+                    @for (type of hero.types; track type) {
+                    <app-chip>{{ type }}</app-chip>
+                    }
+                </div>
+
+                <h1>{{ hero.name }}</h1>
+
+                @if (hero.title) {
+                <p>{{ hero.title }}</p>
+                }
+            </div>
+        </div>
+
+        <app-tier-badge [tier]="hero.tier" />
     </header>
 
-    <dl>
-        <dt>Faction</dt>
-        <dd>{{ hero.faction }}</dd>
+    <section class="hero-detail__overview">
+        <article class="hero-detail__overview-item">
+            <span>Placement</span>
+            <strong>
+                {{ hero.placement || 'Not specified' }}
+            </strong>
+        </article>
 
-        <dt>Tier</dt>
-        <dd>{{ hero.tier }}</dd>
+        <article class="hero-detail__overview-item">
+            <span>Exclusive equipment</span>
+            <strong>
+                Level {{ hero.minimumExclusiveEquipment }}
+            </strong>
+        </article>
 
-        <dt>Type</dt>
-        <dd>{{ hero.types.join(', ') }}</dd>
+        <article class="hero-detail__overview-item">
+            <span>Minimum relics</span>
 
-        <dt>Minimum equipment</dt>
-        <dd>{{ hero.minimumExclusiveEquipment }}</dd>
+            <strong>
+                @if (hero.minimumRelics !== undefined) {
+                {{ hero.minimumRelics }}
+                } @else {
+                Not specified
+                }
+            </strong>
+        </article>
 
-        @if (hero.minimumRelics !== undefined) {
-        <dt>Minimum relics</dt>
-        <dd>{{ hero.minimumRelics }}</dd>
-        }
+        <article class="hero-detail__overview-item">
+            <span>PVP talent</span>
+            <strong>
+                {{ hero.generalTalentsPvp.join(' / ') }}
+            </strong>
+        </article>
+    </section>
 
-        @if (hero.placement) {
-        <dt>Placement</dt>
-        <dd>{{ hero.placement }}</dd>
-        }
+    <section class="hero-detail__content-grid">
+        <div class="hero-detail__main-column">
+            <app-panel>
+                <div class="hero-detail__panel-content">
+                    <app-build-section title="Stat focus" [items]="hero.statFocus" />
 
-        <dt>Stat focus</dt>
-        <dd>{{ hero.statFocus.join(' | ') }}</dd>
+                    <app-build-section title="Four-set stigmata" [items]="hero.stigmataFourSet" />
 
-        <dt>Four-set stigmata</dt>
-        <dd>{{ hero.stigmataFourSet.join(' | ') }}</dd>
+                    <app-build-section title="Two-set stigmata" [items]="hero.stigmataTwoSet" />
+                </div>
+            </app-panel>
 
-        <dt>Two-set stigmata</dt>
-        <dd>{{ hero.stigmataTwoSet.join(' | ') }}</dd>
+            <app-panel>
+                <div class="hero-detail__panel-content">
+                    <app-build-section title="Artifacts" [items]="hero.artifacts" />
 
-        <dt>Artifacts</dt>
-        <dd>{{ hero.artifacts.join(' | ') }}</dd>
+                    <app-build-section title="Collections" [items]="hero.collections"
+                        emptyMessage="No collection recommendation" />
+                </div>
+            </app-panel>
+        </div>
 
-        <dt>PVP talent</dt>
-        <dd>{{ hero.generalTalentsPvp.join(' | ') }}</dd>
+        <aside class="hero-detail__side-column">
+            <app-panel>
+                <div class="hero-detail__panel-content">
+                    <app-build-section title="Gems" [items]="hero.gems" />
 
-        <dt>Gems</dt>
-        <dd>{{ hero.gems.join(' | ') }}</dd>
+                    <app-build-section title="Gem talent" [items]="hero.gemTalents" />
 
-        <dt>Gem talent</dt>
-        <dd>{{ hero.gemTalents.join(' | ') }}</dd>
-    </dl>
+                    <app-build-section title="General talent — PVP" [items]="hero.generalTalentsPvp" />
+                </div>
+            </app-panel>
+        </aside>
+    </section>
 
     @if (hero.notes?.length) {
-    <section>
-        <h2>Notes</h2>
+    <section class="hero-detail__notes">
+        <header>
+            <span aria-hidden="true">!</span>
 
-        @for (note of hero.notes; track note) {
-        <p>{{ note }}</p>
-        }
+            <div>
+                <h2>Special notes</h2>
+                <p>
+                    Important information for this hero build.
+                </p>
+            </div>
+        </header>
+
+        <div class="hero-detail__notes-content">
+            @for (note of hero.notes; track note) {
+            <p>{{ note }}</p>
+            }
+        </div>
     </section>
     }
+
+    <nav class="hero-detail__navigation" aria-label="Hero navigation">
+        <div>
+            @if (navigation.previousHero; as previousHero) {
+            <a class="hero-detail__navigation-link" [routerLink]="[
+                '/heroes',
+                previousHero.slug
+              ]">
+                <span class="hero-detail__navigation-label">
+                    Previous hero
+                </span>
+
+                <strong>
+                    ← {{ previousHero.name }}
+                </strong>
+            </a>
+            }
+        </div>
+
+        <div>
+            @if (navigation.nextHero; as nextHero) {
+            <a class="
+                hero-detail__navigation-link
+                hero-detail__navigation-link--next
+              " [routerLink]="[
+                '/heroes',
+                nextHero.slug
+              ]">
+                <span class="hero-detail__navigation-label">
+                    Next hero
+                </span>
+
+                <strong>
+                    {{ nextHero.name }} →
+                </strong>
+            </a>
+            }
+        </div>
+    </nav>
     } @else {
-    <h1>Hero not found</h1>
-    <p>The requested hero does not exist in the current dataset.</p>
+    <app-status-message type="empty" title="Hero not found"
+        message="The requested hero does not exist in the current guide.">
+        <a class="button button--primary" routerLink="/heroes">
+            Browse heroes
+        </a>
+    </app-status-message>
+    }
+    } @else {
+    <app-status-message type="loading" title="Loading hero" message="Please wait while the hero build is loaded." />
     }
 </section>
