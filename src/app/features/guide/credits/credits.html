@@ -1,0 +1,108 @@
+<section class="credits page-container">
+    @if (viewModel$ | async; as viewModel) {
+    @if (viewModel.error) {
+    <app-status-message type="error" title="Unable to load credits" message="The credits data could not be loaded." />
+    } @else if (viewModel.credits; as credits) {
+    <header class="credits__header">
+        <p class="credits__eyebrow">
+            Original guide attribution
+        </p>
+
+        <h1>{{ credits.title }}</h1>
+
+        <p class="credits__author">
+            Hero Build Guide v10.2 by
+            <strong>{{ credits.author }}</strong>
+        </p>
+
+        <div class="credits__introduction">
+            @for (
+            paragraph of credits.introduction;
+            track paragraph
+            ) {
+            <p>{{ paragraph }}</p>
+            }
+        </div>
+
+        <a class="button button--primary" routerLink="/about">
+            Read about the guide
+        </a>
+    </header>
+
+    <section class="credits__section">
+        <header class="credits__section-header">
+            <p>Community acknowledgements</p>
+            <h2>Contributors</h2>
+        </header>
+
+        <div class="credits__grid">
+            @for (
+            contributor of credits.contributors;
+            track contributor.id
+            ) {
+            <app-panel>
+                <article class="credits__contributor" [attr.data-major]="
+                  contributor.role ===
+                  'Major contributor'
+                ">
+                    <div class="credits__avatar" aria-hidden="true">
+                        {{ contributor.name.charAt(0) }}
+                    </div>
+
+                    <div class="credits__contributor-content">
+                        <div class="credits__contributor-heading">
+                            <h3>{{ contributor.name }}</h3>
+
+                            <span>
+                                {{ contributor.role }}
+                            </span>
+                        </div>
+
+                        @if (contributor.group) {
+                        <p>
+                            {{ contributor.group }}
+                        </p>
+                        }
+                    </div>
+                </article>
+            </app-panel>
+            }
+        </div>
+    </section>
+
+    <section class="credits__contact-section">
+        <header>
+            <p>Feedback</p>
+            <h2>Contact the original guide author</h2>
+        </header>
+
+        <div class="credits__contacts">
+            @for (
+            contact of credits.contacts;
+            track contact.platform
+            ) {
+            <article>
+                <span>{{ contact.platform }}</span>
+
+                <div>
+                    <strong>{{ contact.value }}</strong>
+
+                    @if (contact.description) {
+                    <p>{{ contact.description }}</p>
+                    }
+                </div>
+            </article>
+            }
+        </div>
+    </section>
+
+    <aside class="credits__disclaimer">
+        <span aria-hidden="true">i</span>
+
+        <p>{{ credits.disclaimer }}</p>
+    </aside>
+    }
+    } @else {
+    <app-status-message type="loading" title="Loading credits" message="Please wait while the credits are loaded." />
+    }
+</section>

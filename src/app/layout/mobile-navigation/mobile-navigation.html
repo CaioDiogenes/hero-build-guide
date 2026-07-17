@@ -50,6 +50,11 @@
                 Acronyms and FAQ
             </a>
 
+            <a routerLink="/guide/credits" routerLinkActive="mobile-navigation__link--active"
+                class="mobile-navigation__link" (click)="close()">
+                Credits
+            </a>
+
             @for (faction of factions; track faction.id) {
             <a [routerLink]="faction.route" routerLinkActive="mobile-navigation__link--active"
                 class="mobile-navigation__link" (click)="close()">

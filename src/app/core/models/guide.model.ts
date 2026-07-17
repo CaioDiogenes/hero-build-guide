@@ -136,3 +136,25 @@ export interface AcronymFaqGuide {
     acronyms: GuideAcronym[];
     faq: GuideFaqEntry[];
 }
+
+export interface GuideContributor {
+    id: string;
+    name: string;
+    group?: string;
+    role: 'Contributor' | 'Major contributor';
+}
+
+export interface GuideContact {
+    platform: string;
+    value: string;
+    description?: string;
+}
+
+export interface GuideCredits {
+    title: string;
+    author: string;
+    introduction: string[];
+    contributors: GuideContributor[];
+    contacts: GuideContact[];
+    disclaimer: string;
+}

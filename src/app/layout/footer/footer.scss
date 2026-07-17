@@ -19,3 +19,20 @@
         color: inherit;
     }
 }
+
+.footer__attribution {
+    margin: 0;
+
+    color: var(--color-text-subtle);
+    font-size: 0.78rem;
+
+    a {
+        color: var(--color-primary);
+        font-weight: 700;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

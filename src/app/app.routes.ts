@@ -85,6 +85,16 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'guide/credits',
+    title: 'Credits | Hero Build Guide',
+    loadComponent: () =>
+      import(
+        './features/guide/credits/credits'
+      ).then(
+        (component) => component.Credits,
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
