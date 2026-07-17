@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "validate:data": "node scripts/validate-heroes.mjs",
+    "list:hero-routes": "node scripts/list-hero-routes.mjs"
   },
   "private": true,
   "packageManager": "npm@11.12.0",
