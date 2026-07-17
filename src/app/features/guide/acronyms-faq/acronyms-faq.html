@@ -1,0 +1,162 @@
+<section class="acronyms-faq page-container">
+    @if (viewModel$ | async; as viewModel) {
+    @if (viewModel.error) {
+    <app-status-message type="error" title="Unable to load the reference"
+        message="The acronyms and FAQ data could not be loaded." />
+    } @else if (viewModel.guide; as guide) {
+    <header class="acronyms-faq__header">
+        <p class="acronyms-faq__eyebrow">
+            Guide reference
+        </p>
+
+        <h1>{{ guide.title }}</h1>
+
+        <div class="acronyms-faq__introduction">
+            @for (
+            paragraph of guide.introduction;
+            track paragraph
+            ) {
+            <p>{{ paragraph }}</p>
+            }
+        </div>
+    </header>
+
+    <section class="acronyms-faq__filters" aria-label="Reference filters">
+        <div>
+            <label for="reference-search">
+                Search
+            </label>
+
+            <input id="reference-search" type="search" placeholder="Search terms, definitions or questions"
+                [formControl]="searchControl" />
+        </div>
+
+        <div>
+            <label for="reference-category">
+                Acronym category
+            </label>
+
+            <select id="reference-category" [formControl]="categoryControl">
+                <option value="">All categories</option>
+
+                @for (
+                category of categoryOptions;
+                track category
+                ) {
+                <option [value]="category">
+                    {{ category }}
+                </option>
+                }
+            </select>
+        </div>
+
+        <button type="button" class="button button--ghost" (click)="clearFilters()">
+            Clear filters
+        </button>
+    </section>
+
+    <section class="acronyms-faq__section">
+        <header class="acronyms-faq__section-header">
+            <div>
+                <p>Definitions</p>
+                <h2>Acronyms and terms</h2>
+            </div>
+
+            <span>
+                {{ viewModel.acronyms.length }}
+                results
+            </span>
+        </header>
+
+        @if (viewModel.acronyms.length) {
+        <div class="acronyms-faq__acronym-grid">
+            @for (
+            entry of viewModel.acronyms;
+            track entry.id
+            ) {
+            <app-panel>
+                <article class="acronyms-faq__acronym">
+                    <header>
+                        <span class="acronyms-faq__term">
+                            {{ entry.term }}
+                        </span>
+
+                        <app-chip>
+                            {{ entry.category }}
+                        </app-chip>
+                    </header>
+
+                    <h3>{{ entry.meaning }}</h3>
+                    <p>{{ entry.description }}</p>
+                </article>
+            </app-panel>
+            }
+        </div>
+        } @else {
+        <app-status-message type="empty" title="No acronyms found" message="Try changing or clearing the filters." />
+        }
+    </section>
+
+    <section class="acronyms-faq__section">
+        <header class="acronyms-faq__section-header">
+            <div>
+                <p>Common questions</p>
+                <h2>Frequently asked questions</h2>
+            </div>
+
+            <span>
+                {{ viewModel.faq.length }}
+                results
+            </span>
+        </header>
+
+        @if (viewModel.faq.length) {
+        <div class="acronyms-faq__faq-list">
+            @for (
+            entry of viewModel.faq;
+            track entry.id
+            ) {
+            <details class="acronyms-faq__faq">
+                <summary>
+                    <span>{{ entry.question }}</span>
+                    <span aria-hidden="true">+</span>
+                </summary>
+
+                <div class="acronyms-faq__faq-content">
+                    @for (
+                    paragraph of entry.answer;
+                    track paragraph
+                    ) {
+                    <p>{{ paragraph }}</p>
+                    }
+
+                    @if (entry.relatedTerms?.length) {
+                    <div class="acronyms-faq__related">
+                        <strong>Related terms</strong>
+
+                        <div>
+                            @for (
+                            term of entry.relatedTerms;
+                            track term
+                            ) {
+                            <app-chip>
+                                {{ term }}
+                            </app-chip>
+                            }
+                        </div>
+                    </div>
+                    }
+                </div>
+            </details>
+            }
+        </div>
+        } @else {
+        <app-status-message type="empty" title="No FAQ entries found" message="Try changing or clearing the search." />
+        }
+    </section>
+    }
+    } @else {
+    <app-status-message type="loading" title="Loading acronyms and FAQ"
+        message="Please wait while the reference is loaded." />
+    }
+</section>

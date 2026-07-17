@@ -45,6 +45,11 @@
                 A-Hero PVE skills
             </a>
 
+            <a routerLink="/guide/acronyms-faq" routerLinkActive="mobile-navigation__link--active"
+                class="mobile-navigation__link" (click)="close()">
+                Acronyms and FAQ
+            </a>
+
             @for (faction of factions; track faction.id) {
             <a [routerLink]="faction.route" routerLinkActive="mobile-navigation__link--active"
                 class="mobile-navigation__link" (click)="close()">

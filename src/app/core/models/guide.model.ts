@@ -110,3 +110,29 @@ export interface CrowdControlDotGuide {
     damageOverTime: DotEffect[];
     dotInteractions: DotInteraction[];
 }
+
+export interface GuideAcronym {
+    id: string;
+    term: string;
+    meaning: string;
+    description: string;
+    category:
+    | 'Role'
+    | 'Combat'
+    | 'Game mode'
+    | 'Attack';
+}
+
+export interface GuideFaqEntry {
+    id: string;
+    question: string;
+    answer: string[];
+    relatedTerms?: string[];
+}
+
+export interface AcronymFaqGuide {
+    title: string;
+    introduction: string[];
+    acronyms: GuideAcronym[];
+    faq: GuideFaqEntry[];
+}

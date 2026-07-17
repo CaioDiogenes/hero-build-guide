@@ -75,6 +75,16 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'guide/acronyms-faq',
+    title: 'Acronyms and FAQ | Hero Build Guide',
+    loadComponent: () =>
+      import(
+        './features/guide/acronyms-faq/acronyms-faq'
+      ).then(
+        (component) => component.AcronymsFaq,
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

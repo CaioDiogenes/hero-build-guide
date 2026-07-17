@@ -1,0 +1,119 @@
+{
+    "title": "Acronyms and Frequently Asked Questions",
+    "introduction": [
+        "This reference explains common terms used throughout the hero build guide.",
+        "The FAQ also covers several recurring questions about exclusive equipment, gems and highlighted recommendations."
+    ],
+    "acronyms": [
+        {
+            "id": "dps",
+            "term": "DPS",
+            "meaning": "Damage per second",
+            "description": "A role used for heroes that act as the team's main damage dealers.",
+            "category": "Role"
+        },
+        {
+            "id": "cc",
+            "term": "CC",
+            "meaning": "Crowd control",
+            "description": "Heroes or effects that prevent enemies from performing certain actions.",
+            "category": "Combat"
+        },
+        {
+            "id": "tank",
+            "term": "Tank",
+            "meaning": "Primary damage receiver",
+            "description": "A hero intended to absorb damage and protect the team's damage dealers.",
+            "category": "Role"
+        },
+        {
+            "id": "support",
+            "term": "Support",
+            "meaning": "Team utility role",
+            "description": "A hero that heals or affects the team in a way that is not a constant stat buff.",
+            "category": "Role"
+        },
+        {
+            "id": "debuffer",
+            "term": "Debuffer",
+            "meaning": "Enemy weakening role",
+            "description": "A hero that removes enemy buffs or lowers enemy stats.",
+            "category": "Role"
+        },
+        {
+            "id": "buffer",
+            "term": "Buffer",
+            "meaning": "Ally enhancement role",
+            "description": "A hero that increases allied stats or provides another persistent enhancement.",
+            "category": "Role"
+        },
+        {
+            "id": "pvp",
+            "term": "PVP",
+            "meaning": "Player versus player",
+            "description": "Game modes that involve fighting teams controlled by other players.",
+            "category": "Game mode"
+        },
+        {
+            "id": "pve",
+            "term": "PVE",
+            "meaning": "Player versus environment",
+            "description": "Game modes that do not involve fighting other players.",
+            "category": "Game mode"
+        },
+        {
+            "id": "basic",
+            "term": "Basic",
+            "meaning": "Basic attack",
+            "description": "A hero's normal attack.",
+            "category": "Attack"
+        },
+        {
+            "id": "ulti",
+            "term": "Ulti",
+            "meaning": "Ultimate attack",
+            "description": "The attack used when the hero's energy bar reaches 100.",
+            "category": "Attack"
+        }
+    ],
+    "faq": [
+        {
+            "id": "exclusive-equipment-31",
+            "question": "Why are some heroes recommended for exclusive equipment level 31 instead of 30?",
+            "answer": [
+                "At level 31, the third stat provided by the hero's exclusive equipment increases.",
+                "For example, Alcazar has 15% additional Armor PEN at level 30. At level 31, that third exclusive-equipment stat increases to 20%."
+            ],
+            "relatedTerms": [
+                "Exclusive equipment",
+                "Armor PEN"
+            ]
+        },
+        {
+            "id": "missing-dark-gems",
+            "question": "Why do some heroes have no recommended dark gems?",
+            "answer": [
+                "Some heroes do not benefit greatly from any of the stats provided by dark gems.",
+                "When no specific dark gem is recommended, Speed is usually a reasonable fallback."
+            ],
+            "relatedTerms": [
+                "Dark gems",
+                "Speed"
+            ]
+        },
+        {
+            "id": "grey-highlights",
+            "question": "Why are some recommendations highlighted in grey in the original guide?",
+            "answer": [
+                "The grey highlights show the artifacts and stigmata personally used by the guide author on main heroes.",
+                "The highlights represent how those items are normally kept in the author's inventory, not necessarily the optimal Union War arrangement.",
+                "An optimized Union War version would highlight Hunter's Scythe for many more DPS heroes."
+            ],
+            "relatedTerms": [
+                "Artifacts",
+                "Stigmata",
+                "Union War"
+            ]
+        }
+    ]
+}
