@@ -1,0 +1,59 @@
+{
+    "title": "Credits",
+    "author": "Serenity",
+    "introduction": [
+        "This website is based on Hero Build Guide version 10.2, originally created by Serenity.",
+        "Special thanks to the following community members for contributing to the original guide."
+    ],
+    "contributors": [
+        {
+            "id": "dankeshun",
+            "name": "Dankeshun",
+            "group": "Thug Life",
+            "role": "Contributor"
+        },
+        {
+            "id": "alc3ste",
+            "name": "Alc3ste",
+            "group": "Elite",
+            "role": "Contributor"
+        },
+        {
+            "id": "rainhawk",
+            "name": "RainHawK",
+            "group": "Prometheus",
+            "role": "Contributor"
+        },
+        {
+            "id": "scubasteve",
+            "name": "ScubaSteve",
+            "group": "DA₇RK",
+            "role": "Contributor"
+        },
+        {
+            "id": "sugarbabygoki",
+            "name": "SugarBabyGoki",
+            "group": "[FIN]The Empire",
+            "role": "Contributor"
+        },
+        {
+            "id": "thicc",
+            "name": "Thicc",
+            "group": "DA₇RK",
+            "role": "Major contributor"
+        }
+    ],
+    "contacts": [
+        {
+            "platform": "Discord",
+            "value": "Serenity8",
+            "description": "For suggestions, corrections or discussion about the guide."
+        },
+        {
+            "platform": "In game",
+            "value": "17888692 (EA)",
+            "description": "Original guide author game contact."
+        }
+    ],
+    "disclaimer": "This website is an independent web adaptation of the original community guide. All guide recommendations and contributor credits remain attributed to their original authors."
+}

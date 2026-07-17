@@ -1,0 +1,79 @@
+{
+    "title": "Team Building for Beginners",
+    "introduction": [
+        "A balanced team normally combines heroes that absorb damage, heroes that deal damage and heroes that provide support, buffs, debuffs or crowd control.",
+        "The exact composition should change according to your available heroes, the enemy team and the game mode."
+    ],
+    "roles": [
+        {
+            "id": "tank",
+            "title": "Tanks",
+            "minimum": 1,
+            "maximum": 2,
+            "description": "Tanks receive most of the incoming damage and protect the rest of the team.",
+            "examples": [
+                "Michelangelo",
+                "Julianne",
+                "Rockefeller"
+            ]
+        },
+        {
+            "id": "dps",
+            "title": "Damage dealers",
+            "minimum": 1,
+            "maximum": 2,
+            "description": "DPS heroes provide the team’s primary damage.",
+            "examples": [
+                "Toko",
+                "Indira",
+                "Laura"
+            ]
+        },
+        {
+            "id": "support",
+            "title": "Supports, buffers and debuffers",
+            "minimum": 2,
+            "maximum": 4,
+            "description": "These heroes strengthen allies, weaken enemies, remove control effects or provide other utility.",
+            "examples": [
+                "Cui Pan",
+                "Silas",
+                "Jane"
+            ]
+        }
+    ],
+    "placementAdvice": [
+        {
+            "title": "Place most tanks in front",
+            "description": "Many early-game DPS heroes target the front row, so tanks normally belong there.",
+            "priority": 1
+        },
+        {
+            "title": "Check position-specific skills",
+            "description": "Some tanks and other heroes need position 1 for their abilities or recommended build to work correctly.",
+            "priority": 2
+        },
+        {
+            "title": "Protect most DPS heroes",
+            "description": "Most damage dealers should stay in the back unless their skills rely on counterattacks or another special mechanic.",
+            "priority": 3
+        },
+        {
+            "title": "Consider health-triggered abilities",
+            "description": "Heroes whose abilities activate after losing health may benefit from positions where they receive controlled damage.",
+            "priority": 4
+        },
+        {
+            "title": "Read each hero’s skills",
+            "description": "Role labels alone are not enough. Placement and team composition should follow the actual hero skills.",
+            "priority": 5
+        }
+    ],
+    "compositionNotes": [
+        "Faction combinations can provide additional team bonuses.",
+        "Faction bonuses from Star Tech are added to normal faction-composition bonuses.",
+        "The original guide considers Star Tech faction-bonus upgrades generally low priority.",
+        "Some heroes provide additional bonuses specifically to allies from their own faction."
+    ],
+    "disclaimer": "The suggested numbers are a starting point rather than a fixed rule. Adjust the team for the enemy, game mode and heroes available to you."
+}

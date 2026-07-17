@@ -1,0 +1,60 @@
+{
+    "title": "Guide Library",
+    "description": "Browse beginner advice, combat references, terminology and information about the original Hero Build Guide.",
+    "items": [
+        {
+            "id": "introduction",
+            "title": "Guide Introduction",
+            "description": "Learn about the purpose of the guide, supported game modes and version 10.2 changes.",
+            "route": "/about",
+            "category": "Getting started",
+            "order": 1,
+            "icon": "book-open"
+        },
+        {
+            "id": "team-building",
+            "title": "Beginner Team Building",
+            "description": "Understand basic team composition, roles and hero placement.",
+            "route": "/guide/team-building",
+            "category": "Getting started",
+            "order": 2,
+            "icon": "users"
+        },
+        {
+            "id": "a-hero-pve",
+            "title": "A-Hero Skills for PVE",
+            "description": "Find useful A-Hero abilities for PVE content and early progression.",
+            "route": "/guide/a-hero-pve",
+            "category": "Reference",
+            "order": 3,
+            "icon": "shield"
+        },
+        {
+            "id": "cc-dot",
+            "title": "CC and DOT Glossary",
+            "description": "Review crowd-control restrictions, damage-over-time effects and build interactions.",
+            "route": "/guide/cc-dot",
+            "category": "Reference",
+            "order": 4,
+            "icon": "sparkles"
+        },
+        {
+            "id": "acronyms-faq",
+            "title": "Acronyms and FAQ",
+            "description": "Search definitions, role terminology and common build questions.",
+            "route": "/guide/acronyms-faq",
+            "category": "Reference",
+            "order": 5,
+            "icon": "circle-help"
+        },
+        {
+            "id": "credits",
+            "title": "Credits",
+            "description": "View attribution for the original guide author and community contributors.",
+            "route": "/guide/credits",
+            "category": "About",
+            "order": 6,
+            "icon": "heart"
+        }
+    ]
+}

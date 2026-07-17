@@ -1,0 +1,66 @@
+{
+    "title": "Hero Build Guide",
+    "version": "10.2",
+    "author": "Serenity",
+    "description": [
+        "This guide provides recommended hero build options for both PVP and PVE game modes.",
+        "The recommendations are guidelines rather than strict requirements. Players should adapt builds according to the heroes, equipment and resources available to them.",
+        "Three two-piece stigmata sets can also be used as an alternative build configuration."
+    ],
+    "coveredPvpModes": [
+        "Union War",
+        "Dominator",
+        "Transcendence",
+        "Infinity",
+        "Dimensional Battle",
+        "Arenas"
+    ],
+    "coveredPveModes": [
+        "X-War",
+        "Galaxy",
+        "Faction Wanted",
+        "Expedition",
+        "Space Discovery",
+        "Valiant Trials",
+        "Lost Land"
+    ],
+    "notices": [
+        {
+            "title": "Adapt recommendations",
+            "description": "Gem talents and builds may change depending on the opponent. Do not follow a build blindly; evaluate the situation and adjust.",
+            "type": "info"
+        },
+        {
+            "title": "Speed matters",
+            "description": "Speed determines turn order for every hero. It is especially important for heroes whose skills depend on acting before the enemy.",
+            "type": "important"
+        },
+        {
+            "title": "Facing crowd control",
+            "description": "When facing teams with strong crowd control, the guide recommends considering third talent 3.",
+            "type": "warning"
+        },
+        {
+            "title": "Annihilation",
+            "description": "At the time of version 10.2, Annihilation is mainly useful for Pierre, Forest Avatar (Epeius), Mikaela and Orochi.",
+            "type": "info"
+        },
+        {
+            "title": "Phantom stigmata",
+            "description": "Many current heroes and skills invalidate Phantom effects. Phantom should therefore be considered a lower-priority recommendation when alternatives are available.",
+            "type": "warning"
+        }
+    ],
+    "versionNotes": {
+        "version": "10.2",
+        "changes": [
+            "Added Ayana skin.",
+            "Added Oblivion hero recommendations.",
+            "Added a damage-over-time subsection to the crowd-control section.",
+            "Added Heart of Calamity artifact recommendations.",
+            "Reassessed hero tiers to reflect the current meta.",
+            "Marked relevant heroes as True Damage or Holy Damage.",
+            "Added a disclaimer regarding Phantom stigmata."
+        ]
+    }
+}

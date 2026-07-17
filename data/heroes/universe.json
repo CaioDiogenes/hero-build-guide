@@ -1,0 +1,417 @@
+[
+  {
+    "id": "balance",
+    "slug": "balance",
+    "name": "Balance",
+    "faction": "universe",
+    "types": ["CC"],
+    "tier": "S+",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Back",
+    "statFocus": [
+      "Speed",
+      "Effect Hit"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Succubus",
+      "Devil Spirit"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Bell of Chaos",
+      "Turbid Orb",
+      "Time Cycle",
+      "Eternal Oath"
+    ],
+    "generalTalentsPvp": ["3413"],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite"
+    ],
+    "gemTalents": ["123"]
+  },
+  {
+    "id": "collapse",
+    "slug": "collapse",
+    "name": "Collapse",
+    "faction": "universe",
+    "types": [
+      "CC",
+      "Debuffer"
+    ],
+    "tier": "S+",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "-",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit Res"
+    ],
+    "stigmataFourSet": [
+      "Bulwark",
+      "Vital",
+      "Enflame",
+      "Phantom",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Sanctity",
+      "Judgement",
+      "Annihilation"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Bow of Doom",
+      "Baleful Axe",
+      "Angel Wings",
+      "Heart of Calamity"
+    ],
+    "generalTalentsPvp": ["3322"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["123"]
+  },
+  {
+    "id": "darkness",
+    "slug": "darkness",
+    "name": "Darkness",
+    "faction": "universe",
+    "types": [
+      "DPS",
+      "CC"
+    ],
+    "tier": "S",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Same position as enemy DPS",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Striker",
+      "Thorn"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Hunter's Scythe",
+      "Bell of Chaos",
+      "Tyrant's Hammer",
+      "Abyssal Boots",
+      "Genesis"
+    ],
+    "generalTalentsPvp": ["2333"],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["313"]
+  },
+  {
+    "id": "incinerus",
+    "slug": "incinerus",
+    "name": "Incinerus",
+    "faction": "universe",
+    "types": [
+      "DPS",
+      "Buffer"
+    ],
+    "tier": "S",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Front",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Thorn",
+      "Striker"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Judgement"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Tyrant's Hammer",
+      "Misanthropy",
+      "Baleful Axe",
+      "Devouring Wand"
+    ],
+    "generalTalentsPvp": ["1112"],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Amethyst"
+    ],
+    "gemTalents": ["111"]
+  },
+  {
+    "id": "light",
+    "slug": "light",
+    "name": "Light",
+    "faction": "universe",
+    "types": [
+      "Tank",
+      "Holy DMG"
+    ],
+    "tier": "A",
+    "minimumRelics": 0,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Slot 1",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit Res",
+      "Crit"
+    ],
+    "stigmataFourSet": [
+      "Banshee",
+      "Vital",
+      "Berserk",
+      "Armor Shred"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot",
+      "Genesis Dagger"
+    ],
+    "artifacts": [
+      "Baleful Axe",
+      "Devil's Eye",
+      "Armor of Destruction",
+      "Glorious Crown"
+    ],
+    "generalTalentsPvp": ["3452"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "oblivion",
+    "slug": "oblivion",
+    "name": "Oblivion",
+    "faction": "universe",
+    "types": [
+      "Tank",
+      "Buffer",
+      "True DMG"
+    ],
+    "tier": "S+",
+    "minimumRelics": 3,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Slot 1",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit Res"
+    ],
+    "stigmataFourSet": [
+      "Guardian",
+      "Armor Shred"
+    ],
+    "stigmataTwoSet": [
+      "Sanctity",
+      "Evolution"
+    ],
+    "collections": [
+      "Undying Symbol"
+    ],
+    "artifacts": [
+      "Bow of Doom",
+      "Immortal Shield",
+      "Armor of Destruction",
+      "Luminous Beacon",
+      "Devouring Wand"
+    ],
+    "generalTalentsPvp": ["3422"],
+    "gems": [
+      "Kallaite",
+      "Cat's Eye",
+      "Labradorite",
+      "Alexandrite"
+    ],
+    "gemTalents": ["112"]
+  },
+  {
+    "id": "shadow",
+    "slug": "shadow",
+    "name": "Shadow",
+    "faction": "universe",
+    "types": ["DPS"],
+    "tier": "S+",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Back row",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Vital",
+      "Samurai",
+      "Enflame",
+      "Withering"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Evil Dreadsword",
+      "Pit Spear",
+      "Tyrant's Hammer",
+      "Baleful Axe",
+      "Devouring Wand",
+      "Sacred Radiance Codex"
+    ],
+    "generalTalentsPvp": ["1332"],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["313"]
+  },
+  {
+    "id": "sovereign",
+    "slug": "sovereign",
+    "name": "Sovereign",
+    "faction": "universe",
+    "types": [
+      "Buffer",
+      "True DMG"
+    ],
+    "tier": "S",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Below Nydia",
+    "statFocus": [
+      "ATK",
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Bulwark",
+      "Sage",
+      "Armor Shred"
+    ],
+    "stigmataTwoSet": [
+      "Judgement"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Turbid Orb"
+    ],
+    "generalTalentsPvp": ["1122"],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Balas"
+    ],
+    "gemTalents": ["121"],
+    "notes": [
+      "Sovereign deals True Damage, which does not require Armor PEN or Crit.",
+      "The absence of Armor PEN and Crit recommendations is intentional."
+    ]
+  },
+  {
+    "id": "time",
+    "slug": "time",
+    "name": "Time",
+    "faction": "universe",
+    "types": ["Buffer"],
+    "tier": "S",
+    "minimumRelics": 0,
+    "minimumExclusiveEquipment": 20,
+    "placement": "Back",
+    "statFocus": [
+      "Speed"
+    ],
+    "stigmataFourSet": [
+      "Redemption",
+      "Phantom",
+      "Bulwark",
+      "Samurai",
+      "Guardian"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Turbid Orb",
+      "Devouring Wand",
+      "Angel Wings",
+      "Abyssal Boots",
+      "Genesis"
+    ],
+    "generalTalentsPvp": ["3432"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["331"]
+  }
+]

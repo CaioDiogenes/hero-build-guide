@@ -1,0 +1,1 @@
+import{Da as i,Ya as t,Za as o,jb as n}from"./chunk-C2OPUX6U.js";var a=class m{static \u0275fac=function(e){return new(e||m)};static \u0275cmp=i({type:m,selectors:[["app-home"]],decls:5,vars:0,template:function(e,r){e&1&&(t(0,"section")(1,"h1"),n(2,"Hero Build Guide"),o(),t(3,"p"),n(4,"Home page works."),o()())},encapsulation:2})};export{a as Home};

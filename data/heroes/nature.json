@@ -1,0 +1,986 @@
+[
+  {
+    "id": "ayana",
+    "slug": "ayana",
+    "name": "Ayana",
+    "title": "Flowerkeeper Spirit",
+    "faction": "nature",
+    "types": [
+      "Support",
+      "True DMG"
+    ],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Front row",
+    "statFocus": [
+      "Speed",
+      "HP"
+    ],
+    "stigmataFourSet": [
+      "Guardian",
+      "Phantom",
+      "Redemption",
+      "Armor Shred"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot",
+      "Genesis Dagger"
+    ],
+    "artifacts": [
+      "Genesis",
+      "Turbid Orb (PVE)"
+    ],
+    "generalTalentsPvp": [
+      "3452"
+    ],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": [
+      "332"
+    ],
+    "notes": [
+      "Ayana is ranked A for PVP and S+ for PVE."
+    ]
+  },
+  {
+    "id": "aphra",
+    "slug": "aphra",
+    "name": "Aphra",
+    "title": "Battlefield Angel",
+    "faction": "nature",
+    "types": [
+      "Support"
+    ],
+    "tier": "B",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Front",
+    "statFocus": [
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Redemption"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Zealot"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Radiance Tribute",
+      "Luminous Beacon",
+      "Braveheart",
+      "Fictional Reality"
+    ],
+    "generalTalentsPvp": [
+      "3452"
+    ],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": [
+      "331"
+    ]
+  },
+  {
+    "id": "daluna",
+    "slug": "daluna",
+    "name": "Daluna",
+    "title": "Moon Princess",
+    "faction": "nature",
+    "types": [
+      "DPS",
+      "Buffer",
+      "True DMG"
+    ],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Back",
+    "statFocus": [
+      "ATK",
+      "HP"
+    ],
+    "stigmataFourSet": [
+      "Vital",
+      "Apocalypse",
+      "Berserk",
+      "Guardian"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Judgement"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Fatal Judgement",
+      "Baleful Axe",
+      "Pit Spear"
+    ],
+    "generalTalentsPvp": [
+      "2112"
+    ],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Labradorite"
+    ],
+    "gemTalents": [
+      "313"
+    ],
+    "notes": [
+      "Daluna deals True Damage, which does not crit and does not require Armor PEN.",
+      "Crit, Crit DMG, Skill DMG and Armor PEN may convert to ATK, but a direct ATK build is recommended."
+    ]
+  },
+  {
+    "id": "elodie",
+    "slug": "elodie",
+    "name": "Elodie",
+    "title": "Winter Lord",
+    "faction": "nature",
+    "types": [
+      "CC"
+    ],
+    "tier": "S",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Front",
+    "statFocus": [
+      "Speed",
+      "Effect Hit",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Succubus",
+      "Banshee",
+      "Sage",
+      "Devil Spirit"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Turbid Orb",
+      "Bell of Chaos",
+      "Devil's Eye",
+      "Bow of Doom",
+      "Abyssal Boots",
+      "Luminous Beacon",
+      "Angel Wings",
+      "Genesis",
+      "Time Cycle",
+      "Eternal Oath"
+    ],
+    "generalTalentsPvp": [
+      "3433"
+    ],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite",
+      "White Onyx"
+    ],
+    "gemTalents": [
+      "121"
+    ]
+  },
+  {
+    "id": "feng",
+    "slug": "feng",
+    "name": "Feng",
+    "title": "Panda Chef",
+    "faction": "nature",
+    "types": [
+      "Tank"
+    ],
+    "tier": "B",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Slot 1",
+    "statFocus": [
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Redemption"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Angel Wings"
+    ],
+    "generalTalentsPvp": [
+      "3412"
+    ],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": [
+      "121"
+    ]
+  },
+  {
+    "id": "forest-avatar",
+    "slug": "forest-avatar",
+    "name": "Forest Avatar",
+    "title": "Epeius",
+    "faction": "nature",
+    "types": [
+      "DPS"
+    ],
+    "tier": "B",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Back",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN",
+      "Skill DMG"
+    ],
+    "stigmataFourSet": [
+      "Vital",
+      "Apocalypse",
+      "Thorn",
+      "Striker"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin",
+      "Annihilation"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Pit Spear",
+      "Oracle's Ring",
+      "Eternal Soul",
+      "Hunter's Scythe"
+    ],
+    "generalTalentsPvp": [
+      "1332"
+    ],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone",
+      "Emerald"
+    ],
+    "gemTalents": [
+      "313"
+    ]
+  },
+  {
+    "id": "guton",
+    "slug": "guton",
+    "name": "Guton",
+    "title": "Treant Guardian",
+    "faction": "nature",
+    "types": [
+      "Tank"
+    ],
+    "tier": "S",
+    "minimumRelics": 3,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Front",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit Res"
+    ],
+    "stigmataFourSet": [
+      "Bulwark",
+      "Mirage",
+      "Banshee",
+      "Guardian",
+      "Sacred Guardian"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Immortal Shield",
+      "Armor of Destruction",
+      "Glorious Crown",
+      "Light of Faith"
+    ],
+    "generalTalentsPvp": [
+      "3415"
+    ],
+    "gems": [
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite",
+      "Labradorite"
+    ],
+    "gemTalents": [
+      "111"
+    ]
+  },
+  {
+    "id": "indira",
+    "slug": "indira",
+    "name": "Indira",
+    "title": "Electric Arc",
+    "faction": "nature",
+    "types": [
+      "DPS"
+    ],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 30,
+    "placement": "Back",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Vital",
+      "Apocalypse",
+      "Striker",
+      "Enflame"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin",
+      "Judgement"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Hunter's Scythe",
+      "Baleful Axe",
+      "Miracle Dawn",
+      "Fatal Judgement",
+      "Meteorite Dust"
+    ],
+    "generalTalentsPvp": [
+      "1322"
+    ],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": [
+      "311"
+    ]
+  },
+  {
+    "id": "julia",
+    "slug": "julia",
+    "name": "Julia",
+    "title": "Forest Dancer",
+    "faction": "nature",
+    "types": [
+      "DPS"
+    ],
+    "tier": "S+",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Back",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Berserk",
+      "Samurai"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin",
+      "Judgement"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Hunter's Scythe",
+      "Tyrant's Hammer",
+      "Pit Spear",
+      "Oracle's Ring",
+      "Baleful Axe"
+    ],
+    "generalTalentsPvp": [
+      "1332"
+    ],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": [
+      "313"
+    ]
+  },
+  {
+    "id": "logan",
+    "slug": "logan",
+    "name": "Logan",
+    "title": "Wings of Wrath",
+    "faction": "nature",
+    "types": [
+      "Tank"
+    ],
+    "tier": "A",
+    "minimumRelics": 3,
+    "minimumExclusiveEquipment": 20,
+    "placement": "Slot 1",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit Res"
+    ],
+    "stigmataFourSet": [
+      "Banshee",
+      "Guardian",
+      "Sacred Guardian"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Devil's Eye",
+      "Angel Wings"
+    ],
+    "generalTalentsPvp": [
+      "3412"
+    ],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": [
+      "121"
+    ]
+  },
+  {
+    "id": "lora",
+    "slug": "lora",
+    "name": "Lora",
+    "title": "Dragon Edict Priestess",
+    "faction": "nature",
+    "types": [
+      "Healer",
+      "DPS"
+    ],
+    "tier": "S+",
+    "minimumRelics": 3,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back",
+    "statFocus": [
+      "Armor PEN",
+      "Crit",
+      "Crit DMG"
+    ],
+    "stigmataFourSet": [
+      "Enflame"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin",
+      "Judgement"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Baleful Axe",
+      "Pit Spear",
+      "Hunter's Scythe",
+      "Fatal Judgement"
+    ],
+    "generalTalentsPvp": [
+      "2342"
+    ],
+    "gems": [
+      "Malachite",
+      "Amethyst",
+      "Kallaite",
+      "Alexandrite",
+      "Labradorite",
+      "Bloodstone"
+    ],
+    "gemTalents": [
+      "311"
+    ]
+  },
+  {
+    "id": "loufontiel",
+    "slug": "loufontiel",
+    "name": "Loufontiel",
+    "title": "Immortal Spirit Deer",
+    "faction": "nature",
+    "types": [
+      "Buffer",
+      "Support"
+    ],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit Res"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Redemption",
+      "Bulwark",
+      "Sage",
+      "Guardian",
+      "Armor Shred"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot",
+      "Genesis Dagger"
+    ],
+    "artifacts": [
+      "Bow of Doom",
+      "Immortal Shield",
+      "Heart of Calamity",
+      "Nether Gloves",
+      "Devouring Wand",
+      "Glorious Crown",
+      "Radiance Tribute",
+      "Luminous Beacon",
+      "Life Source",
+      "Fictional Reality"
+    ],
+    "generalTalentsPvp": [
+      "3452",
+      "3412"
+    ],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": [
+      "331"
+    ]
+  },
+  {
+    "id": "lucy",
+    "slug": "lucy",
+    "name": "Lucy",
+    "title": "Storm Walker",
+    "faction": "nature",
+    "types": [
+      "Buffer"
+    ],
+    "tier": "A",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Front",
+    "statFocus": [
+      "Speed",
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Samurai",
+      "Banshee",
+      "Sage",
+      "Armor Shred"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Bow of Doom",
+      "Radiance Tribute",
+      "Frozen Mirror"
+    ],
+    "generalTalentsPvp": [
+      "3422"
+    ],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": [
+      "132"
+    ]
+  },
+  {
+    "id": "marilina",
+    "slug": "marilina",
+    "name": "Marilina",
+    "title": "Marina Heartsea",
+    "faction": "nature",
+    "types": [
+      "Support"
+    ],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Front",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit Res"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Bulwark",
+      "Mirage",
+      "Banshee",
+      "Guardian",
+      "Armor Shred",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot",
+      "Genesis Dagger"
+    ],
+    "artifacts": [
+      "Bow of Doom",
+      "Heart of Calamity",
+      "Immortal Shield",
+      "Nether Gloves",
+      "Devouring Wand",
+      "Radiance Tribute",
+      "Life Source",
+      "Fictional Reality",
+      "Glorious Crown"
+    ],
+    "generalTalentsPvp": [
+      "3455"
+    ],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": [
+      "332"
+    ]
+  },
+  {
+    "id": "michelangelo",
+    "slug": "michelangelo",
+    "name": "Michelangelo",
+    "title": "Thinker",
+    "faction": "nature",
+    "types": [
+      "Tank"
+    ],
+    "tier": "S",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 20,
+    "placement": "-",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit Res"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Bulwark",
+      "Mirage",
+      "Banshee",
+      "Guardian",
+      "Sacred Guardian",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot",
+      "Genesis Dagger"
+    ],
+    "artifacts": [
+      "Immortal Shield",
+      "Devouring Wand",
+      "Nether Gloves",
+      "Holy Prayer",
+      "Light of Faith",
+      "Fictional Reality"
+    ],
+    "generalTalentsPvp": [
+      "3412"
+    ],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": [
+      "121"
+    ]
+  },
+  {
+    "id": "noah",
+    "slug": "noah",
+    "name": "Noah",
+    "title": "Dawnwarden",
+    "faction": "nature",
+    "types": [
+      "Tank"
+    ],
+    "tier": "S+",
+    "minimumRelics": 3,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Front",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit Res"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Bulwark",
+      "Mirage",
+      "Banshee",
+      "Guardian",
+      "Sacred Guardian",
+      "Armor Shred",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot",
+      "Genesis Dagger"
+    ],
+    "artifacts": [
+      "Bow of Doom",
+      "Immortal Shield",
+      "Armor of Destruction",
+      "Devouring Wand",
+      "Nether Gloves",
+      "Holy Prayer",
+      "Radiance Tribute"
+    ],
+    "generalTalentsPvp": [
+      "3415"
+    ],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": [
+      "121"
+    ]
+  },
+  {
+    "id": "sally",
+    "slug": "sally",
+    "name": "Sally",
+    "title": "Mother of Swarms",
+    "faction": "nature",
+    "types": [
+      "DPS"
+    ],
+    "tier": "A",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Back",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Apocalypse"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Miracle Dawn",
+      "Fatal Judgement",
+      "Meteorite Dust",
+      "Primal Power"
+    ],
+    "generalTalentsPvp": [
+      "1332"
+    ],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": [
+      "313"
+    ]
+  },
+  {
+    "id": "sharmaka",
+    "slug": "sharmaka",
+    "name": "Sharmaka",
+    "title": "Forest Watcher",
+    "faction": "nature",
+    "types": [
+      "Support"
+    ],
+    "tier": "S",
+    "minimumRelics": 3,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back row",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit Res"
+    ],
+    "stigmataFourSet": [
+      "Sage",
+      "Redemption",
+      "Phantom",
+      "Bulwark",
+      "Sacred Guardian"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Turbid Orb",
+      "Devouring Wand",
+      "Radiance Tribute",
+      "Glorious Crown",
+      "Heart of Calamity"
+    ],
+    "generalTalentsPvp": [
+      "3415"
+    ],
+    "gems": [
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": [
+      "231"
+    ]
+  },
+  {
+    "id": "silas",
+    "slug": "silas",
+    "name": "Silas",
+    "title": "Evolver",
+    "faction": "nature",
+    "types": [
+      "CC"
+    ],
+    "tier": "B",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Front",
+    "statFocus": [
+      "Effect Hit"
+    ],
+    "stigmataFourSet": [
+      "Banshee"
+    ],
+    "stigmataTwoSet": [
+      "Judgement"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Radiance Tribute",
+      "Braveheart"
+    ],
+    "generalTalentsPvp": [
+      "3423"
+    ],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite"
+    ],
+    "gemTalents": [
+      "121"
+    ]
+  }
+]
