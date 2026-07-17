@@ -38,12 +38,22 @@ export const routes: Routes = [
         .then(component => component.About),
   },
   {
-  path: 'style-guide',
-  title: 'Style Guide | Hero Build Guide',
-  loadComponent: () =>
-    import('./features/style-guide/style-guide')
-      .then((component) => component.StyleGuide),
-},
+    path: 'style-guide',
+    title: 'Style Guide | Hero Build Guide',
+    loadComponent: () =>
+      import('./features/style-guide/style-guide')
+        .then((component) => component.StyleGuide),
+  },
+  {
+    path: 'guide/team-building',
+    title: 'Beginner Team Building | Hero Build Guide',
+    loadComponent: () =>
+      import(
+        './features/guide/beginner-team/beginner-team'
+      ).then(
+        (component) => component.BeginnerTeam,
+      ),
+  },
   {
     path: '**',
     redirectTo: '',

@@ -31,6 +31,15 @@
                 Factions
             </p>
 
+            <p class="mobile-navigation__section-title">
+                Guides
+            </p>
+
+            <a routerLink="/guide/team-building" routerLinkActive="mobile-navigation__link--active"
+                class="mobile-navigation__link" (click)="close()">
+                Beginner team building
+            </a>
+
             @for (faction of factions; track faction.id) {
             <a [routerLink]="faction.route" routerLinkActive="mobile-navigation__link--active"
                 class="mobile-navigation__link" (click)="close()">

@@ -1,0 +1,130 @@
+<section class="beginner-team page-container">
+    @if (viewModel$ | async; as viewModel) {
+    @if (viewModel.error) {
+    <app-status-message type="error" title="Unable to load team-building advice"
+        message="The beginner guide data could not be loaded." />
+    } @else if (viewModel.guide; as guide) {
+    <header class="beginner-team__header">
+        <p class="beginner-team__eyebrow">
+            Beginner guide
+        </p>
+
+        <h1>{{ guide.title }}</h1>
+
+        <div class="beginner-team__introduction">
+            @for (
+            paragraph of guide.introduction;
+            track paragraph
+            ) {
+            <p>{{ paragraph }}</p>
+            }
+        </div>
+
+        <a class="button button--primary" routerLink="/heroes">
+            Browse heroes
+        </a>
+    </header>
+
+    <section class="beginner-team__section">
+        <header class="beginner-team__section-header">
+            <h2>Recommended role distribution</h2>
+
+            <p>
+                A common six-hero team can be assembled
+                using the following starting ranges.
+            </p>
+        </header>
+
+        <div class="beginner-team__role-grid">
+            @for (role of guide.roles; track role.id) {
+            <app-panel>
+                <article class="beginner-team__role" [attr.data-role]="role.id">
+                    <header>
+                        <div class="beginner-team__role-count">
+                            {{ role.minimum }}–{{ role.maximum }}
+                        </div>
+
+                        <div>
+                            <h3>{{ role.title }}</h3>
+                            <p>{{ role.description }}</p>
+                        </div>
+                    </header>
+
+                    <section>
+                        <h4>Examples</h4>
+
+                        <div class="beginner-team__examples">
+                            @for (
+                            example of role.examples;
+                            track example
+                            ) {
+                            <span>{{ example }}</span>
+                            }
+                        </div>
+                    </section>
+                </article>
+            </app-panel>
+            }
+        </div>
+    </section>
+
+    <section class="beginner-team__section">
+        <header class="beginner-team__section-header">
+            <h2>Placement advice</h2>
+
+            <p>
+                Positioning can be as important as the
+                heroes selected for the team.
+            </p>
+        </header>
+
+        <ol class="beginner-team__advice-list">
+            @for (
+            advice of guide.placementAdvice;
+            track advice.priority
+            ) {
+            <li>
+                <span class="beginner-team__advice-number">
+                    {{ advice.priority }}
+                </span>
+
+                <div>
+                    <h3>{{ advice.title }}</h3>
+                    <p>{{ advice.description }}</p>
+                </div>
+            </li>
+            }
+        </ol>
+    </section>
+
+    <section class="beginner-team__composition">
+        <header>
+            <h2>Faction and composition bonuses</h2>
+
+            <p>
+                Team composition may provide bonuses in
+                addition to individual hero synergy.
+            </p>
+        </header>
+
+        <ul>
+            @for (
+            note of guide.compositionNotes;
+            track note
+            ) {
+            <li>{{ note }}</li>
+            }
+        </ul>
+    </section>
+
+    <aside class="beginner-team__disclaimer">
+        <span aria-hidden="true">!</span>
+
+        <p>{{ guide.disclaimer }}</p>
+    </aside>
+    }
+    } @else {
+    <app-status-message type="loading" title="Loading team-building advice"
+        message="Please wait while the beginner guide is loaded." />
+    }
+</section>
