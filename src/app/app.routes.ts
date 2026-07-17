@@ -45,6 +45,16 @@ export const routes: Routes = [
         .then((component) => component.StyleGuide),
   },
   {
+    path: 'guide',
+    title: 'Guide Library | Hero Build Guide',
+    loadComponent: () =>
+      import(
+        './features/guide/guide-index/guide-index'
+      ).then(
+        (component) => component.GuideIndex,
+      ),
+  },
+  {
     path: 'guide/team-building',
     title: 'Beginner Team Building | Hero Build Guide',
     loadComponent: () =>

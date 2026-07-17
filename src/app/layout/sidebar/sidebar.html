@@ -45,26 +45,40 @@
 
         <section class="sidebar__section">
             <p class="sidebar__section-title">
-                Guides
+                Guide
             </p>
 
-            <a routerLink="/guide/team-building" routerLinkActive="sidebar__link--active" class="sidebar__link">
-                Beginner team building
+            <a routerLink="/guide" routerLinkActive="sidebar__link--active" [routerLinkActiveOptions]="{ exact: true }"
+                class="sidebar__link">
+                Guide library
             </a>
 
-            <a routerLink="/guide/a-hero-pve" routerLinkActive="sidebar__link--active" class="sidebar__link">
-                A-Hero PVE skills
+            <a routerLink="/about" routerLinkActive="sidebar__link--active" class="sidebar__link sidebar__link--nested">
+                Introduction
             </a>
 
-            <a routerLink="/guide/cc-dot" routerLinkActive="sidebar__link--active" class="sidebar__link">
-                CC and DOT glossary
+            <a routerLink="/guide/team-building" routerLinkActive="sidebar__link--active"
+                class="sidebar__link sidebar__link--nested">
+                Team building
             </a>
 
-            <a routerLink="/guide/acronyms-faq" routerLinkActive="sidebar__link--active" class="sidebar__link">
+            <a routerLink="/guide/a-hero-pve" routerLinkActive="sidebar__link--active"
+                class="sidebar__link sidebar__link--nested">
+                A-Hero PVE
+            </a>
+
+            <a routerLink="/guide/cc-dot" routerLinkActive="sidebar__link--active"
+                class="sidebar__link sidebar__link--nested">
+                CC and DOT
+            </a>
+
+            <a routerLink="/guide/acronyms-faq" routerLinkActive="sidebar__link--active"
+                class="sidebar__link sidebar__link--nested">
                 Acronyms and FAQ
             </a>
 
-            <a routerLink="/guide/credits" routerLinkActive="sidebar__link--active" class="sidebar__link">
+            <a routerLink="/guide/credits" routerLinkActive="sidebar__link--active"
+                class="sidebar__link sidebar__link--nested">
                 Credits
             </a>
         </section>

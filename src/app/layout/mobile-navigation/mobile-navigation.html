@@ -32,17 +32,32 @@
             </p>
 
             <p class="mobile-navigation__section-title">
-                Guides
+                Guide
             </p>
+
+            <a routerLink="/guide" routerLinkActive="mobile-navigation__link--active"
+                [routerLinkActiveOptions]="{ exact: true }" class="mobile-navigation__link" (click)="close()">
+                Guide library
+            </a>
+
+            <a routerLink="/about" routerLinkActive="mobile-navigation__link--active" class="mobile-navigation__link"
+                (click)="close()">
+                Introduction
+            </a>
 
             <a routerLink="/guide/team-building" routerLinkActive="mobile-navigation__link--active"
                 class="mobile-navigation__link" (click)="close()">
-                Beginner team building
+                Team building
             </a>
 
             <a routerLink="/guide/a-hero-pve" routerLinkActive="mobile-navigation__link--active"
                 class="mobile-navigation__link" (click)="close()">
-                A-Hero PVE skills
+                A-Hero PVE
+            </a>
+
+            <a routerLink="/guide/cc-dot" routerLinkActive="mobile-navigation__link--active"
+                class="mobile-navigation__link" (click)="close()">
+                CC and DOT
             </a>
 
             <a routerLink="/guide/acronyms-faq" routerLinkActive="mobile-navigation__link--active"

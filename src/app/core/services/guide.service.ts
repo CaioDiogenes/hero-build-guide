@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, inject } from "@angular/core";
 import { shareReplay, Observable } from "rxjs";
-import { GuideIntroduction, BeginnerTeamGuide, AHeroPveGuide, CrowdControlDotGuide, AcronymFaqGuide, GuideCredits } from "../models/guide.model";
+import { GuideIntroduction, BeginnerTeamGuide, AHeroPveGuide, CrowdControlDotGuide, AcronymFaqGuide, GuideCredits, GuideNavigationData } from "../models/guide.model";
 
 @Injectable({
     providedIn: 'root',
@@ -75,6 +75,17 @@ export class GuideService {
             }),
         );
 
+    private readonly navigation$ = this.http
+        .get<GuideNavigationData>(
+            '/data/guide/navigation.json',
+        )
+        .pipe(
+            shareReplay({
+                bufferSize: 1,
+                refCount: true,
+            }),
+        );
+
     getIntroduction(): Observable<GuideIntroduction> {
         return this.introduction$;
     }
@@ -97,5 +108,9 @@ export class GuideService {
 
     getCredits(): Observable<GuideCredits> {
         return this.credits$;
+    }
+
+    getNavigation(): Observable<GuideNavigationData> {
+        return this.navigation$;
     }
 }

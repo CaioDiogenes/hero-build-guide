@@ -158,3 +158,19 @@ export interface GuideCredits {
     contacts: GuideContact[];
     disclaimer: string;
 }
+
+export interface GuideNavigationItem {
+    id: string;
+    title: string;
+    description: string;
+    route: string;
+    category: 'Getting started' | 'Reference' | 'About';
+    order: number;
+    icon?: string;
+}
+
+export interface GuideNavigationData {
+    title: string;
+    description: string;
+    items: GuideNavigationItem[];
+}

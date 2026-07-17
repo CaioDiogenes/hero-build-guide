@@ -1,19 +1,15 @@
 .sidebar {
     display: none;
-
     position: sticky;
     top: 4.5rem;
-
     width: 16rem;
     height: calc(100vh - 4.5rem);
-
     padding: var(--space-5) var(--space-4);
-
     background: rgba(16, 10, 25, 0.72);
-
     border-right: 1px solid var(--color-border);
+    max-height: none;
+    overflow: visible;
 
-    overflow-y: auto;
 
     &__navigation {
         display: grid;
@@ -107,4 +103,31 @@
     .sidebar {
         display: block;
     }
+}
+
+.sidebar__link--nested {
+    padding-left: calc(var(--space-4) + var(--space-3));
+
+    font-size: 0.84rem;
+
+    &::before {
+        content: '';
+
+        width: 0.3rem;
+        height: 0.3rem;
+
+        margin-right: var(--space-2);
+
+        background: var(--color-text-subtle);
+        border-radius: 50%;
+    }
+}
+
+.sidebar {
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
 }
