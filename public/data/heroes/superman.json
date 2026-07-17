@@ -1,0 +1,545 @@
+[
+  {
+    "id": "einstein",
+    "slug": "einstein",
+    "name": "Einstein",
+    "title": "Universe Sage",
+    "faction": "superman",
+    "types": ["Support"],
+    "tier": "A",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Front",
+    "statFocus": ["HP", "Damage Immune", "Crit Res"],
+    "stigmataFourSet": ["Redemption", "Banshee"],
+    "stigmataTwoSet": ["Evolution", "Sanctity"],
+    "collections": [],
+    "artifacts": [
+      "Radiance Tribute",
+      "Luminous Beacon",
+      "Light of Faith",
+      "Braveheart"
+    ],
+    "generalTalentsPvp": ["3412"],
+    "gems": ["Amethyst", "Kallaite", "Cat's Eye"],
+    "gemTalents": ["331"]
+  },
+  {
+    "id": "eve",
+    "slug": "eve",
+    "name": "Eve",
+    "title": "Lady Ivy",
+    "faction": "superman",
+    "types": ["CC"],
+    "tier": "S",
+    "minimumExclusiveEquipment": 30,
+    "placement": "Slot 1",
+    "statFocus": ["Effect Hit"],
+    "stigmataFourSet": [
+      "Devil Spirit",
+      "Succubus",
+      "Samurai",
+      "Vital"
+    ],
+    "stigmataTwoSet": ["Zealot"],
+    "collections": [],
+    "artifacts": [
+      "Bell of Chaos",
+      "Genesis",
+      "Time Cycle",
+      "Eternal Oath"
+    ],
+    "generalTalentsPvp": ["1323"],
+    "gems": ["Topaz", "Accuracy", "Alexandrite"],
+    "gemTalents": ["122"]
+  },
+  {
+    "id": "gilles",
+    "slug": "gilles",
+    "name": "Gilles",
+    "title": "Fearless Aegis",
+    "faction": "superman",
+    "types": ["Tank", "CC"],
+    "tier": "S",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Front",
+    "statFocus": ["HP", "Damage Immune", "Crit Res"],
+    "stigmataFourSet": [
+      "Phantom",
+      "Mirage",
+      "Banshee",
+      "Sacred Guardian",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": ["Evolution", "Sanctity"],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot",
+      "Genesis Dagger"
+    ],
+    "artifacts": [
+      "Holy Prayer",
+      "Immortal Shield",
+      "Armor of Destruction",
+      "Nether Gloves",
+      "Devouring Wand"
+    ],
+    "generalTalentsPvp": ["3413", "3415"],
+    "gems": ["Kallaite", "Cat's Eye", "Topaz"],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "houston",
+    "slug": "houston",
+    "name": "Houston",
+    "title": "Dimension Runner",
+    "faction": "superman",
+    "types": ["Buffer"],
+    "tier": "A",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Back row",
+    "statFocus": ["Damage Immune", "HP"],
+    "stigmataFourSet": ["Samurai", "Armor Shred"],
+    "stigmataTwoSet": ["Sanctity"],
+    "collections": [],
+    "artifacts": [
+      "Bow of Doom",
+      "Templar Glory",
+      "Angel Wings",
+      "Frozen Mirror"
+    ],
+    "generalTalentsPvp": ["3422"],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Labradorite"
+    ],
+    "gemTalents": ["333"]
+  },
+  {
+    "id": "jane",
+    "slug": "jane",
+    "name": "Jane",
+    "title": "The Fairy of Music",
+    "faction": "superman",
+    "types": ["Buffer"],
+    "tier": "B",
+    "minimumRelics": 3,
+    "minimumExclusiveEquipment": 20,
+    "placement": "Same row as DPS",
+    "statFocus": ["HP", "Speed"],
+    "stigmataFourSet": ["Samurai", "Armor Shred"],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot",
+      "Genesis Dagger"
+    ],
+    "artifacts": [
+      "Templar Glory",
+      "Devouring Wand",
+      "Radiance Tribute",
+      "Luminous Beacon"
+    ],
+    "generalTalentsPvp": ["3412"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["331"]
+  },
+  {
+    "id": "julianne",
+    "slug": "julianne",
+    "name": "Julianne",
+    "title": "Moonlight Paladin",
+    "faction": "superman",
+    "types": ["Tank"],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Front",
+    "statFocus": ["HP", "Damage Immune"],
+    "stigmataFourSet": [
+      "Phantom",
+      "Bulwark",
+      "Mirage",
+      "Banshee",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot",
+      "Genesis Dagger"
+    ],
+    "artifacts": [
+      "Devil's Eye",
+      "Devouring Wand",
+      "Glorious Crown",
+      "Radiance Tribute",
+      "Light of Faith"
+    ],
+    "generalTalentsPvp": ["3413"],
+    "gems": ["Topaz", "Kallaite", "Cat's Eye"],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "karen",
+    "slug": "karen",
+    "name": "Karen",
+    "title": "Frontline Striker",
+    "faction": "superman",
+    "types": ["Buffer"],
+    "tier": "B",
+    "minimumExclusiveEquipment": 10,
+    "statFocus": ["ATK"],
+    "stigmataFourSet": [
+      "Apocalypse",
+      "Armor Shred"
+    ],
+    "stigmataTwoSet": ["Judgement"],
+    "collections": [],
+    "artifacts": [
+      "Templar Glory",
+      "Frozen Mirror"
+    ],
+    "generalTalentsPvp": ["1222"],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Labradorite"
+    ],
+    "gemTalents": ["332"]
+  },
+  {
+    "id": "kloris",
+    "slug": "kloris",
+    "name": "Kloris",
+    "title": "Queen of Desert",
+    "faction": "superman",
+    "types": ["DPS", "Debuffer", "True DMG"],
+    "tier": "S",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back",
+    "statFocus": ["HP", "ATK"],
+    "stigmataFourSet": [
+      "Vital",
+      "Apocalypse",
+      "Enflame",
+      "Banshee"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Baleful Axe",
+      "Devouring Wand",
+      "Angel Wings",
+      "Devil's Eye",
+      "Holy Prayer",
+      "Fatal Judgement"
+    ],
+    "generalTalentsPvp": ["3442"],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Labradorite"
+    ],
+    "gemTalents": ["312"],
+    "notes": [
+      "Kloris deals True Damage. This damage does not crit and does not require Armor PEN.",
+      "Prioritize HP, Damage Immune and ATK."
+    ]
+  },
+  {
+    "id": "knox",
+    "slug": "knox",
+    "name": "Knox",
+    "title": "Sacred Fistmaster",
+    "faction": "superman",
+    "types": ["DPS"],
+    "tier": "A",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Slot 1, Back row",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": ["Broken Blade"],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin",
+      "Judgement"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Hunter's Scythe",
+      "Miracle Dawn",
+      "Eden Space",
+      "Oracle's Ring"
+    ],
+    "generalTalentsPvp": ["1332"],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["333"]
+  },
+  {
+    "id": "mikaela",
+    "slug": "mikaela",
+    "name": "Mikaela",
+    "title": "Jade Enchantress",
+    "faction": "superman",
+    "types": ["DPS"],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back",
+    "statFocus": [
+      "Skill DMG",
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Vital",
+      "Apocalypse",
+      "Striker",
+      "Broken Blade",
+      "Thorn",
+      "Enflame"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin",
+      "Judgement",
+      "Annihilation"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Pit Spear",
+      "Hunter's Scythe",
+      "Baleful Axe",
+      "Oracle's Ring",
+      "Miracle Dawn",
+      "Eden Space",
+      "Eternal Soul"
+    ],
+    "generalTalentsPvp": ["1332"],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone",
+      "Emerald"
+    ],
+    "gemTalents": ["313"]
+  },
+  {
+    "id": "nydia",
+    "slug": "nydia",
+    "name": "Nydia",
+    "title": "Secretive Witch",
+    "faction": "superman",
+    "types": ["Support"],
+    "tier": "S+",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Above or below someone with orb",
+    "statFocus": ["Speed", "HP"],
+    "stigmataFourSet": [
+      "Phantom",
+      "Redemption",
+      "Armor Shred",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Bow of Doom",
+      "Abyssal Boots",
+      "Devouring Wand",
+      "Angel Wings",
+      "Genesis",
+      "Frozen Mirror",
+      "Turbid Orb (PVE)"
+    ],
+    "generalTalentsPvp": ["3412"],
+    "gems": [
+      "Labradorite",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["332"]
+  },
+  {
+    "id": "pierre",
+    "slug": "pierre",
+    "name": "Pierre",
+    "title": "Fury Wave",
+    "faction": "superman",
+    "types": ["DPS"],
+    "tier": "A",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back",
+    "statFocus": [
+      "Armor PEN",
+      "Crit",
+      "Crit DMG",
+      "Skill DMG"
+    ],
+    "stigmataFourSet": [
+      "Striker",
+      "Thorn",
+      "Apocalypse"
+    ],
+    "stigmataTwoSet": [
+      "Sin",
+      "Judgement",
+      "Annihilation",
+      "Zealot"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Tyrant's Hammer",
+      "Baleful Axe",
+      "Misanthropy",
+      "Oracle's Ring"
+    ],
+    "generalTalentsPvp": ["3321"],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Emerald"
+    ],
+    "gemTalents": ["311"]
+  },
+  {
+    "id": "toko",
+    "slug": "toko",
+    "name": "Toko",
+    "title": "Samurai Girl",
+    "faction": "superman",
+    "types": ["DPS"],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 30,
+    "placement": "Back",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": ["Samurai"],
+    "stigmataTwoSet": ["Zealot", "Sin"],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Pit Spear",
+      "Hunter's Scythe",
+      "Miracle Dawn",
+      "Fatal Judgement",
+      "Eden Space",
+      "Baleful Axe"
+    ],
+    "generalTalentsPvp": ["1332"],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["313"]
+  },
+  {
+    "id": "wadjet",
+    "slug": "wadjet",
+    "name": "Wadjet",
+    "title": "Heart of the Nile",
+    "faction": "superman",
+    "types": ["Tank"],
+    "tier": "S+",
+    "minimumRelics": 3,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Slot 1",
+    "statFocus": ["Damage Immune", "HP"],
+    "stigmataFourSet": [
+      "Sacred Guardian",
+      "Guardian",
+      "Banshee",
+      "Redemption",
+      "Mirage"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Devil's Eye",
+      "Immortal Shield",
+      "Armor of Destruction",
+      "Glorious Crown",
+      "Holy Prayer",
+      "Angel Wings",
+      "Heart of Calamity"
+    ],
+    "generalTalentsPvp": ["4452"],
+    "gems": [
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["111"]
+  }
+]
