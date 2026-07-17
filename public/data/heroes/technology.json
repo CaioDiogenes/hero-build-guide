@@ -1,1 +1,753 @@
-[]
+[
+  {
+    "id": "alfa",
+    "slug": "alfa",
+    "name": "Alfa",
+    "title": "Machina",
+    "faction": "technology",
+    "types": ["CC"],
+    "tier": "A",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 20,
+    "placement": "-",
+    "statFocus": ["Speed", "Effect Hit"],
+    "stigmataFourSet": [
+      "Devil Spirit",
+      "Succubus",
+      "Samurai"
+    ],
+    "stigmataTwoSet": ["Sanctity"],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Bell of Chaos",
+      "Genesis",
+      "Time Cycle",
+      "Eternal Oath"
+    ],
+    "generalTalentsPvp": ["3413"],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite"
+    ],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "bonnie",
+    "slug": "bonnie",
+    "name": "Bonnie",
+    "title": "Crimson Queen",
+    "faction": "technology",
+    "types": ["Buffer"],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 20,
+    "placement": "-",
+    "statFocus": [
+      "ATK",
+      "Crit",
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Bulwark",
+      "Sage",
+      "Thorn",
+      "Samurai",
+      "Armor Shred"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Judgement"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Bow of Doom",
+      "Devouring Wand",
+      "Radiance Tribute",
+      "Templar Glory",
+      "Fatal Judgement",
+      "Heart of Calamity"
+    ],
+    "generalTalentsPvp": ["1332"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "camp",
+    "slug": "camp",
+    "name": "Camp",
+    "title": "Space Kong",
+    "faction": "technology",
+    "types": ["Buffer"],
+    "tier": "S",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 20,
+    "placement": "-",
+    "statFocus": [
+      "Speed",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Samurai",
+      "Banshee",
+      "Armor Shred"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Bow of Doom",
+      "Radiance Tribute",
+      "Templar Glory",
+      "Luminous Beacon",
+      "Angel Wings",
+      "Frozen Mirror",
+      "Heart of Calamity"
+    ],
+    "generalTalentsPvp": ["3412"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "cui-pan",
+    "slug": "cui-pan",
+    "name": "Cui Pan",
+    "title": "Combat Type",
+    "faction": "technology",
+    "types": ["Debuffer"],
+    "tier": "A",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Front",
+    "statFocus": [
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Redemption",
+      "Banshee"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Radiance Tribute",
+      "Luminous Beacon",
+      "Light of Faith",
+      "Fictional Reality"
+    ],
+    "generalTalentsPvp": ["3442"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["332"]
+  },
+  {
+    "id": "cyborg",
+    "slug": "cyborg",
+    "name": "Cyborg, The",
+    "title": "Light of the Firmament",
+    "faction": "technology",
+    "types": [
+      "Tank",
+      "CC",
+      "True DMG"
+    ],
+    "tier": "S",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Slot 1",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Effect Hit",
+      "Crit Res"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Bulwark",
+      "Mirage",
+      "Banshee",
+      "Sacred Guardian",
+      "Guardian",
+      "Devil Spirit",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Holy Prayer",
+      "Immortal Shield",
+      "Armor of Destruction",
+      "Devouring Wand"
+    ],
+    "generalTalentsPvp": ["3413"],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite",
+      "Cat's Eye"
+    ],
+    "gemTalents": ["112"]
+  },
+  {
+    "id": "dane",
+    "slug": "dane",
+    "name": "Dane",
+    "title": "Doctor Abyss",
+    "faction": "technology",
+    "types": ["Buffer"],
+    "tier": "S",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back",
+    "statFocus": [
+      "Speed",
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Redemption",
+      "Bulwark",
+      "Sacred Guardian",
+      "Armor Shred"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Bow of Doom",
+      "Devouring Wand",
+      "Glorious Crown",
+      "Radiance Tribute",
+      "Genesis",
+      "Templar Glory",
+      "Luminous Beacon",
+      "Turbid Orb"
+    ],
+    "generalTalentsPvp": ["3425"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["132"]
+  },
+  {
+    "id": "hawkins",
+    "slug": "hawkins",
+    "name": "Hawkins",
+    "title": "Iron Giant",
+    "faction": "technology",
+    "types": ["Tank"],
+    "tier": "B",
+    "minimumExclusiveEquipment": 1,
+    "placement": "Slot 1",
+    "statFocus": [
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Banshee"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Radiance Tribute",
+      "Holy Prayer",
+      "Light of Faith"
+    ],
+    "generalTalentsPvp": ["3415"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["121"],
+    "notes": [
+      "Included for meme purposes only.",
+      "The guide describes Hawkins as ineffective in both PVE and PVP."
+    ]
+  },
+  {
+    "id": "irena",
+    "slug": "irena",
+    "name": "Irena",
+    "title": "Morning Star",
+    "faction": "technology",
+    "types": [
+      "Support",
+      "Debuffer"
+    ],
+    "tier": "S",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Same row as DPS",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit"
+    ],
+    "stigmataFourSet": [
+      "Guardian",
+      "Banshee",
+      "Redemption",
+      "Bulwark",
+      "Phantom",
+      "Sacred Guardian"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot",
+      "Genesis Dagger"
+    ],
+    "artifacts": [
+      "Nether Gloves",
+      "Devouring Wand",
+      "Glorious Crown",
+      "Radiance Tribute",
+      "Luminous Beacon",
+      "Fictional Reality",
+      "Heart of Calamity"
+    ],
+    "generalTalentsPvp": ["3452"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["322"]
+  },
+  {
+    "id": "ivy-belle",
+    "slug": "ivy-belle",
+    "name": "Ivy Belle",
+    "title": "Radiant Neon",
+    "faction": "technology",
+    "types": [
+      "CC",
+      "DPS"
+    ],
+    "tier": "S",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Back",
+    "statFocus": [
+      "Armor PEN",
+      "Crit"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Thorn",
+      "Devil Spirit",
+      "Broken Blade",
+      "Withering"
+    ],
+    "stigmataTwoSet": [
+      "Sanctity",
+      "Zealot",
+      "Sin",
+      "Annihilation"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Misanthropy",
+      "Pit Spear",
+      "Abyssal Boots",
+      "Baleful Axe",
+      "Evil Dreadsword",
+      "Sacred Radiance Codex",
+      "Time Cycle",
+      "Eternal Oath"
+    ],
+    "generalTalentsPvp": ["1333"],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst"
+    ],
+    "gemTalents": ["333"]
+  },
+  {
+    "id": "kinley",
+    "slug": "kinley",
+    "name": "Kinley",
+    "title": "Mecha Valkyrie",
+    "faction": "technology",
+    "types": ["DPS"],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "-",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Broken Blade",
+      "Samurai",
+      "Vital",
+      "Thorn",
+      "Striker (PVE)"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin",
+      "Annihilation (PVE)"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Hunter's Scythe",
+      "Pit Spear",
+      "Misanthropy",
+      "Turbid Orb (PVE)",
+      "Oracle's Ring",
+      "Eden Space",
+      "Baleful Axe"
+    ],
+    "generalTalentsPvp": ["1332"],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["333"]
+  },
+  {
+    "id": "kisa",
+    "slug": "kisa",
+    "name": "Kisa",
+    "title": "The Phantom of the Sand",
+    "faction": "technology",
+    "types": ["CC"],
+    "tier": "S+",
+    "minimumRelics": 3,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back",
+    "statFocus": [
+      "Speed",
+      "Effect Hit"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Devil Spirit",
+      "Sage",
+      "Succubus",
+      "Banshee"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Bell of Chaos",
+      "Bow of Doom",
+      "Time Cycle",
+      "Eternal Oath",
+      "Nether Gloves"
+    ],
+    "generalTalentsPvp": ["3413"],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite"
+    ],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "laura",
+    "slug": "laura",
+    "name": "Laura",
+    "title": "Storm Falcon",
+    "faction": "technology",
+    "types": ["DPS"],
+    "tier": "A",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Slot 1",
+    "statFocus": [
+      "Speed",
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Striker",
+      "Vital",
+      "Apocalypse",
+      "Thorn"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin",
+      "Judgement"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Hunter's Scythe",
+      "Abyssal Boots",
+      "Baleful Axe",
+      "Miracle Dawn",
+      "Eternal Soul"
+    ],
+    "generalTalentsPvp": ["1322"],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["311"]
+  },
+  {
+    "id": "magner",
+    "slug": "magner",
+    "name": "Magner",
+    "title": "Hammer of Destruction",
+    "faction": "technology",
+    "types": [
+      "Tank",
+      "True DMG"
+    ],
+    "tier": "S",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Speed"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Bulwark",
+      "Mirage",
+      "Banshee",
+      "Sage",
+      "Sacred Guardian",
+      "Armor Shred",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Bow of Doom",
+      "Immortal Shield",
+      "Armor of Destruction",
+      "Devouring Wand",
+      "Radiance Tribute",
+      "Angel Wings",
+      "Light of Faith",
+      "Heart of Calamity"
+    ],
+    "generalTalentsPvp": ["3435"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite",
+      "Labradorite"
+    ],
+    "gemTalents": ["122"]
+  },
+  {
+    "id": "musashi",
+    "slug": "musashi",
+    "name": "Musashi",
+    "title": "Cyber Ronin",
+    "faction": "technology",
+    "types": ["Buffer"],
+    "tier": "B",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 20,
+    "placement": "-",
+    "statFocus": [
+      "Speed",
+      "HP"
+    ],
+    "stigmataFourSet": [
+      "Samurai",
+      "Armor Shred"
+    ],
+    "stigmataTwoSet": [
+      "Judgement",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Bow of Doom",
+      "Radiance Tribute",
+      "Templar Glory",
+      "Frozen Mirror"
+    ],
+    "generalTalentsPvp": ["3422"],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Labradorite"
+    ],
+    "gemTalents": ["122"]
+  },
+  {
+    "id": "rex",
+    "slug": "rex",
+    "name": "Rex",
+    "title": "Mecha Rex",
+    "faction": "technology",
+    "types": ["Tank"],
+    "tier": "B",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Slot 1",
+    "statFocus": [
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Guardian",
+      "Banshee",
+      "Vital"
+    ],
+    "stigmataTwoSet": [
+      "Sanctity",
+      "Sin",
+      "Evolution"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Armor of Destruction",
+      "Glorious Crown",
+      "Holy Prayer"
+    ],
+    "generalTalentsPvp": ["3322"],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Labradorite",
+      "Bloodstone"
+    ],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "rockefeller",
+    "slug": "rockefeller",
+    "name": "Rockefeller",
+    "title": "Blaze Centaur",
+    "faction": "technology",
+    "types": [
+      "Tank",
+      "CC"
+    ],
+    "tier": "A",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Slot 1",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Effect Hit"
+    ],
+    "stigmataFourSet": [
+      "Banshee",
+      "Guardian"
+    ],
+    "stigmataTwoSet": [
+      "Evolution"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Glorious Crown",
+      "Radiance Tribute",
+      "Light of Faith"
+    ],
+    "generalTalentsPvp": ["3413"],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite"
+    ],
+    "gemTalents": ["121"]
+  }
+]
