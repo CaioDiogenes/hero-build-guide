@@ -4,10 +4,9 @@ export const routes: Routes = [
   {
     path: '',
     title: 'Hero Build Guide',
-    // [routerLinkActiveOptions]="{ exact: true }",
     loadComponent: () =>
-      import('./features/home/home')
-        .then(component => component.Home),
+      import('./features/guide/credits/credits')
+        .then(component => component.Credits),
   },
   {
     path: 'heroes',
