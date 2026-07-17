@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, inject } from "@angular/core";
 import { shareReplay, Observable } from "rxjs";
-import { GuideIntroduction, BeginnerTeamGuide } from "../models/guide.model";
+import { GuideIntroduction, BeginnerTeamGuide, AHeroPveGuide } from "../models/guide.model";
 
 @Injectable({
     providedIn: 'root',
@@ -31,11 +31,26 @@ export class GuideService {
             }),
         );
 
+    private readonly aHeroPveGuide$ = this.http
+        .get<AHeroPveGuide>(
+            '/data/guide/a-hero-pve.json',
+        )
+        .pipe(
+            shareReplay({
+                bufferSize: 1,
+                refCount: true,
+            }),
+        );
+
     getIntroduction(): Observable<GuideIntroduction> {
         return this.introduction$;
     }
 
     getBeginnerTeamGuide(): Observable<BeginnerTeamGuide> {
         return this.beginnerTeamGuide$;
+    }
+
+    getAHeroPveGuide(): Observable<AHeroPveGuide> {
+        return this.aHeroPveGuide$;
     }
 }

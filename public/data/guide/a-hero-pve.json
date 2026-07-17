@@ -1,0 +1,123 @@
+{
+    "title": "A-Hero Skills for PVE",
+    "introduction": [
+        "Some A heroes can provide useful utility in PVE, especially when stronger alternatives are not yet available.",
+        "Their value usually comes from healing reduction, crowd control, ally buffs, energy control or defensive support."
+    ],
+    "warning": "A heroes are generally not recommended for PVP. They are difficult to build for survivability, and most of their buffs can be obtained from stronger S or S+ heroes. Cupid is noted as an exception because of her distinctive support effect.",
+    "heroes": [
+        {
+            "id": "cupid",
+            "name": "Cupid",
+            "description": "Heals all allies, reduces enemy healing and increases attack and healing effect by 40% for the heroes in positions 1 and 2.",
+            "utilities": [
+                "Healing",
+                "Healing Reduction",
+                "Attack Buff"
+            ],
+            "notes": [
+                "If Cupid occupies position 1 or 2, the buff moves to the next available position.",
+                "The position-based buff is lost when one of the affected heroes dies."
+            ]
+        },
+        {
+            "id": "valkyrie",
+            "name": "Valkyrie",
+            "description": "Her basic attack has a 60% chance to stun enemies for one round.",
+            "utilities": [
+                "Stun",
+                "Crowd Control"
+            ]
+        },
+        {
+            "id": "order",
+            "name": "Order",
+            "description": "Reduces enemy healing by 20% for two rounds.",
+            "utilities": [
+                "Healing Reduction"
+            ]
+        },
+        {
+            "id": "cheetah-girl",
+            "name": "Cheetah Girl",
+            "description": "Stuns a random enemy in the front row for two turns, increases allied Armor and drains enemy energy.",
+            "utilities": [
+                "Stun",
+                "Crowd Control",
+                "Armor Buff",
+                "Energy Drain"
+            ]
+        },
+        {
+            "id": "lady-icy",
+            "name": "Lady Icy",
+            "description": "Reduces enemy Speed and can freeze enemies.",
+            "utilities": [
+                "Freeze",
+                "Crowd Control"
+            ]
+        },
+        {
+            "id": "zorro",
+            "name": "Zorro",
+            "description": "Reduces enemy healing by 80%.",
+            "utilities": [
+                "Healing Reduction"
+            ]
+        },
+        {
+            "id": "bullfight",
+            "name": "Bullfight",
+            "description": "Can stun an enemy for two rounds.",
+            "utilities": [
+                "Stun",
+                "Crowd Control"
+            ]
+        },
+        {
+            "id": "abyss-titan",
+            "name": "Abyss Titan",
+            "description": "Increases allied healing effect and Armor with the ultimate skill.",
+            "utilities": [
+                "Healing",
+                "Armor Buff"
+            ]
+        },
+        {
+            "id": "master-program",
+            "name": "Master Program",
+            "description": "Increases allied Speed and can stun an enemy.",
+            "utilities": [
+                "Speed Buff",
+                "Stun",
+                "Crowd Control"
+            ]
+        },
+        {
+            "id": "miss-usa",
+            "name": "Miss USA",
+            "description": "Increases the attack and Armor of allied Superman heroes.",
+            "utilities": [
+                "Attack Buff",
+                "Armor Buff"
+            ]
+        },
+        {
+            "id": "bread-hero",
+            "name": "Bread Hero",
+            "description": "Reduces damage received by front-row allies.",
+            "utilities": [
+                "Damage Reduction"
+            ]
+        },
+        {
+            "id": "mask-man",
+            "name": "Mask Man",
+            "description": "Can apply an area-of-effect stun for two rounds.",
+            "utilities": [
+                "Stun",
+                "Crowd Control"
+            ]
+        }
+    ]
+}

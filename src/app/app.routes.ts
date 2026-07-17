@@ -55,6 +55,16 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'guide/a-hero-pve',
+    title: 'A-Hero Skills for PVE | Hero Build Guide',
+    loadComponent: () =>
+      import(
+        './features/guide/a-hero-pve/a-hero-pve'
+      ).then(
+        (component) => component.AHeroPve,
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

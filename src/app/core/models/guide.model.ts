@@ -43,3 +43,30 @@ export interface BeginnerTeamGuide {
     compositionNotes: string[];
     disclaimer: string;
 }
+
+export type AHeroUtility =
+    | 'Healing'
+    | 'Healing Reduction'
+    | 'Attack Buff'
+    | 'Armor Buff'
+    | 'Speed Buff'
+    | 'Damage Reduction'
+    | 'Energy Drain'
+    | 'Stun'
+    | 'Freeze'
+    | 'Crowd Control';
+
+export interface AHeroPveEntry {
+    id: string;
+    name: string;
+    description: string;
+    utilities: AHeroUtility[];
+    notes?: string[];
+}
+
+export interface AHeroPveGuide {
+    title: string;
+    introduction: string[];
+    warning: string;
+    heroes: AHeroPveEntry[];
+}

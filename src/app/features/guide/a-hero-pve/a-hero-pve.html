@@ -1,0 +1,134 @@
+<section class="a-hero-pve page-container">
+    @if (viewModel$ | async; as viewModel) {
+    @if (viewModel.error) {
+    <app-status-message type="error" title="Unable to load the A-Hero guide"
+        message="The PVE reference data could not be loaded." />
+    } @else if (viewModel.guide; as guide) {
+    <header class="a-hero-pve__header">
+        <p class="a-hero-pve__eyebrow">
+            PVE reference
+        </p>
+
+        <h1>{{ guide.title }}</h1>
+
+        <div class="a-hero-pve__introduction">
+            @for (
+            paragraph of guide.introduction;
+            track paragraph
+            ) {
+            <p>{{ paragraph }}</p>
+            }
+        </div>
+    </header>
+
+    <aside class="a-hero-pve__warning">
+        <span aria-hidden="true">!</span>
+        <p>{{ guide.warning }}</p>
+    </aside>
+
+    <section class="a-hero-pve__filters" aria-label="A-Hero filters">
+        <div>
+            <label for="a-hero-search">
+                Search
+            </label>
+
+            <input id="a-hero-search" type="search" placeholder="Search by hero, effect or utility"
+                [formControl]="filterForm.controls.search" />
+        </div>
+
+        <div>
+            <label for="a-hero-utility">
+                Utility
+            </label>
+
+            <select id="a-hero-utility" [formControl]="filterForm.controls.utility">
+                <option value="">All utilities</option>
+
+                @for (
+                utility of utilityOptions;
+                track utility
+                ) {
+                <option [value]="utility">
+                    {{ utility }}
+                </option>
+                }
+            </select>
+        </div>
+
+        <button type="button" class="button button--ghost" (click)="clearFilters()">
+            Clear filters
+        </button>
+    </section>
+
+    <section class="a-hero-pve__summary" aria-live="polite">
+        <p>
+            Showing
+            <strong>{{ viewModel.heroes.length }}</strong>
+            of
+            <strong>{{ viewModel.totalHeroes }}</strong>
+            heroes
+        </p>
+    </section>
+
+    @if (viewModel.heroes.length > 0) {
+    <section class="a-hero-pve__grid">
+        @for (
+        hero of viewModel.heroes;
+        track hero.id
+        ) {
+        <app-panel>
+            <article class="a-hero-pve__card">
+                <header>
+                    <div class="a-hero-pve__avatar" aria-hidden="true">
+                        {{ hero.name.charAt(0) }}
+                    </div>
+
+                    <div>
+                        <h2>{{ hero.name }}</h2>
+
+                        <div class="a-hero-pve__utilities">
+                            @for (
+                            utility of hero.utilities;
+                            track utility
+                            ) {
+                            <app-chip>
+                                {{ utility }}
+                            </app-chip>
+                            }
+                        </div>
+                    </div>
+                </header>
+
+                <p class="a-hero-pve__description">
+                    {{ hero.description }}
+                </p>
+
+                @if (hero.notes?.length) {
+                <section class="a-hero-pve__notes">
+                    <h3>Notes</h3>
+
+                    @for (
+                    note of hero.notes;
+                    track note
+                    ) {
+                    <p>{{ note }}</p>
+                    }
+                </section>
+                }
+            </article>
+        </app-panel>
+        }
+    </section>
+    } @else {
+    <app-status-message type="empty" title="No A heroes found" message="Try changing or clearing the filters.">
+        <button type="button" class="button button--primary" (click)="clearFilters()">
+            Clear filters
+        </button>
+    </app-status-message>
+    }
+    }
+    } @else {
+    <app-status-message type="loading" title="Loading A-Hero PVE guide"
+        message="Please wait while the reference is loaded." />
+    }
+</section>

@@ -40,6 +40,11 @@
                 Beginner team building
             </a>
 
+            <a routerLink="/guide/a-hero-pve" routerLinkActive="mobile-navigation__link--active"
+                class="mobile-navigation__link" (click)="close()">
+                A-Hero PVE skills
+            </a>
+
             @for (faction of factions; track faction.id) {
             <a [routerLink]="faction.route" routerLinkActive="mobile-navigation__link--active"
                 class="mobile-navigation__link" (click)="close()">
