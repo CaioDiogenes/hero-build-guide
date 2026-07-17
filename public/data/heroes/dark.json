@@ -1,1 +1,702 @@
-[]
+[
+  {
+    "id": "alcazar",
+    "slug": "alcazar",
+    "name": "Alcazar",
+    "title": "Spectral Witch",
+    "faction": "dark",
+    "types": ["DPS"],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back",
+    "statFocus": ["Crit", "Crit DMG"],
+    "stigmataFourSet": [
+      "Vital",
+      "Apocalypse",
+      "Domination",
+      "Thorn",
+      "Enflame"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin",
+      "Judgement"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Pit Spear",
+      "Hunter's Scythe",
+      "Tyrant's Hammer",
+      "Miracle Dawn",
+      "Eden Space",
+      "Meteorite Dust",
+      "Eternal Soul"
+    ],
+    "generalTalentsPvp": ["2322"],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["313"]
+  },
+  {
+    "id": "anna",
+    "slug": "anna",
+    "name": "Anna",
+    "title": "Succuba",
+    "faction": "dark",
+    "types": ["CC"],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Front",
+    "statFocus": ["Speed", "Effect Hit"],
+    "stigmataFourSet": [
+      "Succubus",
+      "Devil Spirit"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Bell of Chaos",
+      "Time Cycle",
+      "Eternal Oath"
+    ],
+    "generalTalentsPvp": ["3423"],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite"
+    ],
+    "gemTalents": ["122"]
+  },
+  {
+    "id": "baron",
+    "slug": "baron",
+    "name": "Baron",
+    "title": "Hell's Emissary",
+    "faction": "dark",
+    "types": ["DPS"],
+    "tier": "S",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Berserk",
+      "Samurai",
+      "Thorn"
+    ],
+    "stigmataTwoSet": ["Zealot"],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Pit Spear",
+      "Hunter's Scythe",
+      "Tyrant's Hammer",
+      "Miracle Dawn",
+      "Eternal Soul",
+      "Oracle's Ring"
+    ],
+    "generalTalentsPvp": ["2332"],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["313", "333"]
+  },
+  {
+    "id": "behemoth",
+    "slug": "behemoth",
+    "name": "Behemoth",
+    "title": "Catastrophe",
+    "faction": "dark",
+    "types": ["Tank", "CC"],
+    "tier": "A",
+    "minimumExclusiveEquipment": 10,
+    "placement": "Front",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Effect Hit"
+    ],
+    "stigmataFourSet": ["Banshee"],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Glorious Crown",
+      "Radiance Tribute",
+      "Light of Faith"
+    ],
+    "generalTalentsPvp": ["3413"],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite"
+    ],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "camilla",
+    "slug": "camilla",
+    "name": "Camilla",
+    "title": "Bloodnight Baroness",
+    "faction": "dark",
+    "types": ["Tank"],
+    "tier": "A",
+    "minimumRelics": 3,
+    "minimumExclusiveEquipment": 20,
+    "placement": "Front",
+    "statFocus": [
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Mirage",
+      "Banshee",
+      "Sacred Guardian",
+      "Armor Shred",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot",
+      "Genesis Dagger"
+    ],
+    "artifacts": [
+      "Devil's Eye",
+      "Armor of Destruction",
+      "Nether Gloves",
+      "Glorious Crown",
+      "Radiance Tribute",
+      "Life Source",
+      "Light of Faith"
+    ],
+    "generalTalentsPvp": ["3415"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "cara",
+    "slug": "cara",
+    "name": "Cara",
+    "title": "Requiem Blade",
+    "faction": "dark",
+    "types": ["DPS"],
+    "tier": "A",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Back",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Samurai",
+      "Broken Blade",
+      "Thorn"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Pit Spear",
+      "Hunter's Scythe",
+      "Miracle Dawn",
+      "Fatal Judgement",
+      "Eden Space"
+    ],
+    "generalTalentsPvp": ["1332"],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["313"]
+  },
+  {
+    "id": "eddie",
+    "slug": "eddie",
+    "name": "Eddie",
+    "title": "Nightmare Flame",
+    "faction": "dark",
+    "types": ["DPS"],
+    "tier": "B",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Back",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": ["Apocalypse"],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Oracle's Ring",
+      "Miracle Dawn",
+      "Eden Space",
+      "Meteorite Dust",
+      "Primal Power",
+      "Sacred Radiance Codex"
+    ],
+    "generalTalentsPvp": ["1322"],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["333"]
+  },
+  {
+    "id": "focalor",
+    "slug": "focalor",
+    "name": "Focalor",
+    "title": "The God Slayer",
+    "faction": "dark",
+    "types": ["DPS"],
+    "tier": "S",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Front",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Striker",
+      "Samurai",
+      "Berserk"
+    ],
+    "stigmataTwoSet": ["Zealot"],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Tyrant's Hammer",
+      "Hunter's Scythe",
+      "Turbid Orb (PVE)",
+      "Miracle Dawn",
+      "Eden Space"
+    ],
+    "generalTalentsPvp": ["1332"],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["333"]
+  },
+  {
+    "id": "gonibal",
+    "slug": "gonibal",
+    "name": "Gonibal",
+    "title": "Unlucky Aborigine",
+    "faction": "dark",
+    "types": ["Tank", "CC"],
+    "tier": "A",
+    "minimumExclusiveEquipment": 10,
+    "placement": "Front",
+    "statFocus": [
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": ["Banshee"],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Glorious Crown",
+      "Radiance Tribute",
+      "Light of Faith"
+    ],
+    "generalTalentsPvp": ["3413"],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite"
+    ],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "lucas",
+    "slug": "lucas",
+    "name": "Lucas",
+    "title": "Demon of Souls",
+    "faction": "dark",
+    "types": ["Support"],
+    "tier": "S",
+    "minimumRelics": 0,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Front",
+    "statFocus": [
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Redemption",
+      "Bulwark",
+      "Sage",
+      "Armor Shred",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Turbid Orb",
+      "Devouring Wand",
+      "Radiance Tribute",
+      "Light of Faith",
+      "Nether Gloves",
+      "Fictional Reality",
+      "Heart of Calamity"
+    ],
+    "generalTalentsPvp": ["3412"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["111"]
+  },
+  {
+    "id": "marduk",
+    "slug": "marduk",
+    "name": "Marduk",
+    "title": "Saint of the Underworld",
+    "faction": "dark",
+    "types": ["Buffer", "Healer"],
+    "tier": "S+",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 40,
+    "placement": "Back",
+    "statFocus": [
+      "HP",
+      "Damage Immune"
+    ],
+    "stigmataFourSet": [
+      "Phantom",
+      "Redemption",
+      "Bulwark",
+      "Sacred Guardian",
+      "Withering",
+      "Guardian",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity",
+      "Zealot"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Nether Gloves",
+      "Bow of Doom",
+      "Devouring Wand",
+      "Radiance Tribute",
+      "Luminous Beacon",
+      "Fictional Reality"
+    ],
+    "generalTalentsPvp": ["3455"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite"
+    ],
+    "gemTalents": ["231"],
+    "notes": [
+      "Marduk increases damage-over-time effects and also provides healing."
+    ]
+  },
+  {
+    "id": "medusa",
+    "slug": "medusa",
+    "name": "Medusa",
+    "title": "Medusa",
+    "faction": "dark",
+    "types": ["CC"],
+    "tier": "A",
+    "minimumExclusiveEquipment": 20,
+    "placement": "Back",
+    "statFocus": [
+      "Speed",
+      "Effect Hit"
+    ],
+    "stigmataFourSet": ["Succubus"],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Time Cycle",
+      "Eternal Oath"
+    ],
+    "generalTalentsPvp": ["3423"],
+    "gems": [
+      "Topaz",
+      "Kallaite",
+      "Alexandrite"
+    ],
+    "gemTalents": ["121"]
+  },
+  {
+    "id": "ophelia",
+    "slug": "ophelia",
+    "name": "Ophelia",
+    "title": "Heaven-Piercing Wing",
+    "faction": "dark",
+    "types": ["DPS"],
+    "tier": "S+",
+    "minimumRelics": 18,
+    "minimumExclusiveEquipment": 40,
+    "placement": "-",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Enflame",
+      "Withering"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin",
+      "Judgement"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Evil Dreadsword",
+      "Hunter's Scythe",
+      "Baleful Axe",
+      "Pit Spear",
+      "Sacred Radiance Codex"
+    ],
+    "generalTalentsPvp": ["1312"],
+    "gems": [
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["312"]
+  },
+  {
+    "id": "satan",
+    "slug": "satan",
+    "name": "Satan",
+    "title": "King of Hell",
+    "faction": "dark",
+    "types": ["DPS"],
+    "tier": "A",
+    "minimumRelics": 3,
+    "minimumExclusiveEquipment": 20,
+    "placement": "Back",
+    "statFocus": [
+      "Speed",
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Samurai",
+      "Vital",
+      "Apocalypse",
+      "Broken Blade",
+      "Thorn"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin"
+    ],
+    "collections": [
+      "Genesis Dagger",
+      "Chaos Axe"
+    ],
+    "artifacts": [
+      "Pit Spear",
+      "Abyssal Boots",
+      "Oracle's Ring",
+      "Eternal Soul",
+      "Eden Space"
+    ],
+    "generalTalentsPvp": ["1332"],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["313"]
+  },
+  {
+    "id": "van-helsing",
+    "slug": "van-helsing",
+    "name": "Van Helsing",
+    "title": "Devil Hunter",
+    "faction": "dark",
+    "types": ["DPS"],
+    "tier": "B",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 30,
+    "placement": "Back",
+    "statFocus": [
+      "Crit",
+      "Crit DMG",
+      "Armor PEN"
+    ],
+    "stigmataFourSet": [
+      "Vital",
+      "Apocalypse",
+      "Domination"
+    ],
+    "stigmataTwoSet": [
+      "Zealot",
+      "Sin",
+      "Judgement"
+    ],
+    "collections": [],
+    "artifacts": [
+      "Oracle's Ring",
+      "Eternal Soul",
+      "Misanthropy"
+    ],
+    "generalTalentsPvp": ["1334"],
+    "gems": [
+      "White Onyx",
+      "Kallaite",
+      "Alexandrite",
+      "Malachite",
+      "Amethyst",
+      "Bloodstone"
+    ],
+    "gemTalents": ["313"]
+  },
+  {
+    "id": "vulcano",
+    "slug": "vulcano",
+    "name": "Vulcano",
+    "title": "Molten Wrath",
+    "faction": "dark",
+    "types": ["Tank", "True DMG"],
+    "tier": "S+",
+    "minimumRelics": 9,
+    "minimumExclusiveEquipment": 31,
+    "placement": "Front",
+    "statFocus": [
+      "HP",
+      "Damage Immune",
+      "Crit Res"
+    ],
+    "stigmataFourSet": [
+      "Bulwark",
+      "Sacred Guardian",
+      "Phantom",
+      "Mirage",
+      "Banshee",
+      "Guardian",
+      "Withering",
+      "Holy Shield"
+    ],
+    "stigmataTwoSet": [
+      "Evolution",
+      "Sanctity"
+    ],
+    "collections": [
+      "Undying Symbol",
+      "Priest's Knot"
+    ],
+    "artifacts": [
+      "Devil's Eye",
+      "Immortal Shield",
+      "Armor of Destruction",
+      "Glorious Crown",
+      "Holy Prayer",
+      "Light of Faith"
+    ],
+    "generalTalentsPvp": ["3412"],
+    "gems": [
+      "Amethyst",
+      "Kallaite",
+      "Cat's Eye",
+      "Alexandrite",
+      "Labradorite"
+    ],
+    "gemTalents": ["121"]
+  }
+]
