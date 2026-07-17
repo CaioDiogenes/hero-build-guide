@@ -1,1 +1,129 @@
-<p>about works!</p>
+<section class="about page-container">
+    @if (viewModel$ | async; as viewModel) {
+    @if (viewModel.error) {
+    <app-status-message type="error" title="Unable to load guide information"
+        message="The introduction data could not be loaded." />
+    } @else if (viewModel.guide; as guide) {
+    <header class="about__hero">
+        <p class="about__eyebrow">
+            Version {{ guide.version }}
+        </p>
+
+        <h1>{{ guide.title }}</h1>
+
+        <p class="about__author">
+            Original guide by {{ guide.author }}
+        </p>
+
+        <div class="about__introduction">
+            @for (
+            paragraph of guide.description;
+            track paragraph
+            ) {
+            <p>{{ paragraph }}</p>
+            }
+        </div>
+
+        <a class="button button--primary" routerLink="/heroes">
+            Browse hero builds
+        </a>
+    </header>
+
+    <section class="about__mode-grid">
+        <app-panel>
+            <div class="about__panel">
+                <h2>PVP modes</h2>
+
+                <div class="about__tags">
+                    @for (
+                    mode of guide.coveredPvpModes;
+                    track mode
+                    ) {
+                    <span class="about__tag">
+                        {{ mode }}
+                    </span>
+                    }
+                </div>
+            </div>
+        </app-panel>
+
+        <app-panel>
+            <div class="about__panel">
+                <h2>PVE modes</h2>
+
+                <div class="about__tags">
+                    @for (
+                    mode of guide.coveredPveModes;
+                    track mode
+                    ) {
+                    <span class="about__tag">
+                        {{ mode }}
+                    </span>
+                    }
+                </div>
+            </div>
+        </app-panel>
+    </section>
+
+    <section class="about__section">
+        <header class="about__section-header">
+            <h2>Important build notes</h2>
+
+            <p>
+                General recommendations that apply across
+                multiple heroes and game modes.
+            </p>
+        </header>
+
+        <div class="about__notice-grid">
+            @for (
+            notice of guide.notices;
+            track notice.title
+            ) {
+            <article class="about__notice" [attr.data-type]="notice.type">
+                <span class="about__notice-icon" aria-hidden="true">
+                    @switch (notice.type) {
+                    @case ('important') {
+                    !
+                    }
+
+                    @case ('warning') {
+                    !
+                    }
+
+                    @default {
+                    i
+                    }
+                    }
+                </span>
+
+                <div>
+                    <h3>{{ notice.title }}</h3>
+                    <p>{{ notice.description }}</p>
+                </div>
+            </article>
+            }
+        </div>
+    </section>
+
+    <section class="about__version">
+        <header>
+            <p>Release notes</p>
+            <h2>Version {{ guide.versionNotes.version }}</h2>
+        </header>
+
+        <ul>
+            @for (
+            change of guide.versionNotes.changes;
+            track change
+            ) {
+            <li>{{ change }}</li>
+            }
+        </ul>
+    </section>
+    }
+    } @else {
+    <app-status-message type="loading" title="Loading guide information"
+        message="Please wait while the guide introduction is loaded." />
+    }
+</section>
