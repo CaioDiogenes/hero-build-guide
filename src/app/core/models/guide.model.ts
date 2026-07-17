@@ -70,3 +70,43 @@ export interface AHeroPveGuide {
     warning: string;
     heroes: AHeroPveEntry[];
 }
+
+export type ControlRestriction =
+    | 'Basic'
+    | 'Ultimate'
+    | 'Basic and Ultimate'
+    | 'Other';
+
+export interface CrowdControlEffect {
+    id: string;
+    name: string;
+    description: string;
+    restriction: ControlRestriction;
+    additionalEffects?: string[];
+}
+
+export interface DotEffect {
+    id: string;
+    name: string;
+    source: string;
+    timing: string;
+    countedAsDot: boolean;
+    notes?: string[];
+}
+
+export interface DotInteraction {
+    type:
+    | 'Increase damage'
+    | 'Immunity'
+    | 'Remove effect';
+    source: string;
+    description: string;
+}
+
+export interface CrowdControlDotGuide {
+    title: string;
+    introduction: string[];
+    crowdControl: CrowdControlEffect[];
+    damageOverTime: DotEffect[];
+    dotInteractions: DotInteraction[];
+}

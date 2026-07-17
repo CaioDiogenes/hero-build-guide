@@ -1,0 +1,179 @@
+{
+    "title": "Crowd Control and Damage Over Time",
+    "introduction": [
+        "Crowd-control effects restrict an enemy hero's ability to perform basic attacks, ultimate attacks or both.",
+        "Damage-over-time effects apply damage at the end of each round and can interact with specific stigmata, artifacts and hero abilities."
+    ],
+    "crowdControl": [
+        {
+            "id": "stun",
+            "name": "Stun",
+            "description": "The affected hero cannot perform a basic attack or ultimate attack.",
+            "restriction": "Basic and Ultimate"
+        },
+        {
+            "id": "twine",
+            "name": "Twine",
+            "description": "The affected hero cannot perform a basic attack or ultimate attack.",
+            "restriction": "Basic and Ultimate"
+        },
+        {
+            "id": "charm",
+            "name": "Charm",
+            "description": "The affected hero cannot perform a basic attack or ultimate attack.",
+            "restriction": "Basic and Ultimate"
+        },
+        {
+            "id": "disarm",
+            "name": "Disarm",
+            "description": "The affected hero cannot perform a basic attack.",
+            "restriction": "Basic"
+        },
+        {
+            "id": "petrify",
+            "name": "Petrify",
+            "description": "The affected hero cannot perform a basic attack or ultimate attack.",
+            "restriction": "Basic and Ultimate"
+        },
+        {
+            "id": "paralyze",
+            "name": "Paralyze",
+            "description": "The affected hero cannot perform a basic attack or ultimate attack.",
+            "restriction": "Basic and Ultimate"
+        },
+        {
+            "id": "freeze",
+            "name": "Freeze",
+            "description": "The affected hero cannot perform a basic attack or ultimate attack.",
+            "restriction": "Basic and Ultimate"
+        },
+        {
+            "id": "disable",
+            "name": "Disable",
+            "description": "The affected hero cannot perform an ultimate attack.",
+            "restriction": "Ultimate"
+        },
+        {
+            "id": "silence",
+            "name": "Silence",
+            "description": "The affected hero cannot perform an ultimate attack.",
+            "restriction": "Ultimate"
+        },
+        {
+            "id": "shackle",
+            "name": "Shackle",
+            "description": "The affected hero cannot perform a basic attack or ultimate attack.",
+            "restriction": "Basic and Ultimate",
+            "additionalEffects": [
+                "Healing effect is reduced."
+            ]
+        },
+        {
+            "id": "absolute-freeze",
+            "name": "Absolute Freeze",
+            "description": "The affected hero cannot perform a basic attack or ultimate attack.",
+            "restriction": "Basic and Ultimate"
+        },
+        {
+            "id": "lunar-eclipse",
+            "name": "Lunar Eclipse",
+            "description": "The affected hero cannot perform a basic attack or ultimate attack.",
+            "restriction": "Basic and Ultimate",
+            "additionalEffects": [
+                "Damage Reduction is decreased."
+            ]
+        }
+    ],
+    "damageOverTime": [
+        {
+            "id": "delusion-mark",
+            "name": "Delusion Mark",
+            "source": "Shadow",
+            "timing": "Damage is applied at the end of each round.",
+            "countedAsDot": true
+        },
+        {
+            "id": "scorch-mark",
+            "name": "Scorch Mark",
+            "source": "Vulcano",
+            "timing": "Damage is applied at the end of each round.",
+            "countedAsDot": true
+        },
+        {
+            "id": "blood-ritual-mark",
+            "name": "Blood Ritual Mark",
+            "source": "Ophelia",
+            "timing": "Damage is applied at the end of each round.",
+            "countedAsDot": true
+        },
+        {
+            "id": "ghost-mark",
+            "name": "Ghost Mark",
+            "source": "Marduk",
+            "timing": "Damage is applied at the end of each round.",
+            "countedAsDot": true
+        },
+        {
+            "id": "flammable",
+            "name": "Flammable",
+            "source": "Enflame stigmata",
+            "timing": "Damage is applied at the end of each round.",
+            "countedAsDot": true
+        },
+        {
+            "id": "toxic-mark",
+            "name": "Toxic Mark",
+            "source": "Orochi",
+            "timing": "Damage is applied at the end of each round.",
+            "countedAsDot": false,
+            "notes": [
+                "The guide states that Toxic Mark is not officially counted as DOT.",
+                "Withering stigmata and Evil Dreadsword therefore do not affect it."
+            ]
+        },
+        {
+            "id": "burn",
+            "name": "Burn",
+            "source": "Eddie",
+            "timing": "Damage is applied at the end of each round.",
+            "countedAsDot": true
+        }
+    ],
+    "dotInteractions": [
+        {
+            "type": "Increase damage",
+            "source": "Withering stigmata",
+            "description": "Increases damage dealt by DOT effects."
+        },
+        {
+            "type": "Increase damage",
+            "source": "Evil Dreadsword",
+            "description": "Increases damage dealt by DOT effects."
+        },
+        {
+            "type": "Increase damage",
+            "source": "Sacred Radiance Codex",
+            "description": "Increases damage dealt by DOT effects."
+        },
+        {
+            "type": "Immunity",
+            "source": "Radiance Tribute",
+            "description": "Makes the equipped hero immune to DOT effects."
+        },
+        {
+            "type": "Remove effect",
+            "source": "Kloris",
+            "description": "Can remove DOT effects."
+        },
+        {
+            "type": "Remove effect",
+            "source": "Cui Pan",
+            "description": "Can remove DOT effects."
+        },
+        {
+            "type": "Increase damage",
+            "source": "Ivy Belle",
+            "description": "The guide identifies Ivy Belle as another DOT damage dealer."
+        }
+    ]
+}

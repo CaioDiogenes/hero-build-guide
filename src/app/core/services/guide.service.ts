@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, inject } from "@angular/core";
 import { shareReplay, Observable } from "rxjs";
-import { GuideIntroduction, BeginnerTeamGuide, AHeroPveGuide } from "../models/guide.model";
+import { GuideIntroduction, BeginnerTeamGuide, AHeroPveGuide, CrowdControlDotGuide } from "../models/guide.model";
 
 @Injectable({
     providedIn: 'root',
@@ -42,6 +42,17 @@ export class GuideService {
             }),
         );
 
+    private readonly crowdControlDotGuide$ = this.http
+        .get<CrowdControlDotGuide>(
+            '/data/guide/cc-dot.json',
+        )
+        .pipe(
+            shareReplay({
+                bufferSize: 1,
+                refCount: true,
+            }),
+        );
+
     getIntroduction(): Observable<GuideIntroduction> {
         return this.introduction$;
     }
@@ -52,5 +63,9 @@ export class GuideService {
 
     getAHeroPveGuide(): Observable<AHeroPveGuide> {
         return this.aHeroPveGuide$;
+    }
+
+    getCrowdControlDotGuide(): Observable<CrowdControlDotGuide> {
+        return this.crowdControlDotGuide$;
     }
 }

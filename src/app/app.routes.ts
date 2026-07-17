@@ -65,6 +65,16 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'guide/cc-dot',
+    title: 'CC and DOT Glossary | Hero Build Guide',
+    loadComponent: () =>
+      import(
+        './features/guide/cc-dot/cc-dot'
+      ).then(
+        (component) => component.CcDot,
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
