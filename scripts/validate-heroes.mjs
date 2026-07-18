@@ -34,9 +34,18 @@ const requiredArrayFields = [
   'gemTalents',
 ];
 
+function toGemSlug(gemName) {
+  return gemName
+    .toLowerCase()
+    .replace(/'/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 const errors = [];
 const warnings = [];
 const allHeroes = [];
+const allGemNames = new Set();
 
 function addError(message) {
   errors.push(message);
@@ -115,6 +124,10 @@ for (const faction of factions) {
       validateNonEmptyStrings(hero, field, hero[field]);
     }
 
+    for (const gem of hero.gems ?? []) {
+      allGemNames.add(gem);
+    }
+
     for (const type of hero.types ?? []) {
       if (!validTypes.has(type)) {
         addError(`${hero.slug}: unsupported hero type "${type}".`);
@@ -191,6 +204,16 @@ for (const check of duplicateChecks) {
 
 if (allHeroes.length !== 86) {
   addError(`Expected 86 heroes in total, found ${allHeroes.length}.`);
+}
+
+for (const gem of [...allGemNames].sort()) {
+  const gemPath = resolve(`public/data/assets/gems/${toGemSlug(gem)}.webp`);
+
+  try {
+    await access(gemPath);
+  } catch {
+    addWarning(`"${gem}": missing gem icon at public/data/assets/gems/${toGemSlug(gem)}.webp.`);
+  }
 }
 
 const countByFaction = Object.fromEntries(

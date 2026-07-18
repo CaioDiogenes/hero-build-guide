@@ -1,6 +1,7 @@
 .chip {
   display: inline-flex;
   align-items: center;
+  gap: var(--space-1);
 
   padding: 0.35rem 0.65rem;
 
@@ -11,4 +12,15 @@
   border-radius: var(--radius-sm);
 
   font-size: 0.8rem;
+
+  &__icon {
+    flex: 0 0 auto;
+
+    width: auto;
+    height: auto;
+    max-width: 32px;
+    max-height: 32px;
+
+    object-fit: contain;
+  }
 }

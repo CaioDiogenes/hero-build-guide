@@ -4,6 +4,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Title } from '@angular/platform-browser';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { map, switchMap, catchError, of, tap } from 'rxjs';
+import { GemImageService } from '../../../core/services/gem-image.service';
 import { HeroImageService } from '../../../core/services/hero-image.service';
 import { HeroService } from '../../../core/services/hero.service';
 import { BuildSection } from '../../../shared/components/build-section/build-section';
@@ -40,6 +41,10 @@ export class HeroDetail {
   onImageError(): void {
     this.imageFailed.set(true);
   }
+
+  private readonly gemImageService = inject(GemImageService);
+
+  readonly gemIcon = (gemName: string): string => this.gemImageService.getImageUrl(gemName);
 
   readonly viewModel$ = this.route.paramMap.pipe(
     map((params) => params.get('slug') ?? ''),

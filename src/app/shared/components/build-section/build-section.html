@@ -4,7 +4,7 @@
   @if (items().length > 0) {
     <div class="build-section__items">
       @for (item of items(); track item) {
-        <app-chip>{{ item }}</app-chip>
+        <app-chip [icon]="iconFor()?.(item)">{{ item }}</app-chip>
       }
     </div>
   } @else {
