@@ -2,6 +2,7 @@
   {
     "id": "alfa",
     "slug": "alfa",
+    "image": "data/assets/heroes/alfa.webp",
     "name": "Alfa",
     "title": "Machina",
     "faction": "technology",
@@ -38,6 +39,7 @@
   {
     "id": "bonnie",
     "slug": "bonnie",
+    "image": "data/assets/heroes/bonnie.webp",
     "name": "Bonnie",
     "title": "Crimson Queen",
     "faction": "technology",
@@ -371,6 +373,7 @@
   {
     "id": "ivy-belle",
     "slug": "ivy-belle",
+    "image": "data/assets/heroes/ivy-bell.webp",
     "name": "Ivy Belle",
     "title": "Radiant Neon",
     "faction": "technology",
@@ -714,6 +717,7 @@
   {
     "id": "rockefeller",
     "slug": "rockefeller",
+    "image": "data/assets/heroes/rockefeller.webp",
     "name": "Rockefeller",
     "title": "Blaze Centaur",
     "faction": "technology",

@@ -3,8 +3,15 @@
         [attr.aria-label]="'View build for ' + hero().name">
         <header class="hero-card__header">
             <div class="hero-card__identity">
-                <div class="hero-card__avatar" aria-hidden="true">
-                    {{ hero().name.charAt(0) }}
+                <div class="hero-card__media">
+                    @if (!imageFailed()) {
+                    <img class="hero-card__image" [src]=" heroImageService.getImageUrl(hero().slug)" [alt]="hero().name"
+                        width="64" height="64" loading="lazy" decoding="async" (error)="onImageError()" />
+                    } @else {
+                    <div class="hero-card__avatar" aria-hidden="true">
+                        {{ hero().name.charAt(0) }}
+                    </div>
+                    }
                 </div>
 
                 <div>
