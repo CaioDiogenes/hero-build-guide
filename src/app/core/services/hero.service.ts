@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable, inject } from "@angular/core";
+import { Injectable, inject, DOCUMENT } from "@angular/core";
 import { forkJoin, map, shareReplay, Observable } from "rxjs";
 import { HeroFaction } from "../models/faction.model";
 import { HeroNavigation } from "../models/hero-navigation";
@@ -10,19 +10,24 @@ import { Hero } from "../models/hero.model";
 })
 export class HeroService {
   private readonly http = inject(HttpClient);
+  private readonly document = inject(DOCUMENT);
 
-  private readonly dataUrls = [
-    '/data/heroes/superman.json',
-    '/data/heroes/technology.json',
-    '/data/heroes/dark.json',
-    '/data/heroes/nature.json',
-    '/data/heroes/god.json',
-    '/data/heroes/universe.json',
-  ];
+  private readonly dataFiles = [
+    'superman.json',
+    'technology.json',
+    'dark.json',
+    'nature.json',
+    'god.json',
+    'universe.json',
+  ] as const;
 
   private readonly heroes$ = forkJoin(
-    this.dataUrls.map((url) =>
-      this.http.get<Hero[]>(url),
+    this.dataFiles.map((file) =>
+      this.http.get<Hero[]>(
+        this.resolveUrl(
+          `data/heroes/${file}`,
+        ),
+      ),
     ),
   ).pipe(
     map((factionHeroes) =>
@@ -56,7 +61,8 @@ export class HeroService {
     return this.heroes$.pipe(
       map((heroes) =>
         heroes.filter(
-          (hero) => hero.faction === faction,
+          (hero) =>
+            hero.faction === faction,
         ),
       ),
     );
@@ -64,17 +70,24 @@ export class HeroService {
 
   getHeroNavigationBySlug(
     slug: string,
-  ): Observable<HeroNavigation | undefined> {
+  ): Observable<
+    HeroNavigation | undefined
+  > {
     return this.heroes$.pipe(
       map((heroes) => {
-        const sortedHeroes = [...heroes].sort(
+        const sortedHeroes = [
+          ...heroes,
+        ].sort(
           (first, second) =>
-            first.name.localeCompare(second.name),
+            first.name.localeCompare(
+              second.name,
+            ),
         );
 
         const currentIndex =
           sortedHeroes.findIndex(
-            (hero) => hero.slug === slug,
+            (hero) =>
+              hero.slug === slug,
           );
 
         if (currentIndex === -1) {
@@ -83,17 +96,32 @@ export class HeroService {
 
         return {
           hero: sortedHeroes[currentIndex],
+
           previousHero:
             currentIndex > 0
-              ? sortedHeroes[currentIndex - 1]
+              ? sortedHeroes[
+              currentIndex - 1
+              ]
               : undefined,
+
           nextHero:
             currentIndex <
-            sortedHeroes.length - 1
-              ? sortedHeroes[currentIndex + 1]
+              sortedHeroes.length - 1
+              ? sortedHeroes[
+              currentIndex + 1
+              ]
               : undefined,
         };
       }),
     );
+  }
+
+  private resolveUrl(
+    path: string,
+  ): string {
+    return new URL(
+      path.replace(/^\/+/, ''),
+      this.document.baseURI,
+    ).toString();
   }
 }

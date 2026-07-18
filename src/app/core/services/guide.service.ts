@@ -1,89 +1,49 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, inject } from "@angular/core";
-import { shareReplay, Observable } from "rxjs";
+import { Observable, shareReplay } from "rxjs";
 import { GuideIntroduction, BeginnerTeamGuide, AHeroPveGuide, CrowdControlDotGuide, AcronymFaqGuide, GuideCredits, GuideNavigationData } from "../models/guide.model";
+import { AppPathService } from "./app-path.service";
 
 @Injectable({
     providedIn: 'root',
 })
 export class GuideService {
     private readonly http = inject(HttpClient);
+    private readonly appPath = inject(AppPathService);
 
-    private readonly introduction$ = this.http
-        .get<GuideIntroduction>(
-            '/data/guide/introduction.json',
-        )
-        .pipe(
-            shareReplay({
-                bufferSize: 1,
-                refCount: true,
-            }),
+    private readonly introduction$ =
+        this.load<GuideIntroduction>(
+            'data/guide/introduction.json',
         );
 
-    private readonly beginnerTeamGuide$ = this.http
-        .get<BeginnerTeamGuide>(
-            '/data/guide/beginner-team-building.json',
-        )
-        .pipe(
-            shareReplay({
-                bufferSize: 1,
-                refCount: true,
-            }),
+    private readonly beginnerTeamGuide$ =
+        this.load<BeginnerTeamGuide>(
+            'data/guide/beginner-team-building.json',
         );
 
-    private readonly aHeroPveGuide$ = this.http
-        .get<AHeroPveGuide>(
-            '/data/guide/a-hero-pve.json',
-        )
-        .pipe(
-            shareReplay({
-                bufferSize: 1,
-                refCount: true,
-            }),
+    private readonly aHeroPveGuide$ =
+        this.load<AHeroPveGuide>(
+            'data/guide/a-hero-pve.json',
         );
 
-    private readonly crowdControlDotGuide$ = this.http
-        .get<CrowdControlDotGuide>(
-            '/data/guide/cc-dot.json',
-        )
-        .pipe(
-            shareReplay({
-                bufferSize: 1,
-                refCount: true,
-            }),
+    private readonly crowdControlDotGuide$ =
+        this.load<CrowdControlDotGuide>(
+            'data/guide/cc-dot.json',
         );
 
-    private readonly acronymFaqGuide$ = this.http
-        .get<AcronymFaqGuide>(
-            '/data/guide/acronyms-faq.json',
-        )
-        .pipe(
-            shareReplay({
-                bufferSize: 1,
-                refCount: true,
-            }),
+    private readonly acronymFaqGuide$ =
+        this.load<AcronymFaqGuide>(
+            'data/guide/acronyms-faq.json',
         );
 
-    private readonly credits$ = this.http
-        .get<GuideCredits>(
-            '/data/guide/credits.json',
-        )
-        .pipe(
-            shareReplay({
-                bufferSize: 1,
-                refCount: true,
-            }),
+    private readonly credits$ =
+        this.load<GuideCredits>(
+            'data/guide/credits.json',
         );
 
-    private readonly navigation$ = this.http
-        .get<GuideNavigationData>(
-            '/data/guide/navigation.json',
-        )
-        .pipe(
-            shareReplay({
-                bufferSize: 1,
-                refCount: true,
-            }),
+    private readonly navigation$ =
+        this.load<GuideNavigationData>(
+            'data/guide/navigation.json',
         );
 
     getIntroduction(): Observable<GuideIntroduction> {
@@ -112,5 +72,20 @@ export class GuideService {
 
     getNavigation(): Observable<GuideNavigationData> {
         return this.navigation$;
+    }
+
+    private load<T>(
+        path: string,
+    ): Observable<T> {
+        return this.http
+            .get<T>(
+                this.appPath.resolve(path),
+            )
+            .pipe(
+                shareReplay({
+                    bufferSize: 1,
+                    refCount: true,
+                }),
+            );
     }
 }
