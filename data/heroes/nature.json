@@ -2,6 +2,7 @@
   {
     "id": "ayana",
     "slug": "ayana",
+    "image": "data/assets/heroes/ayana.webp",
     "name": "Ayana",
     "title": "Flowerkeeper Spirit",
     "faction": "nature",
@@ -56,6 +57,7 @@
   {
     "id": "aphra",
     "slug": "aphra",
+    "image": "data/assets/heroes/aphra.webp",
     "name": "Aphra",
     "title": "Battlefield Angel",
     "faction": "nature",
@@ -99,6 +101,7 @@
   {
     "id": "daluna",
     "slug": "daluna",
+    "image": "data/assets/heroes/daluna.webp",
     "name": "Daluna",
     "title": "Moon Princess",
     "faction": "nature",
@@ -154,6 +157,7 @@
   {
     "id": "elodie",
     "slug": "elodie",
+    "image": "data/assets/heroes/elodie.webp",
     "name": "Elodie",
     "title": "Winter Lord",
     "faction": "nature",
@@ -212,6 +216,7 @@
   {
     "id": "feng",
     "slug": "feng",
+    "image": "data/assets/heroes/feng.webp",
     "name": "Feng",
     "title": "Panda Chef",
     "faction": "nature",
@@ -252,6 +257,7 @@
   {
     "id": "forest-avatar",
     "slug": "forest-avatar",
+    "image": "data/assets/heroes/forest-avatar.webp",
     "name": "Forest Avatar",
     "title": "Epeius",
     "faction": "nature",
@@ -304,6 +310,7 @@
   {
     "id": "guton",
     "slug": "guton",
+    "image": "data/assets/heroes/guton.webp",
     "name": "Guton",
     "title": "Treant Guardian",
     "faction": "nature",
@@ -356,6 +363,7 @@
   {
     "id": "indira",
     "slug": "indira",
+    "image": "data/assets/heroes/indira.webp",
     "name": "Indira",
     "title": "Electric Arc",
     "faction": "nature",
@@ -411,6 +419,7 @@
   {
     "id": "julia",
     "slug": "julia",
+    "image": "data/assets/heroes/julia.webp",
     "name": "Julia",
     "title": "Forest Dancer",
     "faction": "nature",
@@ -463,6 +472,7 @@
   {
     "id": "logan",
     "slug": "logan",
+    "image": "data/assets/heroes/logan.webp",
     "name": "Logan",
     "title": "Wings of Wrath",
     "faction": "nature",
@@ -511,6 +521,7 @@
   {
     "id": "lora",
     "slug": "lora",
+    "image": "data/assets/heroes/lora.webp",
     "name": "Lora",
     "title": "Dragon Edict Priestess",
     "faction": "nature",
@@ -563,6 +574,7 @@
   {
     "id": "loufontiel",
     "slug": "loufontiel",
+    "image": "data/assets/heroes/loufontiel.webp",
     "name": "Loufontiel",
     "title": "Immortal Spirit Deer",
     "faction": "nature",
@@ -626,6 +638,7 @@
   {
     "id": "lucy",
     "slug": "lucy",
+    "image": "data/assets/heroes/lucy.webp",
     "name": "Lucy",
     "title": "Storm Walker",
     "faction": "nature",
@@ -672,6 +685,7 @@
   {
     "id": "marilina",
     "slug": "marilina",
+    "image": "data/assets/heroes/marilina.webp",
     "name": "Marilina",
     "title": "Marina Heartsea",
     "faction": "nature",
@@ -733,6 +747,7 @@
   {
     "id": "michelangelo",
     "slug": "michelangelo",
+    "image": "data/assets/heroes/michelangelo.webp",
     "name": "Michelangelo",
     "title": "Thinker",
     "faction": "nature",
@@ -791,6 +806,7 @@
   {
     "id": "noah",
     "slug": "noah",
+    "image": "data/assets/heroes/noah.webp",
     "name": "Noah",
     "title": "Dawnwarden",
     "faction": "nature",
@@ -850,6 +866,7 @@
   {
     "id": "sally",
     "slug": "sally",
+    "image": "data/assets/heroes/sally.webp",
     "name": "Sally",
     "title": "Mother of Swarms",
     "faction": "nature",
@@ -896,6 +913,7 @@
   {
     "id": "sharmaka",
     "slug": "sharmaka",
+    "image": "data/assets/heroes/sharmaka.webp",
     "name": "Sharmaka",
     "title": "Forest Watcher",
     "faction": "nature",
@@ -948,6 +966,7 @@
   {
     "id": "silas",
     "slug": "silas",
+    "image": "data/assets/heroes/silas.webp",
     "name": "Silas",
     "title": "Evolver",
     "faction": "nature",

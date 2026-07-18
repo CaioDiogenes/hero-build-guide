@@ -2,6 +2,7 @@
   {
     "id": "anubis",
     "slug": "anubis",
+    "image": "data/assets/heroes/anubis.webp",
     "name": "Anubis",
     "title": "God of Egypt",
     "faction": "god",
@@ -55,6 +56,7 @@
   {
     "id": "astraea",
     "slug": "astraea",
+    "image": "data/assets/heroes/astraea.webp",
     "name": "Astraea",
     "title": "Mother of Stars",
     "faction": "god",
@@ -112,6 +114,7 @@
   {
     "id": "asura",
     "slug": "asura",
+    "image": "data/assets/heroes/ashura.webp",
     "name": "Asura",
     "title": "Anti-god",
     "faction": "god",
@@ -162,6 +165,7 @@
   {
     "id": "hera",
     "slug": "hera",
+    "image": "data/assets/heroes/hera.webp",
     "name": "Hera",
     "title": "Queen of Heaven",
     "faction": "god",
@@ -218,6 +222,7 @@
   {
     "id": "life",
     "slug": "life",
+    "image": "data/assets/heroes/life.webp",
     "name": "Life",
     "title": "Goddess of Life",
     "faction": "god",
@@ -277,6 +282,7 @@
   {
     "id": "lucadia",
     "slug": "lucadia",
+    "image": "data/assets/heroes/lucadia.webp",
     "name": "Lucadia",
     "title": "Goddess of War",
     "faction": "god",
@@ -328,6 +334,7 @@
   {
     "id": "orochi",
     "slug": "orochi",
+    "image": "data/assets/heroes/orochi.webp",
     "name": "Orochi",
     "faction": "god",
     "types": [
@@ -383,6 +390,7 @@
   {
     "id": "poseidon",
     "slug": "poseidon",
+    "image": "data/assets/heroes/poseidon.webp",
     "name": "Poseidon",
     "title": "Goddess of Ocean",
     "faction": "god",
@@ -434,6 +442,7 @@
   {
     "id": "sun-wukong",
     "slug": "sun-wukong",
+    "image": "data/assets/heroes/sun-wukong.webp",
     "name": "Sun Wukong",
     "title": "Great Sage",
     "faction": "god",
@@ -483,6 +492,7 @@
   {
     "id": "vesperia",
     "slug": "vesperia",
+    "image": "data/assets/heroes/vesperia.webp",
     "name": "Vesperia",
     "title": "Goddess of Joy",
     "faction": "god",
@@ -535,6 +545,7 @@
   {
     "id": "yi",
     "slug": "yi",
+    "image": "data/assets/heroes/yi.webp",
     "name": "Yi",
     "title": "Dimension Emperor",
     "faction": "god",
@@ -589,6 +600,7 @@
   {
     "id": "zeus",
     "slug": "zeus",
+    "image": "data/assets/heroes/zeus.webp",
     "name": "Zeus",
     "title": "God of Sky",
     "faction": "god",

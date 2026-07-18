@@ -2,6 +2,7 @@
   {
     "id": "alcazar",
     "slug": "alcazar",
+    "image": "data/assets/heroes/alcazar.webp",
     "name": "Alcazar",
     "title": "Spectral Witch",
     "faction": "dark",
@@ -49,6 +50,7 @@
   {
     "id": "anna",
     "slug": "anna",
+    "image": "data/assets/heroes/anna.webp",
     "name": "Anna",
     "title": "Succuba",
     "faction": "dark",
@@ -86,6 +88,7 @@
   {
     "id": "baron",
     "slug": "baron",
+    "image": "data/assets/heroes/baron.webp",
     "name": "Baron",
     "title": "Hell's Emissary",
     "faction": "dark",
@@ -130,6 +133,7 @@
   {
     "id": "behemoth",
     "slug": "behemoth",
+    "image": "data/assets/heroes/behemoth.webp",
     "name": "Behemoth",
     "title": "Catastrophe",
     "faction": "dark",
@@ -164,6 +168,7 @@
   {
     "id": "camilla",
     "slug": "camilla",
+    "image": "data/assets/heroes/camilla.webp",
     "name": "Camilla",
     "title": "Bloodnight Baroness",
     "faction": "dark",
@@ -213,6 +218,7 @@
   {
     "id": "cara",
     "slug": "cara",
+    "image": "data/assets/heroes/cara.webp",
     "name": "Cara",
     "title": "Requiem Blade",
     "faction": "dark",
@@ -260,6 +266,7 @@
   {
     "id": "eddie",
     "slug": "eddie",
+    "image": "data/assets/heroes/eddie.webp",
     "name": "Eddie",
     "title": "Nightmare Flame",
     "faction": "dark",
@@ -300,6 +307,7 @@
   {
     "id": "focalor",
     "slug": "focalor",
+    "image": "data/assets/heroes/focalor.webp",
     "name": "Focalor",
     "title": "The God Slayer",
     "faction": "dark",
@@ -343,6 +351,7 @@
   {
     "id": "gonibal",
     "slug": "gonibal",
+    "image": "data/assets/heroes/gonibal.webp",
     "name": "Gonibal",
     "title": "Unlucky Aborigine",
     "faction": "dark",
@@ -376,6 +385,7 @@
   {
     "id": "lucas",
     "slug": "lucas",
+    "image": "data/assets/heroes/lucas.webp",
     "name": "Lucas",
     "title": "Demon of Souls",
     "faction": "dark",
@@ -426,6 +436,7 @@
   {
     "id": "marduk",
     "slug": "marduk",
+    "image": "data/assets/heroes/marduk.webp",
     "name": "Marduk",
     "title": "Saint of the Underworld",
     "faction": "dark",
@@ -479,6 +490,7 @@
   {
     "id": "medusa",
     "slug": "medusa",
+    "image": "data/assets/heroes/medusa.webp",
     "name": "Medusa",
     "title": "Medusa",
     "faction": "dark",
@@ -511,6 +523,7 @@
   {
     "id": "ophelia",
     "slug": "ophelia",
+    "image": "data/assets/heroes/ophelia.webp",
     "name": "Ophelia",
     "title": "Heaven-Piercing Wing",
     "faction": "dark",
@@ -557,6 +570,7 @@
   {
     "id": "satan",
     "slug": "satan",
+    "image": "data/assets/heroes/satan.webp",
     "name": "Satan",
     "title": "King of Hell",
     "faction": "dark",
@@ -607,6 +621,7 @@
   {
     "id": "van-helsing",
     "slug": "van-helsing",
+    "image": "data/assets/heroes/van-helsing.webp",
     "name": "Van Helsing",
     "title": "Devil Hunter",
     "faction": "dark",
@@ -650,6 +665,7 @@
   {
     "id": "vulcano",
     "slug": "vulcano",
+    "image": "data/assets/heroes/vulcano.webp",
     "name": "Vulcano",
     "title": "Molten Wrath",
     "faction": "dark",

@@ -2,6 +2,7 @@
   {
     "id": "einstein",
     "slug": "einstein",
+    "image": "data/assets/heroes/einstein.webp",
     "name": "Einstein",
     "title": "Universe Sage",
     "faction": "superman",
@@ -26,6 +27,7 @@
   {
     "id": "eve",
     "slug": "eve",
+    "image": "data/assets/heroes/eve.webp",
     "name": "Eve",
     "title": "Lady Ivy",
     "faction": "superman",
@@ -55,6 +57,7 @@
   {
     "id": "gilles",
     "slug": "gilles",
+    "image": "data/assets/heroes/gilles.webp",
     "name": "Gilles",
     "title": "Fearless Aegis",
     "faction": "superman",
@@ -91,6 +94,7 @@
   {
     "id": "houston",
     "slug": "houston",
+    "image": "data/assets/heroes/houston.webp",
     "name": "Houston",
     "title": "Dimension Runner",
     "faction": "superman",
@@ -119,6 +123,7 @@
   {
     "id": "jane",
     "slug": "jane",
+    "image": "data/assets/heroes/jane.webp",
     "name": "Jane",
     "title": "The Fairy of Music",
     "faction": "superman",
@@ -157,6 +162,7 @@
   {
     "id": "julianne",
     "slug": "julianne",
+    "image": "data/assets/heroes/julianne.webp",
     "name": "Julianne",
     "title": "Moonlight Paladin",
     "faction": "superman",
@@ -197,6 +203,7 @@
   {
     "id": "karen",
     "slug": "karen",
+    "image": "data/assets/heroes/karen.webp",
     "name": "Karen",
     "title": "Frontline Striker",
     "faction": "superman",
@@ -225,6 +232,7 @@
   {
     "id": "kloris",
     "slug": "kloris",
+    "image": "data/assets/heroes/kloris.webp",
     "name": "Kloris",
     "title": "Queen of Desert",
     "faction": "superman",
@@ -271,6 +279,7 @@
   {
     "id": "knox",
     "slug": "knox",
+    "image": "data/assets/heroes/knox.webp",
     "name": "Knox",
     "title": "Sacred Fistmaster",
     "faction": "superman",
@@ -313,6 +322,7 @@
   {
     "id": "mikaela",
     "slug": "mikaela",
+    "image": "data/assets/heroes/mikaela.webp",
     "name": "Mikaela",
     "title": "Jade Enchantress",
     "faction": "superman",
@@ -369,6 +379,7 @@
   {
     "id": "nydia",
     "slug": "nydia",
+    "image": "data/assets/heroes/nydia.webp",
     "name": "Nydia",
     "title": "Secretive Witch",
     "faction": "superman",
@@ -413,6 +424,7 @@
   {
     "id": "pierre",
     "slug": "pierre",
+    "image": "data/assets/heroes/pierre.webp",
     "name": "Pierre",
     "title": "Fury Wave",
     "faction": "superman",
@@ -460,6 +472,7 @@
   {
     "id": "toko",
     "slug": "toko",
+    "image": "data/assets/heroes/toko.webp",
     "name": "Toko",
     "title": "Samurai Girl",
     "faction": "superman",
@@ -501,6 +514,7 @@
   {
     "id": "wadjet",
     "slug": "wadjet",
+    "image": "data/assets/heroes/wadjet.webp",
     "name": "Wadjet",
     "title": "Heart of the Nile",
     "faction": "superman",
