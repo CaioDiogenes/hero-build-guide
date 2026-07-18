@@ -5,6 +5,10 @@ const heroTaxonomy = JSON.parse(
   await readFile(resolve('src/app/core/constants/hero-taxonomy.json'), 'utf8'),
 );
 
+const artifactIcons = JSON.parse(
+  await readFile(resolve('src/app/core/constants/artifact-icons.json'), 'utf8'),
+);
+
 const factions = heroTaxonomy.factions;
 
 const validTiers = new Set(heroTaxonomy.tiers);
@@ -34,8 +38,8 @@ const requiredArrayFields = [
   'gemTalents',
 ];
 
-function toGemSlug(gemName) {
-  return gemName
+function toSlug(name) {
+  return name
     .toLowerCase()
     .replace(/'/g, '')
     .replace(/[^a-z0-9]+/g, '-')
@@ -46,6 +50,9 @@ const errors = [];
 const warnings = [];
 const allHeroes = [];
 const allGemNames = new Set();
+const allArtifactNames = new Set();
+const allStigmaNames = new Set();
+const allCollectionNames = new Set();
 
 function addError(message) {
   errors.push(message);
@@ -128,6 +135,18 @@ for (const faction of factions) {
       allGemNames.add(gem);
     }
 
+    for (const artifact of hero.artifacts ?? []) {
+      allArtifactNames.add(artifact);
+    }
+
+    for (const collection of hero.collections ?? []) {
+      allCollectionNames.add(collection);
+    }
+
+    for (const stigma of [...(hero.stigmataFourSet ?? []), ...(hero.stigmataTwoSet ?? [])]) {
+      allStigmaNames.add(stigma);
+    }
+
     for (const type of hero.types ?? []) {
       if (!validTypes.has(type)) {
         addError(`${hero.slug}: unsupported hero type "${type}".`);
@@ -207,12 +226,57 @@ if (allHeroes.length !== 86) {
 }
 
 for (const gem of [...allGemNames].sort()) {
-  const gemPath = resolve(`public/data/assets/gems/${toGemSlug(gem)}.webp`);
+  const gemPath = resolve(`public/data/assets/gems/${toSlug(gem)}.webp`);
 
   try {
     await access(gemPath);
   } catch {
-    addWarning(`"${gem}": missing gem icon at public/data/assets/gems/${toGemSlug(gem)}.webp.`);
+    addWarning(`"${gem}": missing gem icon at public/data/assets/gems/${toSlug(gem)}.webp.`);
+  }
+}
+
+for (const artifact of [...allArtifactNames].sort()) {
+  const filename = artifactIcons[toSlug(artifact)];
+
+  if (!filename) {
+    addWarning(
+      `"${artifact}": missing artifact icon (no entry for "${toSlug(artifact)}" in artifact-icons.json).`,
+    );
+    continue;
+  }
+
+  const artifactPath = resolve(`public/data/assets/artifacts/${filename}`);
+
+  try {
+    await access(artifactPath);
+  } catch {
+    addWarning(
+      `"${artifact}": artifact-icons.json points at missing file public/data/assets/artifacts/${filename}.`,
+    );
+  }
+}
+
+for (const stigma of [...allStigmaNames].sort()) {
+  const stigmaPath = resolve(`public/data/assets/stigmas/${toSlug(stigma)}.webp`);
+
+  try {
+    await access(stigmaPath);
+  } catch {
+    addWarning(
+      `"${stigma}": missing stigma icon at public/data/assets/stigmas/${toSlug(stigma)}.webp.`,
+    );
+  }
+}
+
+for (const collection of [...allCollectionNames].sort()) {
+  const collectionPath = resolve(`public/data/assets/collections/${toSlug(collection)}.webp`);
+
+  try {
+    await access(collectionPath);
+  } catch {
+    addWarning(
+      `"${collection}": missing collection icon at public/data/assets/collections/${toSlug(collection)}.webp.`,
+    );
   }
 }
 

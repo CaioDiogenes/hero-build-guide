@@ -12,4 +12,5 @@ export class BuildSection {
   readonly items = input.required<string[]>();
   readonly emptyMessage = input<string>('No recommendations');
   readonly iconFor = input<(item: string) => string | undefined>();
+  readonly iconSize = input<number>(32);
 }

@@ -96,19 +96,36 @@
             <div class="hero-detail__panel-content">
               <app-build-section title="Stat focus" [items]="hero.statFocus" />
 
-              <app-build-section title="Four-set stigmata" [items]="hero.stigmataFourSet" />
+              <app-build-section
+                title="Four-set stigmata"
+                [items]="hero.stigmataFourSet"
+                [iconFor]="stigmaIcon"
+                [iconSize]="50"
+              />
 
-              <app-build-section title="Two-set stigmata" [items]="hero.stigmataTwoSet" />
+              <app-build-section
+                title="Two-set stigmata"
+                [items]="hero.stigmataTwoSet"
+                [iconFor]="stigmaIcon"
+                [iconSize]="50"
+              />
             </div>
           </app-panel>
 
           <app-panel>
             <div class="hero-detail__panel-content">
-              <app-build-section title="Artifacts" [items]="hero.artifacts" />
+              <app-build-section
+                title="Artifacts"
+                [items]="hero.artifacts"
+                [iconFor]="artifactIcon"
+                [iconSize]="60"
+              />
 
               <app-build-section
                 title="Collections"
                 [items]="hero.collections"
+                [iconFor]="collectionIcon"
+                [iconSize]="50"
                 emptyMessage="No collection recommendation"
               />
             </div>

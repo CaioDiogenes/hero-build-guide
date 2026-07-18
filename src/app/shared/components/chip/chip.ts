@@ -7,6 +7,7 @@ import { Component, input, signal } from '@angular/core';
 })
 export class Chip {
   readonly icon = input<string>();
+  readonly iconSize = input<number>(32);
   readonly imageFailed = signal(false);
 
   onImageError(): void {

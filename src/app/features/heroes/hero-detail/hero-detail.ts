@@ -4,9 +4,12 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Title } from '@angular/platform-browser';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { map, switchMap, catchError, of, tap } from 'rxjs';
+import { ArtifactImageService } from '../../../core/services/artifact-image.service';
+import { CollectionImageService } from '../../../core/services/collection-image.service';
 import { GemImageService } from '../../../core/services/gem-image.service';
 import { HeroImageService } from '../../../core/services/hero-image.service';
 import { HeroService } from '../../../core/services/hero.service';
+import { StigmaImageService } from '../../../core/services/stigma-image.service';
 import { BuildSection } from '../../../shared/components/build-section/build-section';
 import { Chip } from '../../../shared/components/chip/chip';
 import { FactionBadge } from '../../../shared/components/faction-badge/faction-badge';
@@ -45,6 +48,21 @@ export class HeroDetail {
   private readonly gemImageService = inject(GemImageService);
 
   readonly gemIcon = (gemName: string): string => this.gemImageService.getImageUrl(gemName);
+
+  private readonly artifactImageService = inject(ArtifactImageService);
+
+  readonly artifactIcon = (artifactName: string): string | undefined =>
+    this.artifactImageService.getImageUrl(artifactName);
+
+  private readonly stigmaImageService = inject(StigmaImageService);
+
+  readonly stigmaIcon = (stigmaName: string): string =>
+    this.stigmaImageService.getImageUrl(stigmaName);
+
+  private readonly collectionImageService = inject(CollectionImageService);
+
+  readonly collectionIcon = (collectionName: string): string =>
+    this.collectionImageService.getImageUrl(collectionName);
 
   readonly viewModel$ = this.route.paramMap.pipe(
     map((params) => params.get('slug') ?? ''),
