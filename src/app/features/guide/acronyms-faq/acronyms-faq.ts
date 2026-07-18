@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { map, catchError, of, startWith, combineLatest } from 'rxjs';
 import { GuideAcronym, GuideFaqEntry } from '../../../core/models/guide.model';
@@ -11,6 +11,7 @@ import { StatusMessage } from '../../../shared/components/status-message/status-
 type AcronymCategory = 'Role' | 'Combat' | 'Game mode' | 'Attack';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-acronyms-faq',
   imports: [AsyncPipe, ReactiveFormsModule, Chip, Panel, StatusMessage],
   templateUrl: './acronyms-faq.html',

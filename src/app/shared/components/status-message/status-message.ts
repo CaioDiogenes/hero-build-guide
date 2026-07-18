@@ -1,8 +1,9 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 export type StatusMessageType = 'loading' | 'empty' | 'error';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-status-message',
   templateUrl: './status-message.html',
   styleUrl: './status-message.scss',

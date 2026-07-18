@@ -1,4 +1,13 @@
-import { Component, DestroyRef, effect, inject, input, OnInit, output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  effect,
+  inject,
+  input,
+  OnInit,
+  output,
+} from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
@@ -10,6 +19,7 @@ import {
 import { HeroFilterState, HeroSortOption } from '../../../core/models/hero-filter.model';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-hero-filters',
   imports: [ReactiveFormsModule],
   templateUrl: './hero-filters.html',

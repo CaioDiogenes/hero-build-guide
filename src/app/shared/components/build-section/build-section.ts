@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core';
-import { Chip } from '../chip/chip';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { Chip, DEFAULT_ICON_SIZE } from '../chip/chip';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-build-section',
   imports: [Chip],
   templateUrl: './build-section.html',
@@ -12,5 +13,5 @@ export class BuildSection {
   readonly items = input.required<string[]>();
   readonly emptyMessage = input<string>('No recommendations');
   readonly iconFor = input<(item: string) => string | undefined>();
-  readonly iconSize = input<number>(32);
+  readonly iconSize = input<number>(DEFAULT_ICON_SIZE);
 }

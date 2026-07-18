@@ -1,3 +1,96 @@
+@use 'mixins' as *;
+
+// Shared filter-bar chrome (label/input/select/option styling) for guide pages
+// with a search/filter form. Each page still owns its own responsive
+// grid-template-columns via its `<page>__filters` BEM class, since the number
+// and width of filter fields differs per page.
+.filter-bar {
+  display: grid;
+  gap: var(--space-4);
+
+  padding: var(--space-5);
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  > div {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  label {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+
+  input,
+  select {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.65rem 0.8rem;
+
+    color: var(--color-text);
+    background: var(--color-background-soft);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    outline: none;
+
+    &:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px var(--color-primary-soft);
+    }
+  }
+
+  option {
+    color: var(--color-text);
+    background: var(--color-background-soft);
+  }
+
+  .button {
+    align-self: end;
+  }
+}
+
+// Flex section header (eyebrow paragraph + heading + optional trailing count)
+// used by guide pages listing filterable results.
+.section-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-4);
+
+  p,
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    margin-bottom: var(--space-1);
+
+    color: var(--color-primary);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  > span {
+    color: var(--color-text-subtle);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  @include respond-max(600px) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 .button {
   display: inline-flex;
   align-items: center;

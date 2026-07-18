@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { Footer } from '../footer/footer';
 import { Header } from '../header/header';
@@ -8,6 +8,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-shell',
   imports: [RouterOutlet, Footer, Header, MobileNavigation, Sidebar],
   templateUrl: './app-shell.html',
@@ -17,7 +18,7 @@ export class AppShell {
   private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
 
-  mobileMenuOpen = false;
+  readonly mobileMenuOpen = signal(false);
 
   constructor() {
     this.router.events
@@ -31,10 +32,10 @@ export class AppShell {
   }
 
   openMobileMenu(): void {
-    this.mobileMenuOpen = true;
+    this.mobileMenuOpen.set(true);
   }
 
   closeMobileMenu(): void {
-    this.mobileMenuOpen = false;
+    this.mobileMenuOpen.set(false);
   }
 }

@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject, DestroyRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, DestroyRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Title } from '@angular/platform-browser';
 import { RouterLink, ActivatedRoute } from '@angular/router';
@@ -15,6 +15,7 @@ import { StatusMessage } from '../../../shared/components/status-message/status-
 import { TierBadge } from '../../../shared/components/tier-badge/tier-badge';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-faction-detail',
   imports: [AsyncPipe, RouterLink, FactionBadge, HeroCard, StatusMessage, TierBadge],
   templateUrl: './faction-details.html',

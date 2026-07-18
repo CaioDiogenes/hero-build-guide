@@ -1,8 +1,9 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 import { HeroFaction } from '../../../core/models/faction.model';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-faction-badge',
   templateUrl: './faction-badge.html',
   styleUrl: './faction-badge.scss',

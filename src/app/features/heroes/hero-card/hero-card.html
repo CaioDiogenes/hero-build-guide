@@ -7,7 +7,7 @@
     <header class="hero-card__header">
       <div class="hero-card__identity">
         <div class="hero-card__media">
-          @if (!imageFailed()) {
+          @if (!fallback.failed()) {
             <img
               class="hero-card__image"
               [src]="heroImageService.getImageUrl(hero().slug)"
@@ -16,7 +16,7 @@
               height="64"
               loading="lazy"
               decoding="async"
-              (error)="onImageError()"
+              (error)="fallback.onError()"
             />
           } @else {
             <div class="hero-card__avatar" aria-hidden="true">

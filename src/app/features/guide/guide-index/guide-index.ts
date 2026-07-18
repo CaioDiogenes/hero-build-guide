@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { map, catchError, of } from 'rxjs';
 import { GuideNavigationItem } from '../../../core/models/guide.model';
@@ -8,6 +8,7 @@ import { Panel } from '../../../shared/components/panel/panel';
 import { StatusMessage } from '../../../shared/components/status-message/status-message';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-guide-index',
   imports: [AsyncPipe, RouterLink, Panel, StatusMessage],
   templateUrl: './guide-index.html',

@@ -38,6 +38,8 @@ const requiredArrayFields = [
   'gemTalents',
 ];
 
+// Mirrors src/app/core/utils/slug.util.ts. Kept as a separate copy because this
+// script runs as plain Node outside the Angular build and can't import from src/app.
 function toSlug(name) {
   return name
     .toLowerCase()

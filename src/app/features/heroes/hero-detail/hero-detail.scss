@@ -103,11 +103,10 @@
     flex: 0 0 auto;
   }
 
-  &__image {
+  &__image,
+  &__avatar {
     width: 5rem;
     height: 5rem;
-
-    object-fit: cover;
 
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: var(--radius-lg);
@@ -115,25 +114,21 @@
     box-shadow: var(--shadow-glow);
   }
 
+  &__image {
+    object-fit: cover;
+  }
+
   &__avatar {
     display: grid;
     flex: 0 0 auto;
     place-items: center;
 
-    width: 5rem;
-    height: 5rem;
-
     color: white;
 
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
 
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: var(--radius-lg);
-
     font-size: 2rem;
     font-weight: 900;
-
-    box-shadow: var(--shadow-glow);
   }
 
   &__badges {
@@ -329,15 +324,13 @@
       gap: var(--space-3);
     }
 
-    &__image {
+    &__image,
+    &__avatar {
       width: 3.5rem;
       height: 3.5rem;
     }
 
     &__avatar {
-      width: 3.5rem;
-      height: 3.5rem;
-
       font-size: 1.4rem;
     }
 

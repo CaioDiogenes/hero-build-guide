@@ -1,5 +1,5 @@
 <span class="chip">
-  @if (icon() && !imageFailed()) {
+  @if (icon() && !fallback.failed()) {
     <img
       class="chip__icon"
       [src]="icon()"
@@ -10,7 +10,7 @@
       [style.max-height.px]="iconSize()"
       loading="lazy"
       decoding="async"
-      (error)="onImageError()"
+      (error)="fallback.onError()"
     />
   }
 

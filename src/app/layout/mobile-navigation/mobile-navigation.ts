@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -6,6 +6,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FACTION_NAVIGATION } from '../../core/constants/factions';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-mobile-navigation',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './mobile-navigation.html',

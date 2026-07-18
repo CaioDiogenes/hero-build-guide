@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { map, catchError, of, startWith, combineLatest } from 'rxjs';
 import {
@@ -13,6 +13,7 @@ import { Panel } from '../../../shared/components/panel/panel';
 import { StatusMessage } from '../../../shared/components/status-message/status-message';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-cc-dot',
   imports: [AsyncPipe, ReactiveFormsModule, Chip, Panel, StatusMessage],
   templateUrl: './cc-dot.html',

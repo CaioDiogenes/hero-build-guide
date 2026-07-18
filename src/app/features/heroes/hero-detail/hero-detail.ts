@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject, signal, DestroyRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, DestroyRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Title } from '@angular/platform-browser';
 import { RouterLink, ActivatedRoute } from '@angular/router';
@@ -10,6 +10,7 @@ import { GemImageService } from '../../../core/services/gem-image.service';
 import { HeroImageService } from '../../../core/services/hero-image.service';
 import { HeroService } from '../../../core/services/hero.service';
 import { StigmaImageService } from '../../../core/services/stigma-image.service';
+import { createImageFallback } from '../../../core/utils/image-fallback';
 import { BuildSection } from '../../../shared/components/build-section/build-section';
 import { Chip } from '../../../shared/components/chip/chip';
 import { FactionBadge } from '../../../shared/components/faction-badge/faction-badge';
@@ -18,6 +19,7 @@ import { StatusMessage } from '../../../shared/components/status-message/status-
 import { TierBadge } from '../../../shared/components/tier-badge/tier-badge';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-hero-detail',
   imports: [
     AsyncPipe,
@@ -39,35 +41,17 @@ export class HeroDetail {
   private readonly destroyRef = inject(DestroyRef);
 
   readonly heroImageService = inject(HeroImageService);
-  readonly imageFailed = signal(false);
+  readonly fallback = createImageFallback();
 
-  onImageError(): void {
-    this.imageFailed.set(true);
-  }
-
-  private readonly gemImageService = inject(GemImageService);
-
-  readonly gemIcon = (gemName: string): string => this.gemImageService.getImageUrl(gemName);
-
-  private readonly artifactImageService = inject(ArtifactImageService);
-
-  readonly artifactIcon = (artifactName: string): string | undefined =>
-    this.artifactImageService.getImageUrl(artifactName);
-
-  private readonly stigmaImageService = inject(StigmaImageService);
-
-  readonly stigmaIcon = (stigmaName: string): string =>
-    this.stigmaImageService.getImageUrl(stigmaName);
-
-  private readonly collectionImageService = inject(CollectionImageService);
-
-  readonly collectionIcon = (collectionName: string): string =>
-    this.collectionImageService.getImageUrl(collectionName);
+  readonly gemIcon = this.iconResolver(inject(GemImageService));
+  readonly artifactIcon = this.iconResolver(inject(ArtifactImageService));
+  readonly stigmaIcon = this.iconResolver(inject(StigmaImageService));
+  readonly collectionIcon = this.iconResolver(inject(CollectionImageService));
 
   readonly viewModel$ = this.route.paramMap.pipe(
     map((params) => params.get('slug') ?? ''),
 
-    tap(() => this.imageFailed.set(false)),
+    tap(() => this.fallback.reset()),
 
     switchMap((slug) =>
       this.heroService.getHeroNavigationBySlug(slug).pipe(
@@ -95,4 +79,8 @@ export class HeroDetail {
 
     takeUntilDestroyed(this.destroyRef),
   );
+
+  private iconResolver<T extends { getImageUrl(name: string): string | undefined }>(service: T) {
+    return (name: string) => service.getImageUrl(name);
+  }
 }

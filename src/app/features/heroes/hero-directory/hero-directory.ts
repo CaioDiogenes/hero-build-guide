@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BehaviorSubject, map, catchError, of, combineLatest } from 'rxjs';
 import { HeroFilterState, HeroSortOption } from '../../../core/models/hero-filter.model';
@@ -10,6 +10,7 @@ import { HeroFilters } from '../hero-filters/hero-filters';
 import { StatusMessage } from '../../../shared/components/status-message/status-message';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-hero-directory',
   imports: [AsyncPipe, HeroCard, HeroFilters, StatusMessage],
   templateUrl: './hero-directory.html',

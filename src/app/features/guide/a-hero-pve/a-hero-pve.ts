@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { BehaviorSubject, map, catchError, of, combineLatest, startWith } from 'rxjs';
 import { AHeroPveFilterState } from '../../../core/models/a-hero-pve-filter.model';
@@ -10,6 +10,7 @@ import { Panel } from '../../../shared/components/panel/panel';
 import { StatusMessage } from '../../../shared/components/status-message/status-message';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-a-hero-pve',
   imports: [AsyncPipe, ReactiveFormsModule, Chip, Panel, StatusMessage],
   templateUrl: './a-hero-pve.html',
