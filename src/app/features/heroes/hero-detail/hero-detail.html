@@ -17,6 +17,12 @@
       </a>
 
       <header class="hero-detail__hero-header">
+        <div
+          class="hero-detail__backdrop"
+          aria-hidden="true"
+          [style.background-image]="'url(' + heroImageService.getImageUrl(hero.slug) + ')'"
+        ></div>
+
         <div class="hero-detail__identity">
           <div class="hero-detail__media">
             @if (!imageFailed()) {
