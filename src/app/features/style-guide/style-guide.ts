@@ -1,23 +1,15 @@
-import { Component } from "@angular/core";
-import { BadgeComponent } from "../../shared/components/badge/badge";
-import { ChipComponent } from "../../shared/components/chip/chip";
-import { FactionBadgeComponent } from "../../shared/components/faction-badge/faction-badge";
-import { PanelComponent } from "../../shared/components/panel/panel";
-import { StatusMessageComponent } from "../../shared/components/status-message/status-message";
-import { TierBadgeComponent } from "../../shared/components/tier-badge/tier-badge";
+import { Component } from '@angular/core';
+import { Badge } from '../../shared/components/badge/badge';
+import { Chip } from '../../shared/components/chip/chip';
+import { FactionBadge } from '../../shared/components/faction-badge/faction-badge';
+import { Panel } from '../../shared/components/panel/panel';
+import { StatusMessage } from '../../shared/components/status-message/status-message';
+import { TierBadge } from '../../shared/components/tier-badge/tier-badge';
 
 @Component({
   selector: 'app-style-guide',
-  standalone: true,
-  imports: [
-    BadgeComponent,
-    ChipComponent,
-    FactionBadgeComponent,
-    PanelComponent,
-    StatusMessageComponent,
-    TierBadgeComponent,
-  ],
+  imports: [Badge, Chip, FactionBadge, Panel, StatusMessage, TierBadge],
   templateUrl: './style-guide.html',
   styleUrl: './style-guide.scss',
 })
-export class StyleGuide { }
+export class StyleGuide {}

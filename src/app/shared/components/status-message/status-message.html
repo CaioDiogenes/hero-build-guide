@@ -1,13 +1,13 @@
 <section class="status-message" [attr.data-type]="type()">
-    @if (type() === 'loading') {
+  @if (type() === 'loading') {
     <span class="status-message__spinner"></span>
-    }
+  }
 
-    <h2>{{ title() }}</h2>
+  <h2>{{ title() }}</h2>
 
-    @if (message()) {
+  @if (message()) {
     <p>{{ message() }}</p>
-    }
+  }
 
-    <ng-content />
+  <ng-content />
 </section>

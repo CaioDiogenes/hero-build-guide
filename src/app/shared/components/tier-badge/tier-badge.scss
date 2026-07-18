@@ -1,35 +1,35 @@
 .tier-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    min-width: 2.5rem;
-    height: 2.5rem;
-    padding-inline: 0.65rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding-inline: 0.65rem;
 
-    color: var(--color-background);
+  color: var(--color-background);
+  background: var(--tier-b);
+
+  border-radius: var(--radius-md);
+
+  font-size: 1rem;
+  font-weight: 900;
+
+  box-shadow: var(--shadow-sm);
+
+  &--s-plus {
+    background: var(--tier-s-plus);
+  }
+
+  &--s {
+    background: var(--tier-s);
+  }
+
+  &--a {
+    background: var(--tier-a);
+  }
+
+  &--b {
     background: var(--tier-b);
-
-    border-radius: var(--radius-md);
-
-    font-size: 1rem;
-    font-weight: 900;
-
-    box-shadow: var(--shadow-sm);
-
-    &--s-plus {
-        background: var(--tier-s-plus);
-    }
-
-    &--s {
-        background: var(--tier-s);
-    }
-
-    &--a {
-        background: var(--tier-a);
-    }
-
-    &--b {
-        background: var(--tier-b);
-    }
+  }
 }

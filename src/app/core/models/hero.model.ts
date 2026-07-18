@@ -3,15 +3,7 @@ import { HeroFaction } from './faction.model';
 export type HeroTier = 'S+' | 'S' | 'A' | 'B';
 
 export type HeroType =
-  | 'Tank'
-  | 'DPS'
-  | 'Support'
-  | 'Buffer'
-  | 'Debuffer'
-  | 'CC'
-  | 'Healer'
-  | 'True DMG'
-  | 'Holy DMG';
+  'Tank' | 'DPS' | 'Support' | 'Buffer' | 'Debuffer' | 'CC' | 'Healer' | 'True DMG' | 'Holy DMG';
 
 export interface Hero {
   id: string;

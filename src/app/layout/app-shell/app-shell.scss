@@ -1,63 +1,63 @@
+@use 'mixins' as *;
+
 app-sidebar {
-    height: stretch;
+  height: stretch;
 }
 
 .skip-link {
-    position: fixed;
-    z-index: 100;
-    top: var(--space-3);
-    left: var(--space-3);
+  position: fixed;
+  z-index: 100;
+  top: var(--space-3);
+  left: var(--space-3);
 
-    padding: 0.7rem 1rem;
+  padding: 0.7rem 1rem;
 
-    color: white;
-    background: var(--color-primary);
+  color: white;
+  background: var(--color-primary);
 
-    border-radius: var(--radius-md);
+  border-radius: var(--radius-md);
 
-    font-weight: 800;
+  font-weight: 800;
 
-    transform: translateY(-150%);
-    transition: transform var(--transition-fast);
+  transform: translateY(-150%);
+  transition: transform var(--transition-fast);
 
-    &:focus {
-        transform: translateY(0);
-    }
+  &:focus {
+    transform: translateY(0);
+  }
 }
 
 .app-shell {
-    min-height: 100vh;
+  min-height: 100vh;
 
-    &__body {
-        display: flex;
-        align-items: flex-start;
+  &__body {
+    display: flex;
+    align-items: flex-start;
 
-        min-height: calc(100vh - 4.5rem);
-    }
+    min-height: calc(100vh - 4.5rem);
+  }
 
-    &__content-column {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
+  &__content-column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 
-        min-width: 0;
-        min-height: calc(100vh - 4.5rem);
-    }
+    min-width: 0;
+    min-height: calc(100vh - 4.5rem);
+  }
 
-    &__main {
-        flex: 1;
+  &__main {
+    flex: 1;
 
-        width: 100%;
-        padding:
-            var(--space-5) var(--space-4);
-    }
+    width: 100%;
+    padding: var(--space-5) var(--space-4);
+  }
 }
 
-@media (min-width: 900px) {
-    .app-shell {
-        &__main {
-            padding:
-                var(--space-6) var(--space-6);
-        }
+@include respond-min(900px) {
+  .app-shell {
+    &__main {
+      padding: var(--space-6) var(--space-6);
     }
+  }
 }

@@ -1,124 +1,111 @@
 <section class="guide-index page-container">
-    @if (viewModel$ | async; as viewModel) {
+  @if (viewModel$ | async; as viewModel) {
     @if (viewModel.error) {
-    <app-status-message type="error" title="Unable to load the guide library"
-        message="The guide navigation data could not be loaded." />
+      <app-status-message
+        type="error"
+        title="Unable to load the guide library"
+        message="The guide navigation data could not be loaded."
+      />
     } @else if (viewModel.navigation; as navigation) {
-    <header class="guide-index__header">
-        <p class="guide-index__eyebrow">
-            Resources
-        </p>
+      <header class="guide-index__header">
+        <p class="guide-index__eyebrow">Resources</p>
 
         <h1>{{ navigation.title }}</h1>
 
         <p>{{ navigation.description }}</p>
 
-        <a class="button button--primary" routerLink="/heroes">
-            Browse hero builds
-        </a>
-    </header>
+        <a class="button button--primary" routerLink="/heroes"> Browse hero builds </a>
+      </header>
 
-    @if (viewModel.gettingStarted.length) {
-    <section class="guide-index__section">
-        <header>
+      @if (viewModel.gettingStarted.length) {
+        <section class="guide-index__section">
+          <header>
             <p>Start here</p>
             <h2>Getting started</h2>
-        </header>
+          </header>
 
-        <div class="guide-index__grid">
-            @for (
-            item of viewModel.gettingStarted;
-            track item.id
-            ) {
-            <app-panel>
+          <div class="guide-index__grid">
+            @for (item of viewModel.gettingStarted; track item.id) {
+              <app-panel>
                 <a class="guide-index__card" [routerLink]="item.route">
-                    <span class="guide-index__order">
-                        {{ item.order }}
-                    </span>
+                  <span class="guide-index__order">
+                    {{ item.order }}
+                  </span>
 
-                    <div>
-                        <h3>{{ item.title }}</h3>
-                        <p>{{ item.description }}</p>
-                    </div>
+                  <div>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                  </div>
 
-                    <span class="guide-index__arrow" aria-hidden="true">
-                        →
-                    </span>
+                  <span class="guide-index__arrow" aria-hidden="true"> → </span>
                 </a>
-            </app-panel>
+              </app-panel>
             }
-        </div>
-    </section>
-    }
+          </div>
+        </section>
+      }
 
-    @if (viewModel.reference.length) {
-    <section class="guide-index__section">
-        <header>
+      @if (viewModel.reference.length) {
+        <section class="guide-index__section">
+          <header>
             <p>Lookup tools</p>
             <h2>Reference</h2>
-        </header>
+          </header>
 
-        <div class="guide-index__grid">
-            @for (
-            item of viewModel.reference;
-            track item.id
-            ) {
-            <app-panel>
+          <div class="guide-index__grid">
+            @for (item of viewModel.reference; track item.id) {
+              <app-panel>
                 <a class="guide-index__card" [routerLink]="item.route">
-                    <span class="guide-index__order">
-                        {{ item.order }}
-                    </span>
+                  <span class="guide-index__order">
+                    {{ item.order }}
+                  </span>
 
-                    <div>
-                        <h3>{{ item.title }}</h3>
-                        <p>{{ item.description }}</p>
-                    </div>
+                  <div>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                  </div>
 
-                    <span class="guide-index__arrow" aria-hidden="true">
-                        →
-                    </span>
+                  <span class="guide-index__arrow" aria-hidden="true"> → </span>
                 </a>
-            </app-panel>
+              </app-panel>
             }
-        </div>
-    </section>
-    }
+          </div>
+        </section>
+      }
 
-    @if (viewModel.about.length) {
-    <section class="guide-index__section">
-        <header>
+      @if (viewModel.about.length) {
+        <section class="guide-index__section">
+          <header>
             <p>Attribution</p>
             <h2>About this guide</h2>
-        </header>
+          </header>
 
-        <div class="guide-index__grid">
-            @for (
-            item of viewModel.about;
-            track item.id
-            ) {
-            <app-panel>
+          <div class="guide-index__grid">
+            @for (item of viewModel.about; track item.id) {
+              <app-panel>
                 <a class="guide-index__card" [routerLink]="item.route">
-                    <span class="guide-index__order">
-                        {{ item.order }}
-                    </span>
+                  <span class="guide-index__order">
+                    {{ item.order }}
+                  </span>
 
-                    <div>
-                        <h3>{{ item.title }}</h3>
-                        <p>{{ item.description }}</p>
-                    </div>
+                  <div>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                  </div>
 
-                    <span class="guide-index__arrow" aria-hidden="true">
-                        →
-                    </span>
+                  <span class="guide-index__arrow" aria-hidden="true"> → </span>
                 </a>
-            </app-panel>
+              </app-panel>
             }
-        </div>
-    </section>
+          </div>
+        </section>
+      }
     }
-    }
-    } @else {
-    <app-status-message type="loading" title="Loading guide library"
-        message="Please wait while the guide pages are loaded." />
-    }
+  } @else {
+    <app-status-message
+      type="loading"
+      title="Loading guide library"
+      message="Please wait while the guide pages are loaded."
+    />
+  }
 </section>

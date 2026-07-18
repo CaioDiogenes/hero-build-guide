@@ -1,16 +1,17 @@
-import { Component, DestroyRef, effect, inject, input, OnInit, output, } from '@angular/core';
-import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { ReactiveFormsModule, FormGroup, FormControl } from "@angular/forms";
-import { debounceTime, distinctUntilChanged } from "rxjs";
-import { HERO_FACTION_OPTIONS, HERO_TIER_OPTIONS, HERO_TYPE_OPTIONS } from "../../../core/constants/hero-options";
-import { HeroFilterState, HeroSortOption } from "../../../core/models/hero-filter.model";
+import { Component, DestroyRef, effect, inject, input, OnInit, output } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
+import {
+  HERO_FACTION_OPTIONS,
+  HERO_TIER_OPTIONS,
+  HERO_TYPE_OPTIONS,
+} from '../../../core/constants/hero-options';
+import { HeroFilterState, HeroSortOption } from '../../../core/models/hero-filter.model';
 
 @Component({
   selector: 'app-hero-filters',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-  ],
+  imports: [ReactiveFormsModule],
   templateUrl: './hero-filters.html',
   styleUrl: './hero-filters.scss',
 })
@@ -61,20 +62,16 @@ export class HeroFilters implements OnInit {
       .pipe(
         debounceTime(150),
         distinctUntilChanged(
-          (previous, current) =>
-            JSON.stringify(previous) === JSON.stringify(current),
+          (previous, current) => JSON.stringify(previous) === JSON.stringify(current),
         ),
         takeUntilDestroyed(this.destroyRef),
       )
       .subscribe((value) => {
         this.filtersChanged.emit({
           search: value.search ?? '',
-          faction:
-            value.faction as HeroFilterState['faction'],
-          tier:
-            value.tier as HeroFilterState['tier'],
-          type:
-            value.type as HeroFilterState['type'],
+          faction: value.faction as HeroFilterState['faction'],
+          tier: value.tier as HeroFilterState['tier'],
+          type: value.type as HeroFilterState['type'],
           sort: value.sort ?? 'name-asc',
         });
       });

@@ -1,0 +1,88 @@
+@use 'sass:map';
+
+$faction-colors: (
+  superman: var(--faction-superman),
+  technology: var(--faction-technology),
+  dark: var(--faction-dark),
+  nature: var(--faction-nature),
+  god: var(--faction-god),
+  universe: var(--faction-universe),
+);
+
+// Generates one `&[data-faction='<slug>'] { <property>: <color> }` block per
+// faction so the mapping only has to be maintained in $faction-colors above.
+@mixin faction-variants($property: color) {
+  @each $faction, $color in $faction-colors {
+    &[data-faction='#{$faction}'] {
+      #{$property}: $color;
+    }
+  }
+}
+
+// Page/section hero banner: radial-gradient accent(s) over the surface color,
+// bordered card, optional glow shadow. Matches every guide/feature page header.
+@mixin page-hero($accent, $accent-secondary: null, $glow: false) {
+  display: grid;
+  gap: var(--space-4);
+
+  padding: var(--space-7);
+
+  @if $accent-secondary {
+    background:
+      radial-gradient(circle at top left, $accent, transparent 30rem),
+      radial-gradient(circle at bottom right, $accent-secondary, transparent 24rem),
+      var(--color-surface);
+  } @else {
+    background:
+      radial-gradient(circle at top left, $accent, transparent 30rem), var(--color-surface);
+  }
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+
+  @if $glow {
+    box-shadow: var(--shadow-md), var(--shadow-glow);
+  } @else {
+    box-shadow: var(--shadow-md);
+  }
+
+  h1,
+  p {
+    margin: 0;
+  }
+}
+
+// Small uppercase label above a page/section heading. A class selector
+// already outranks the global `p` color rule in _typography.scss by
+// specificity, so callers don't need `!important`.
+@mixin eyebrow-label($color: var(--color-primary)) {
+  color: $color;
+
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+// The border + radius + shadow combo shared by cards, panels and list items
+// sitting directly on the page background.
+@mixin card-surface($radius: var(--radius-lg)) {
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: $radius;
+
+  box-shadow: var(--shadow-sm);
+}
+
+@mixin respond-min($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-max($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

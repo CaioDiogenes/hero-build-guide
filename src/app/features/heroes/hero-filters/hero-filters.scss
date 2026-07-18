@@ -1,96 +1,89 @@
+@use 'mixins' as *;
+
 .hero-filters {
-    display: grid;
-    gap: var(--space-4);
+  @include card-surface;
 
-    padding: var(--space-5);
+  display: grid;
+  gap: var(--space-4);
 
-    background:
-        linear-gradient(145deg,
-            rgba(255, 255, 255, 0.025),
-            transparent),
-        var(--color-surface);
+  padding: var(--space-5);
+
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.025), transparent), var(--color-surface);
+
+  label {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+
+  input,
+  select {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.65rem 0.8rem;
+
+    color: var(--color-text);
+    background: var(--color-background-soft);
 
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
 
-    box-shadow: var(--shadow-sm);
+    outline: none;
 
-    label {
-        color: var(--color-text-muted);
-        font-size: 0.75rem;
-        font-weight: 800;
+    transition:
+      border-color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      background var(--transition-fast);
+
+    &:hover {
+      border-color: var(--color-border-strong);
     }
 
-    input,
-    select {
-        width: 100%;
-        min-height: 2.75rem;
-        padding: 0.65rem 0.8rem;
+    &:focus {
+      border-color: var(--color-primary);
 
-        color: var(--color-text);
-        background: var(--color-background-soft);
-
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-md);
-
-        outline: none;
-
-        transition:
-            border-color var(--transition-fast),
-            box-shadow var(--transition-fast),
-            background var(--transition-fast);
-
-        &:hover {
-            border-color: var(--color-border-strong);
-        }
-
-        &:focus {
-            border-color: var(--color-primary);
-
-            box-shadow:
-                0 0 0 3px var(--color-primary-soft);
-        }
+      box-shadow: 0 0 0 3px var(--color-primary-soft);
     }
+  }
 
-    select {
-        cursor: pointer;
-    }
+  select {
+    cursor: pointer;
+  }
 
-    option {
-        color: var(--color-text);
-        background: var(--color-background-soft);
-    }
+  option {
+    color: var(--color-text);
+    background: var(--color-background-soft);
+  }
 
-    &__search,
-    &__field {
-        display: grid;
-        align-content: end;
-        gap: var(--space-2);
-    }
+  &__search,
+  &__field {
+    display: grid;
+    align-content: end;
+    gap: var(--space-2);
+  }
 
-    &__clear {
-        align-self: end;
-    }
+  &__clear {
+    align-self: end;
+  }
 }
 
-@media (min-width: 700px) {
-    .hero-filters {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
+@include respond-min(700px) {
+  .hero-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-    .hero-filters__search {
-        grid-column: 1 / -1;
-    }
+  .hero-filters__search {
+    grid-column: 1 / -1;
+  }
 }
 
-@media (min-width: 1150px) {
-    .hero-filters {
-        grid-template-columns:
-            minmax(15rem, 2fr) repeat(4, minmax(8rem, 1fr)) auto;
-    }
+@include respond-min(1150px) {
+  .hero-filters {
+    grid-template-columns: minmax(15rem, 2fr) repeat(4, minmax(8rem, 1fr)) auto;
+  }
 
-    .hero-filters__search {
-        grid-column: auto;
-    }
+  .hero-filters__search {
+    grid-column: auto;
+  }
 }

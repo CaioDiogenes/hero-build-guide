@@ -1,86 +1,73 @@
 <section class="hero-filters" aria-label="Hero filters">
-    <div class="hero-filters__search">
-        <label for="hero-search">
-            Search heroes
-        </label>
+  <div class="hero-filters__search">
+    <label for="hero-search"> Search heroes </label>
 
-        <input id="hero-search" type="search" placeholder="Search by name or title" autocomplete="off"
-            [formControl]="form.controls.search" />
-    </div>
+    <input
+      id="hero-search"
+      type="search"
+      placeholder="Search by name or title"
+      autocomplete="off"
+      [formControl]="form.controls.search"
+    />
+  </div>
 
-    <div class="hero-filters__field">
-        <label for="faction-filter">
-            Faction
-        </label>
+  <div class="hero-filters__field">
+    <label for="faction-filter"> Faction </label>
 
-        <select id="faction-filter" [formControl]="form.controls.faction">
-            <option value="">All factions</option>
+    <select id="faction-filter" [formControl]="form.controls.faction">
+      <option value="">All factions</option>
 
-            @for (option of factionOptions; track option.value) {
-            <option [value]="option.value">
-                {{ option.label }}
-            </option>
-            }
-        </select>
-    </div>
+      @for (option of factionOptions; track option.value) {
+        <option [value]="option.value">
+          {{ option.label }}
+        </option>
+      }
+    </select>
+  </div>
 
-    <div class="hero-filters__field">
-        <label for="tier-filter">
-            Tier
-        </label>
+  <div class="hero-filters__field">
+    <label for="tier-filter"> Tier </label>
 
-        <select id="tier-filter" [formControl]="form.controls.tier">
-            <option value="">All tiers</option>
+    <select id="tier-filter" [formControl]="form.controls.tier">
+      <option value="">All tiers</option>
 
-            @for (option of tierOptions; track option.value) {
-            <option [value]="option.value">
-                {{ option.label }}
-            </option>
-            }
-        </select>
-    </div>
+      @for (option of tierOptions; track option.value) {
+        <option [value]="option.value">
+          {{ option.label }}
+        </option>
+      }
+    </select>
+  </div>
 
-    <div class="hero-filters__field">
-        <label for="type-filter">
-            Type
-        </label>
+  <div class="hero-filters__field">
+    <label for="type-filter"> Type </label>
 
-        <select id="type-filter" [formControl]="form.controls.type">
-            <option value="">All types</option>
+    <select id="type-filter" [formControl]="form.controls.type">
+      <option value="">All types</option>
 
-            @for (option of typeOptions; track option.value) {
-            <option [value]="option.value">
-                {{ option.label }}
-            </option>
-            }
-        </select>
-    </div>
+      @for (option of typeOptions; track option.value) {
+        <option [value]="option.value">
+          {{ option.label }}
+        </option>
+      }
+    </select>
+  </div>
 
-    <div class="hero-filters__field">
-        <label for="sort-filter">
-            Sort by
-        </label>
+  <div class="hero-filters__field">
+    <label for="sort-filter"> Sort by </label>
 
-        <select id="sort-filter" [formControl]="form.controls.sort">
-            <option value="name-asc">
-                Name: A–Z
-            </option>
+    <select id="sort-filter" [formControl]="form.controls.sort">
+      <option value="name-asc">Name: A–Z</option>
 
-            <option value="name-desc">
-                Name: Z–A
-            </option>
+      <option value="name-desc">Name: Z–A</option>
 
-            <option value="tier-high">
-                Highest tier
-            </option>
+      <option value="tier-high">Highest tier</option>
 
-            <option value="tier-low">
-                Lowest tier
-            </option>
-        </select>
-    </div>
+      <option value="tier-low">Lowest tier</option>
+    </select>
+  </div>
 
-    <button type="button" class="button button--ghost hero-filters__clear" (click)="clearFilters()">
-        Clear filters
-    </button>
+  <button type="button" class="button button--ghost hero-filters__clear" (click)="clearFilters()">
+    Clear filters
+  </button>
 </section>

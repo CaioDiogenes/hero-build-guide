@@ -4,11 +4,10 @@ import { HeroFaction } from '../../../core/models/faction.model';
 
 @Component({
   selector: 'app-faction-badge',
-  standalone: true,
   templateUrl: './faction-badge.html',
   styleUrl: './faction-badge.scss',
 })
-export class FactionBadgeComponent {
+export class FactionBadge {
   readonly faction = input.required<HeroFaction>();
 
   readonly labelMap: Record<HeroFaction, string> = {

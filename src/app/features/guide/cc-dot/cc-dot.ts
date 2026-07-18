@@ -1,23 +1,20 @@
-import { AsyncPipe } from "@angular/common";
-import { Component, inject } from "@angular/core";
-import { ReactiveFormsModule, FormControl } from "@angular/forms";
-import { map, catchError, of, startWith, combineLatest } from "rxjs";
-import { ControlRestriction, CrowdControlEffect, DotEffect } from "../../../core/models/guide.model";
-import { GuideService } from "../../../core/services/guide.service";
-import { ChipComponent } from "../../../shared/components/chip/chip";
-import { PanelComponent } from "../../../shared/components/panel/panel";
-import { StatusMessageComponent } from "../../../shared/components/status-message/status-message";
+import { AsyncPipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { map, catchError, of, startWith, combineLatest } from 'rxjs';
+import {
+  ControlRestriction,
+  CrowdControlEffect,
+  DotEffect,
+} from '../../../core/models/guide.model';
+import { GuideService } from '../../../core/services/guide.service';
+import { Chip } from '../../../shared/components/chip/chip';
+import { Panel } from '../../../shared/components/panel/panel';
+import { StatusMessage } from '../../../shared/components/status-message/status-message';
 
 @Component({
   selector: 'app-cc-dot',
-  standalone: true,
-  imports: [
-    AsyncPipe,
-    ReactiveFormsModule,
-    ChipComponent,
-    PanelComponent,
-    StatusMessageComponent,
-  ],
+  imports: [AsyncPipe, ReactiveFormsModule, Chip, Panel, StatusMessage],
   templateUrl: './cc-dot.html',
   styleUrl: './cc-dot.scss',
 })
@@ -28,10 +25,9 @@ export class CcDot {
     nonNullable: true,
   });
 
-  readonly restrictionControl =
-    new FormControl<ControlRestriction | ''>('', {
-      nonNullable: true,
-    });
+  readonly restrictionControl = new FormControl<ControlRestriction | ''>('', {
+    nonNullable: true,
+  });
 
   readonly restrictionOptions: ControlRestriction[] = [
     'Basic',
@@ -40,60 +36,40 @@ export class CcDot {
     'Other',
   ];
 
-  private readonly guideResult$ = this.guideService
-    .getCrowdControlDotGuide()
-    .pipe(
-      map((guide) => ({
-        guide,
-        error: false,
-      })),
+  private readonly guideResult$ = this.guideService.getCrowdControlDotGuide().pipe(
+    map((guide) => ({
+      guide,
+      error: false,
+    })),
 
-      catchError(() =>
-        of({
-          guide: undefined,
-          error: true,
-        }),
-      ),
-    );
+    catchError(() =>
+      of({
+        guide: undefined,
+        error: true,
+      }),
+    ),
+  );
 
-  private readonly search$ =
-    this.searchControl.valueChanges.pipe(
-      startWith(this.searchControl.getRawValue()),
-    );
+  private readonly search$ = this.searchControl.valueChanges.pipe(
+    startWith(this.searchControl.getRawValue()),
+  );
 
-  private readonly restriction$ =
-    this.restrictionControl.valueChanges.pipe(
-      startWith(
-        this.restrictionControl.getRawValue(),
-      ),
-    );
+  private readonly restriction$ = this.restrictionControl.valueChanges.pipe(
+    startWith(this.restrictionControl.getRawValue()),
+  );
 
-  readonly viewModel$ = combineLatest([
-    this.guideResult$,
-    this.search$,
-    this.restriction$,
-  ]).pipe(
+  readonly viewModel$ = combineLatest([this.guideResult$, this.search$, this.restriction$]).pipe(
     map(([result, search, restriction]) => {
-      const normalizedSearch =
-        search.trim().toLowerCase();
+      const normalizedSearch = search.trim().toLowerCase();
 
       const crowdControl =
-        result.guide?.crowdControl.filter(
-          (effect) =>
-            this.matchesCrowdControl(
-              effect,
-              normalizedSearch,
-              restriction,
-            ),
+        result.guide?.crowdControl.filter((effect) =>
+          this.matchesCrowdControl(effect, normalizedSearch, restriction),
         ) ?? [];
 
       const damageOverTime =
-        result.guide?.damageOverTime.filter(
-          (effect) =>
-            this.matchesDot(
-              effect,
-              normalizedSearch,
-            ),
+        result.guide?.damageOverTime.filter((effect) =>
+          this.matchesDot(effect, normalizedSearch),
         ) ?? [];
 
       return {
@@ -115,9 +91,7 @@ export class CcDot {
     search: string,
     restriction: ControlRestriction | '',
   ): boolean {
-    const matchesRestriction =
-      !restriction ||
-      effect.restriction === restriction;
+    const matchesRestriction = !restriction || effect.restriction === restriction;
 
     if (!search) {
       return matchesRestriction;
@@ -132,26 +106,15 @@ export class CcDot {
       .join(' ')
       .toLowerCase();
 
-    return (
-      matchesRestriction &&
-      searchableContent.includes(search)
-    );
+    return matchesRestriction && searchableContent.includes(search);
   }
 
-  private matchesDot(
-    effect: DotEffect,
-    search: string,
-  ): boolean {
+  private matchesDot(effect: DotEffect, search: string): boolean {
     if (!search) {
       return true;
     }
 
-    const searchableContent = [
-      effect.name,
-      effect.source,
-      effect.timing,
-      ...(effect.notes ?? []),
-    ]
+    const searchableContent = [effect.name, effect.source, effect.timing, ...(effect.notes ?? [])]
       .join(' ')
       .toLowerCase();
 

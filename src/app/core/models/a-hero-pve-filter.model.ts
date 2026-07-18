@@ -1,4 +1,4 @@
-import { AHeroUtility } from "./guide.model";
+import { AHeroUtility } from './guide.model';
 
 export interface AHeroPveFilterState {
   search: string;

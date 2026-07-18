@@ -1,24 +1,17 @@
-import { AsyncPipe } from "@angular/common";
-import { Component, inject } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
-import { BehaviorSubject, map, catchError, of, combineLatest } from "rxjs";
-import { HeroFilterState, HeroSortOption } from "../../../core/models/hero-filter.model";
-import { Hero } from "../../../core/models/hero.model";
-import { HeroService } from "../../../core/services/hero.service";
-import { HeroCard } from "../hero-card/hero-card";
-import { HeroFilters } from "../hero-filters/hero-filters";
-import { StatusMessageComponent } from "../../../shared/components/status-message/status-message";
-
+import { AsyncPipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { BehaviorSubject, map, catchError, of, combineLatest } from 'rxjs';
+import { HeroFilterState, HeroSortOption } from '../../../core/models/hero-filter.model';
+import { Hero } from '../../../core/models/hero.model';
+import { HeroService } from '../../../core/services/hero.service';
+import { HeroCard } from '../hero-card/hero-card';
+import { HeroFilters } from '../hero-filters/hero-filters';
+import { StatusMessage } from '../../../shared/components/status-message/status-message';
 
 @Component({
   selector: 'app-hero-directory',
-  standalone: true,
-  imports: [
-    AsyncPipe,
-    HeroCard,
-    HeroFilters,
-    StatusMessageComponent,
-  ],
+  imports: [AsyncPipe, HeroCard, HeroFilters, StatusMessage],
   templateUrl: './hero-directory.html',
   styleUrl: './hero-directory.scss',
 })
@@ -27,42 +20,29 @@ export class HeroDirectory {
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
 
-  readonly initialFilters =
-    this.readFiltersFromQueryParams();
+  readonly initialFilters = this.readFiltersFromQueryParams();
 
-  private readonly filtersSubject =
-    new BehaviorSubject<HeroFilterState>(
-      this.initialFilters,
-    );
+  private readonly filtersSubject = new BehaviorSubject<HeroFilterState>(this.initialFilters);
 
-  readonly filters$ =
-    this.filtersSubject.asObservable();
+  readonly filters$ = this.filtersSubject.asObservable();
 
-  readonly heroesResult$ = this.heroService
-    .getHeroes()
-    .pipe(
-      map((heroes) => ({
-        heroes,
-        error: false,
-      })),
+  readonly heroesResult$ = this.heroService.getHeroes().pipe(
+    map((heroes) => ({
+      heroes,
+      error: false,
+    })),
 
-      catchError(() =>
-        of({
-          heroes: [] as Hero[],
-          error: true,
-        }),
-      ),
-    );
+    catchError(() =>
+      of({
+        heroes: [] as Hero[],
+        error: true,
+      }),
+    ),
+  );
 
-  readonly viewModel$ = combineLatest([
-    this.heroesResult$,
-    this.filters$,
-  ]).pipe(
+  readonly viewModel$ = combineLatest([this.heroesResult$, this.filters$]).pipe(
     map(([result, filters]) => {
-      const filteredHeroes = this.filterHeroes(
-        result.heroes,
-        filters,
-      );
+      const filteredHeroes = this.filterHeroes(result.heroes, filters);
 
       return {
         heroes: filteredHeroes,
@@ -86,50 +66,28 @@ export class HeroDirectory {
     this.updateQueryParams(defaultFilters);
   }
 
-  private filterHeroes(
-    heroes: Hero[],
-    filters: HeroFilterState,
-  ): Hero[] {
-    const normalizedSearch =
-      filters.search.trim().toLowerCase();
+  private filterHeroes(heroes: Hero[], filters: HeroFilterState): Hero[] {
+    const normalizedSearch = filters.search.trim().toLowerCase();
 
     const filtered = heroes.filter((hero) => {
       const matchesSearch =
         !normalizedSearch ||
-        hero.name
-          .toLowerCase()
-          .includes(normalizedSearch) ||
-        hero.title
-          ?.toLowerCase()
-          .includes(normalizedSearch);
+        hero.name.toLowerCase().includes(normalizedSearch) ||
+        hero.title?.toLowerCase().includes(normalizedSearch);
 
-      const matchesFaction =
-        !filters.faction ||
-        hero.faction === filters.faction;
+      const matchesFaction = !filters.faction || hero.faction === filters.faction;
 
-      const matchesTier =
-        !filters.tier ||
-        hero.tier === filters.tier;
+      const matchesTier = !filters.tier || hero.tier === filters.tier;
 
-      const matchesType =
-        !filters.type ||
-        hero.types.includes(filters.type);
+      const matchesType = !filters.type || hero.types.includes(filters.type);
 
-      return (
-        matchesSearch &&
-        matchesFaction &&
-        matchesTier &&
-        matchesType
-      );
+      return matchesSearch && matchesFaction && matchesTier && matchesType;
     });
 
     return this.sortHeroes(filtered, filters.sort);
   }
 
-  private sortHeroes(
-    heroes: Hero[],
-    sort: HeroSortOption,
-  ): Hero[] {
+  private sortHeroes(heroes: Hero[], sort: HeroSortOption): Hero[] {
     const tierOrder: Record<Hero['tier'], number> = {
       'S+': 4,
       S: 3,
@@ -144,16 +102,12 @@ export class HeroDirectory {
 
         case 'tier-high':
           return (
-            tierOrder[second.tier] -
-            tierOrder[first.tier] ||
-            first.name.localeCompare(second.name)
+            tierOrder[second.tier] - tierOrder[first.tier] || first.name.localeCompare(second.name)
           );
 
         case 'tier-low':
           return (
-            tierOrder[first.tier] -
-            tierOrder[second.tier] ||
-            first.name.localeCompare(second.name)
+            tierOrder[first.tier] - tierOrder[second.tier] || first.name.localeCompare(second.name)
           );
 
         case 'name-asc':
@@ -174,33 +128,22 @@ export class HeroDirectory {
   }
 
   private readFiltersFromQueryParams(): HeroFilterState {
-    const queryParams =
-      this.route.snapshot.queryParamMap;
+    const queryParams = this.route.snapshot.queryParamMap;
 
     return {
       search: queryParams.get('search') ?? '',
 
-      faction:
-        (queryParams.get('faction') as
-          HeroFilterState['faction']) ?? '',
+      faction: (queryParams.get('faction') as HeroFilterState['faction']) ?? '',
 
-      tier:
-        (queryParams.get('tier') as
-          HeroFilterState['tier']) ?? '',
+      tier: (queryParams.get('tier') as HeroFilterState['tier']) ?? '',
 
-      type:
-        (queryParams.get('type') as
-          HeroFilterState['type']) ?? '',
+      type: (queryParams.get('type') as HeroFilterState['type']) ?? '',
 
-      sort:
-        (queryParams.get('sort') as HeroSortOption) ??
-        'name-asc',
+      sort: (queryParams.get('sort') as HeroSortOption) ?? 'name-asc',
     };
   }
 
-  private updateQueryParams(
-    filters: HeroFilterState,
-  ): void {
+  private updateQueryParams(filters: HeroFilterState): void {
     void this.router.navigate([], {
       relativeTo: this.route,
 
@@ -210,10 +153,7 @@ export class HeroDirectory {
         tier: filters.tier || null,
         type: filters.type || null,
 
-        sort:
-          filters.sort !== 'name-asc'
-            ? filters.sort
-            : null,
+        sort: filters.sort !== 'name-asc' ? filters.sort : null,
       },
 
       queryParamsHandling: 'merge',

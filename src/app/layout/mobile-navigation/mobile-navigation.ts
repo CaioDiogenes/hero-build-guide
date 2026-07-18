@@ -7,15 +7,11 @@ import { FACTION_NAVIGATION } from '../../core/constants/factions';
 
 @Component({
   selector: 'app-mobile-navigation',
-  standalone: true,
-  imports: [
-    RouterLink,
-    RouterLinkActive,
-  ],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './mobile-navigation.html',
   styleUrl: './mobile-navigation.scss',
 })
-export class MobileNavigationComponent {
+export class MobileNavigation {
   readonly open = input(false);
   readonly closeMenu = output<void>();
 

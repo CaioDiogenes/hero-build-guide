@@ -5,14 +5,10 @@ import { FACTION_NAVIGATION } from '../../core/constants/factions';
 
 @Component({
   selector: 'app-sidebar',
-  standalone: true,
-  imports: [
-    RouterLink,
-    RouterLinkActive,
-  ],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
 })
-export class SidebarComponent {
+export class Sidebar {
   readonly factions = FACTION_NAVIGATION;
 }

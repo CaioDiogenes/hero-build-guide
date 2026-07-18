@@ -1,198 +1,179 @@
 <section class="cc-dot page-container">
-    @if (viewModel$ | async; as viewModel) {
+  @if (viewModel$ | async; as viewModel) {
     @if (viewModel.error) {
-    <app-status-message type="error" title="Unable to load the glossary"
-        message="The crowd-control and DOT data could not be loaded." />
+      <app-status-message
+        type="error"
+        title="Unable to load the glossary"
+        message="The crowd-control and DOT data could not be loaded."
+      />
     } @else if (viewModel.guide; as guide) {
-    <header class="cc-dot__header">
-        <p class="cc-dot__eyebrow">
-            Combat reference
-        </p>
+      <header class="cc-dot__header">
+        <p class="cc-dot__eyebrow">Combat reference</p>
 
         <h1>{{ guide.title }}</h1>
 
         <div class="cc-dot__introduction">
-            @for (
-            paragraph of guide.introduction;
-            track paragraph
-            ) {
+          @for (paragraph of guide.introduction; track paragraph) {
             <p>{{ paragraph }}</p>
+          }
+        </div>
+      </header>
+
+      <section class="cc-dot__filters" aria-label="Glossary filters">
+        <div>
+          <label for="cc-dot-search"> Search </label>
+
+          <input
+            id="cc-dot-search"
+            type="search"
+            placeholder="Search effects, heroes or restrictions"
+            [formControl]="searchControl"
+          />
+        </div>
+
+        <div>
+          <label for="cc-restriction"> CC restriction </label>
+
+          <select id="cc-restriction" [formControl]="restrictionControl">
+            <option value="">All restrictions</option>
+
+            @for (restriction of restrictionOptions; track restriction) {
+              <option [value]="restriction">
+                {{ restriction }}
+              </option>
             }
-        </div>
-    </header>
-
-    <section class="cc-dot__filters" aria-label="Glossary filters">
-        <div>
-            <label for="cc-dot-search">
-                Search
-            </label>
-
-            <input id="cc-dot-search" type="search" placeholder="Search effects, heroes or restrictions"
-                [formControl]="searchControl" />
-        </div>
-
-        <div>
-            <label for="cc-restriction">
-                CC restriction
-            </label>
-
-            <select id="cc-restriction" [formControl]="restrictionControl">
-                <option value="">
-                    All restrictions
-                </option>
-
-                @for (
-                restriction of restrictionOptions;
-                track restriction
-                ) {
-                <option [value]="restriction">
-                    {{ restriction }}
-                </option>
-                }
-            </select>
+          </select>
         </div>
 
         <button type="button" class="button button--ghost" (click)="clearFilters()">
-            Clear filters
+          Clear filters
         </button>
-    </section>
+      </section>
 
-    <section class="cc-dot__section">
+      <section class="cc-dot__section">
         <header class="cc-dot__section-header">
-            <div>
-                <p>Crowd control</p>
-                <h2>Control effects</h2>
-            </div>
+          <div>
+            <p>Crowd control</p>
+            <h2>Control effects</h2>
+          </div>
 
-            <span>
-                {{ viewModel.crowdControl.length }}
-                effects
-            </span>
+          <span>
+            {{ viewModel.crowdControl.length }}
+            effects
+          </span>
         </header>
 
         @if (viewModel.crowdControl.length) {
-        <div class="cc-dot__grid">
-            @for (
-            effect of viewModel.crowdControl;
-            track effect.id
-            ) {
-            <app-panel>
+          <div class="cc-dot__grid">
+            @for (effect of viewModel.crowdControl; track effect.id) {
+              <app-panel>
                 <article class="cc-dot__card">
-                    <header>
-                        <h3>{{ effect.name }}</h3>
+                  <header>
+                    <h3>{{ effect.name }}</h3>
 
-                        <app-chip>
-                            {{ effect.restriction }}
-                        </app-chip>
-                    </header>
+                    <app-chip>
+                      {{ effect.restriction }}
+                    </app-chip>
+                  </header>
 
-                    <p>{{ effect.description }}</p>
+                  <p>{{ effect.description }}</p>
 
-                    @if (effect.additionalEffects?.length) {
+                  @if (effect.additionalEffects?.length) {
                     <ul>
-                        @for (
-                        additionalEffect
-                        of effect.additionalEffects;
-                        track additionalEffect
-                        ) {
+                      @for (additionalEffect of effect.additionalEffects; track additionalEffect) {
                         <li>{{ additionalEffect }}</li>
-                        }
+                      }
                     </ul>
-                    }
+                  }
                 </article>
-            </app-panel>
+              </app-panel>
             }
-        </div>
+          </div>
         } @else {
-        <app-status-message type="empty" title="No control effects found"
-            message="Try changing or clearing the filters." />
+          <app-status-message
+            type="empty"
+            title="No control effects found"
+            message="Try changing or clearing the filters."
+          />
         }
-    </section>
+      </section>
 
-    <section class="cc-dot__section">
+      <section class="cc-dot__section">
         <header class="cc-dot__section-header">
-            <div>
-                <p>Damage over time</p>
-                <h2>DOT effects</h2>
-            </div>
+          <div>
+            <p>Damage over time</p>
+            <h2>DOT effects</h2>
+          </div>
 
-            <span>
-                {{ viewModel.damageOverTime.length }}
-                effects
-            </span>
+          <span>
+            {{ viewModel.damageOverTime.length }}
+            effects
+          </span>
         </header>
 
         @if (viewModel.damageOverTime.length) {
-        <div class="cc-dot__grid">
-            @for (
-            effect of viewModel.damageOverTime;
-            track effect.id
-            ) {
-            <app-panel>
+          <div class="cc-dot__grid">
+            @for (effect of viewModel.damageOverTime; track effect.id) {
+              <app-panel>
                 <article class="cc-dot__card">
-                    <header>
-                        <div>
-                            <h3>{{ effect.name }}</h3>
-                            <p>Source: {{ effect.source }}</p>
-                        </div>
+                  <header>
+                    <div>
+                      <h3>{{ effect.name }}</h3>
+                      <p>Source: {{ effect.source }}</p>
+                    </div>
 
-                        <span class="cc-dot__dot-status" [attr.data-counted]="
-                        effect.countedAsDot
-                      ">
-                            {{
-                            effect.countedAsDot
-                            ? 'Counts as DOT'
-                            : 'Not counted as DOT'
-                            }}
-                        </span>
-                    </header>
+                    <span class="cc-dot__dot-status" [attr.data-counted]="effect.countedAsDot">
+                      {{ effect.countedAsDot ? 'Counts as DOT' : 'Not counted as DOT' }}
+                    </span>
+                  </header>
 
-                    <p>{{ effect.timing }}</p>
+                  <p>{{ effect.timing }}</p>
 
-                    @if (effect.notes?.length) {
+                  @if (effect.notes?.length) {
                     <ul>
-                        @for (
-                        note of effect.notes;
-                        track note
-                        ) {
+                      @for (note of effect.notes; track note) {
                         <li>{{ note }}</li>
-                        }
+                      }
                     </ul>
-                    }
+                  }
                 </article>
-            </app-panel>
+              </app-panel>
             }
-        </div>
+          </div>
         } @else {
-        <app-status-message type="empty" title="No DOT effects found" message="Try changing or clearing the search." />
+          <app-status-message
+            type="empty"
+            title="No DOT effects found"
+            message="Try changing or clearing the search."
+          />
         }
-    </section>
+      </section>
 
-    <section class="cc-dot__interactions">
+      <section class="cc-dot__interactions">
         <header>
-            <p>Build interactions</p>
-            <h2>DOT amplifiers, immunity and removal</h2>
+          <p>Build interactions</p>
+          <h2>DOT amplifiers, immunity and removal</h2>
         </header>
 
         <div class="cc-dot__interaction-list">
-            @for (
-            interaction of guide.dotInteractions;
-            track interaction.source
-            ) {
+          @for (interaction of guide.dotInteractions; track interaction.source) {
             <article>
-                <span>{{ interaction.type }}</span>
+              <span>{{ interaction.type }}</span>
 
-                <div>
-                    <h3>{{ interaction.source }}</h3>
-                    <p>{{ interaction.description }}</p>
-                </div>
+              <div>
+                <h3>{{ interaction.source }}</h3>
+                <p>{{ interaction.description }}</p>
+              </div>
             </article>
-            }
+          }
         </div>
-    </section>
+      </section>
     }
-    } @else {
-    <app-status-message type="loading" title="Loading combat glossary"
-        message="Please wait while the reference is loaded." />
-    }
+  } @else {
+    <app-status-message
+      type="loading"
+      title="Loading combat glossary"
+      message="Please wait while the reference is loaded."
+    />
+  }
 </section>

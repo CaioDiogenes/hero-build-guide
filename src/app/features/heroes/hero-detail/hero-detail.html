@@ -1,184 +1,190 @@
 <section class="hero-detail page-container">
-    @if (viewModel$ | async; as viewModel) {
+  @if (viewModel$ | async; as viewModel) {
     @if (viewModel.error) {
-    <app-status-message type="error" title="Unable to load hero"
-        message="Something went wrong while loading the hero data.">
-        <a class="button button--primary" routerLink="/heroes">
-            Return to heroes
-        </a>
-    </app-status-message>
+      <app-status-message
+        type="error"
+        title="Unable to load hero"
+        message="Something went wrong while loading the hero data."
+      >
+        <a class="button button--primary" routerLink="/heroes"> Return to heroes </a>
+      </app-status-message>
     } @else if (viewModel.navigation; as navigation) {
-    @let hero = navigation.hero;
+      @let hero = navigation.hero;
 
-    <a class="hero-detail__back" routerLink="/heroes">
+      <a class="hero-detail__back" routerLink="/heroes">
         <span aria-hidden="true">←</span>
         Back to heroes
-    </a>
+      </a>
 
-    <header class="hero-detail__hero-header">
+      <header class="hero-detail__hero-header">
         <div class="hero-detail__identity">
-            <div class="hero-detail__avatar" aria-hidden="true">
+          <div class="hero-detail__media">
+            @if (!imageFailed()) {
+              <img
+                class="hero-detail__image"
+                [src]="heroImageService.getImageUrl(hero.slug)"
+                [alt]="hero.name"
+                width="80"
+                height="80"
+                loading="lazy"
+                decoding="async"
+                (error)="onImageError()"
+              />
+            } @else {
+              <div class="hero-detail__avatar" aria-hidden="true">
                 {{ hero.name.charAt(0) }}
+              </div>
+            }
+          </div>
+
+          <div>
+            <div class="hero-detail__badges">
+              <app-faction-badge [faction]="hero.faction" />
+
+              @for (type of hero.types; track type) {
+                <app-chip>{{ type }}</app-chip>
+              }
             </div>
 
-            <div>
-                <div class="hero-detail__badges">
-                    <app-faction-badge [faction]="hero.faction" />
+            <h1>{{ hero.name }}</h1>
 
-                    @for (type of hero.types; track type) {
-                    <app-chip>{{ type }}</app-chip>
-                    }
-                </div>
-
-                <h1>{{ hero.name }}</h1>
-
-                @if (hero.title) {
-                <p>{{ hero.title }}</p>
-                }
-            </div>
+            @if (hero.title) {
+              <p>{{ hero.title }}</p>
+            }
+          </div>
         </div>
 
         <app-tier-badge [tier]="hero.tier" />
-    </header>
+      </header>
 
-    <section class="hero-detail__overview">
+      <section class="hero-detail__overview">
         <article class="hero-detail__overview-item">
-            <span>Placement</span>
-            <strong>
-                {{ hero.placement || 'Not specified' }}
-            </strong>
+          <span>Placement</span>
+          <strong>
+            {{ hero.placement || 'Not specified' }}
+          </strong>
         </article>
 
         <article class="hero-detail__overview-item">
-            <span>Exclusive equipment</span>
-            <strong>
-                Level {{ hero.minimumExclusiveEquipment }}
-            </strong>
+          <span>Exclusive equipment</span>
+          <strong> Level {{ hero.minimumExclusiveEquipment }} </strong>
         </article>
 
         <article class="hero-detail__overview-item">
-            <span>Minimum relics</span>
+          <span>Minimum relics</span>
 
-            <strong>
-                @if (hero.minimumRelics !== undefined) {
-                {{ hero.minimumRelics }}
-                } @else {
-                Not specified
-                }
-            </strong>
+          <strong>
+            @if (hero.minimumRelics !== undefined) {
+              {{ hero.minimumRelics }}
+            } @else {
+              Not specified
+            }
+          </strong>
         </article>
 
         <article class="hero-detail__overview-item">
-            <span>PVP talent</span>
-            <strong>
-                {{ hero.generalTalentsPvp.join(' / ') }}
-            </strong>
+          <span>PVP talent</span>
+          <strong>
+            {{ hero.generalTalentsPvp.join(' / ') }}
+          </strong>
         </article>
-    </section>
+      </section>
 
-    <section class="hero-detail__content-grid">
+      <section class="hero-detail__content-grid">
         <div class="hero-detail__main-column">
-            <app-panel>
-                <div class="hero-detail__panel-content">
-                    <app-build-section title="Stat focus" [items]="hero.statFocus" />
+          <app-panel>
+            <div class="hero-detail__panel-content">
+              <app-build-section title="Stat focus" [items]="hero.statFocus" />
 
-                    <app-build-section title="Four-set stigmata" [items]="hero.stigmataFourSet" />
+              <app-build-section title="Four-set stigmata" [items]="hero.stigmataFourSet" />
 
-                    <app-build-section title="Two-set stigmata" [items]="hero.stigmataTwoSet" />
-                </div>
-            </app-panel>
+              <app-build-section title="Two-set stigmata" [items]="hero.stigmataTwoSet" />
+            </div>
+          </app-panel>
 
-            <app-panel>
-                <div class="hero-detail__panel-content">
-                    <app-build-section title="Artifacts" [items]="hero.artifacts" />
+          <app-panel>
+            <div class="hero-detail__panel-content">
+              <app-build-section title="Artifacts" [items]="hero.artifacts" />
 
-                    <app-build-section title="Collections" [items]="hero.collections"
-                        emptyMessage="No collection recommendation" />
-                </div>
-            </app-panel>
+              <app-build-section
+                title="Collections"
+                [items]="hero.collections"
+                emptyMessage="No collection recommendation"
+              />
+            </div>
+          </app-panel>
         </div>
 
         <aside class="hero-detail__side-column">
-            <app-panel>
-                <div class="hero-detail__panel-content">
-                    <app-build-section title="Gems" [items]="hero.gems" />
+          <app-panel>
+            <div class="hero-detail__panel-content">
+              <app-build-section title="Gems" [items]="hero.gems" />
 
-                    <app-build-section title="Gem talent" [items]="hero.gemTalents" />
+              <app-build-section title="Gem talent" [items]="hero.gemTalents" />
 
-                    <app-build-section title="General talent — PVP" [items]="hero.generalTalentsPvp" />
-                </div>
-            </app-panel>
+              <app-build-section title="General talent — PVP" [items]="hero.generalTalentsPvp" />
+            </div>
+          </app-panel>
         </aside>
-    </section>
+      </section>
 
-    @if (hero.notes?.length) {
-    <section class="hero-detail__notes">
-        <header>
+      @if (hero.notes?.length) {
+        <section class="hero-detail__notes">
+          <header>
             <span aria-hidden="true">!</span>
 
             <div>
-                <h2>Special notes</h2>
-                <p>
-                    Important information for this hero build.
-                </p>
+              <h2>Special notes</h2>
+              <p>Important information for this hero build.</p>
             </div>
-        </header>
+          </header>
 
-        <div class="hero-detail__notes-content">
+          <div class="hero-detail__notes-content">
             @for (note of hero.notes; track note) {
-            <p>{{ note }}</p>
+              <p>{{ note }}</p>
             }
-        </div>
-    </section>
-    }
+          </div>
+        </section>
+      }
 
-    <nav class="hero-detail__navigation" aria-label="Hero navigation">
+      <nav class="hero-detail__navigation" aria-label="Hero navigation">
         <div>
-            @if (navigation.previousHero; as previousHero) {
-            <a class="hero-detail__navigation-link" [routerLink]="[
-                '/heroes',
-                previousHero.slug
-              ]">
-                <span class="hero-detail__navigation-label">
-                    Previous hero
-                </span>
+          @if (navigation.previousHero; as previousHero) {
+            <a class="hero-detail__navigation-link" [routerLink]="['/heroes', previousHero.slug]">
+              <span class="hero-detail__navigation-label"> Previous hero </span>
 
-                <strong>
-                    ← {{ previousHero.name }}
-                </strong>
+              <strong> ← {{ previousHero.name }} </strong>
             </a>
-            }
+          }
         </div>
 
         <div>
-            @if (navigation.nextHero; as nextHero) {
-            <a class="
-                hero-detail__navigation-link
-                hero-detail__navigation-link--next
-              " [routerLink]="[
-                '/heroes',
-                nextHero.slug
-              ]">
-                <span class="hero-detail__navigation-label">
-                    Next hero
-                </span>
+          @if (navigation.nextHero; as nextHero) {
+            <a
+              class="hero-detail__navigation-link hero-detail__navigation-link--next"
+              [routerLink]="['/heroes', nextHero.slug]"
+            >
+              <span class="hero-detail__navigation-label"> Next hero </span>
 
-                <strong>
-                    {{ nextHero.name }} →
-                </strong>
+              <strong> {{ nextHero.name }} → </strong>
             </a>
-            }
+          }
         </div>
-    </nav>
+      </nav>
     } @else {
-    <app-status-message type="empty" title="Hero not found"
-        message="The requested hero does not exist in the current guide.">
-        <a class="button button--primary" routerLink="/heroes">
-            Browse heroes
-        </a>
-    </app-status-message>
+      <app-status-message
+        type="empty"
+        title="Hero not found"
+        message="The requested hero does not exist in the current guide."
+      >
+        <a class="button button--primary" routerLink="/heroes"> Browse heroes </a>
+      </app-status-message>
     }
-    } @else {
-    <app-status-message type="loading" title="Loading hero" message="Please wait while the hero build is loaded." />
-    }
+  } @else {
+    <app-status-message
+      type="loading"
+      title="Loading hero"
+      message="Please wait while the hero build is loaded."
+    />
+  }
 </section>

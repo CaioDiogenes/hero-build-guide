@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "validate:data": "node scripts/validate-heroes.mjs",
-    "list:hero-routes": "node scripts/list-hero-routes.mjs"
+    "list:hero-routes": "node scripts/list-hero-routes.mjs",
+    "format": "prettier --write \"src/**/*.{ts,html,scss}\" \"scripts/**/*.mjs\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,scss}\" \"scripts/**/*.mjs\""
   },
   "private": true,
   "packageManager": "npm@11.12.0",

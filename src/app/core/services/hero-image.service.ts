@@ -1,15 +1,13 @@
-import { Injectable, inject, DOCUMENT } from "@angular/core";
+import { Injectable, inject } from '@angular/core';
+import { AppPathService } from './app-path.service';
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class HeroImageService {
-    private readonly document = inject(DOCUMENT);
+  private readonly appPath = inject(AppPathService);
 
-    getImageUrl(slug: string): string {
-        return new URL(
-            `data/assets/heroes/${slug}.webp`,
-            this.document.baseURI,
-        ).toString();
-    }
+  getImageUrl(slug: string): string {
+    return this.appPath.getUrl(`data/assets/heroes/${slug}.webp`);
+  }
 }

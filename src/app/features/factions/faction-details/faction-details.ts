@@ -1,29 +1,22 @@
-import { AsyncPipe } from "@angular/common";
-import { Component, inject, DestroyRef } from "@angular/core";
-import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { Title } from "@angular/platform-browser";
-import { RouterLink, ActivatedRoute } from "@angular/router";
-import { map, switchMap, of, catchError, tap } from "rxjs";
-import { getFactionBySlug } from "../../../core/constants/factions";
-import { FactionTierSummary } from "../../../core/models/faction-tier-summary";
-import { Hero } from "../../../core/models/hero.model";
-import { HeroService } from "../../../core/services/hero.service";
-import { HeroCard } from "../../heroes/hero-card/hero-card";
-import { FactionBadgeComponent } from "../../../shared/components/faction-badge/faction-badge";
-import { StatusMessageComponent } from "../../../shared/components/status-message/status-message";
-import { TierBadgeComponent } from "../../../shared/components/tier-badge/tier-badge";
+import { AsyncPipe } from '@angular/common';
+import { Component, inject, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Title } from '@angular/platform-browser';
+import { RouterLink, ActivatedRoute } from '@angular/router';
+import { map, switchMap, of, catchError, tap } from 'rxjs';
+import { getFactionBySlug } from '../../../core/constants/factions';
+import { HERO_TIER_OPTIONS } from '../../../core/constants/hero-options';
+import { FactionTierSummary } from '../../../core/models/faction-tier-summary.model';
+import { Hero } from '../../../core/models/hero.model';
+import { HeroService } from '../../../core/services/hero.service';
+import { HeroCard } from '../../heroes/hero-card/hero-card';
+import { FactionBadge } from '../../../shared/components/faction-badge/faction-badge';
+import { StatusMessage } from '../../../shared/components/status-message/status-message';
+import { TierBadge } from '../../../shared/components/tier-badge/tier-badge';
 
 @Component({
   selector: 'app-faction-detail',
-  standalone: true,
-  imports: [
-    AsyncPipe,
-    RouterLink,
-    FactionBadgeComponent,
-    HeroCard,
-    StatusMessageComponent,
-    TierBadgeComponent,
-  ],
+  imports: [AsyncPipe, RouterLink, FactionBadge, HeroCard, StatusMessage, TierBadge],
   templateUrl: './faction-details.html',
   styleUrl: './faction-details.scss',
 })
@@ -48,30 +41,23 @@ export class FactionDetails {
         });
       }
 
-      return this.heroService
-        .getHeroesByFaction(faction.id)
-        .pipe(
-          map((heroes) => ({
-            faction,
-            heroes: [...heroes].sort(
-              (first, second) =>
-                first.name.localeCompare(second.name),
-            ),
-            tierSummary:
-              this.createTierSummary(heroes),
-            error: false,
-          })),
+      return this.heroService.getHeroesByFaction(faction.id).pipe(
+        map((heroes) => ({
+          faction,
+          heroes: [...heroes].sort((first, second) => first.name.localeCompare(second.name)),
+          tierSummary: this.createTierSummary(heroes),
+          error: false,
+        })),
 
-          catchError(() =>
-            of({
-              faction,
-              heroes: [] as Hero[],
-              tierSummary:
-                [] as FactionTierSummary[],
-              error: true,
-            }),
-          ),
-        );
+        catchError(() =>
+          of({
+            faction,
+            heroes: [] as Hero[],
+            tierSummary: [] as FactionTierSummary[],
+            error: true,
+          }),
+        ),
+      );
     }),
 
     tap((viewModel) => {
@@ -85,21 +71,10 @@ export class FactionDetails {
     takeUntilDestroyed(this.destroyRef),
   );
 
-  private createTierSummary(
-    heroes: Hero[],
-  ): FactionTierSummary[] {
-    const tiers: Hero['tier'][] = [
-      'S+',
-      'S',
-      'A',
-      'B',
-    ];
-
-    return tiers.map((tier) => ({
+  private createTierSummary(heroes: Hero[]): FactionTierSummary[] {
+    return HERO_TIER_OPTIONS.map(({ value: tier }) => ({
       tier,
-      count: heroes.filter(
-        (hero) => hero.tier === tier,
-      ).length,
+      count: heroes.filter((hero) => hero.tier === tier).length,
     }));
   }
 }

@@ -1,93 +1,87 @@
 <p>style-guide works!</p>
 <main class="style-guide container">
-    <header class="style-guide__header">
-        <p class="style-guide__eyebrow">
-            Design system
-        </p>
+  <header class="style-guide__header">
+    <p class="style-guide__eyebrow">Design system</p>
 
-        <h1>Hero Build Guide UI</h1>
+    <h1>Hero Build Guide UI</h1>
 
-        <p>
-            Temporary component preview for Phase 3.
-        </p>
-    </header>
+    <p>Temporary component preview for Phase 3.</p>
+  </header>
 
-    <app-panel>
-        <h2>Tier badges</h2>
+  <app-panel>
+    <h2>Tier badges</h2>
 
-        <div class="cluster">
-            <app-tier-badge tier="S+" />
-            <app-tier-badge tier="S" />
-            <app-tier-badge tier="A" />
-            <app-tier-badge tier="B" />
-        </div>
-    </app-panel>
+    <div class="cluster">
+      <app-tier-badge tier="S+" />
+      <app-tier-badge tier="S" />
+      <app-tier-badge tier="A" />
+      <app-tier-badge tier="B" />
+    </div>
+  </app-panel>
 
-    <app-panel>
-        <h2>Faction badges</h2>
+  <app-panel>
+    <h2>Faction badges</h2>
 
-        <div class="cluster">
-            <app-faction-badge faction="superman" />
-            <app-faction-badge faction="technology" />
-            <app-faction-badge faction="dark" />
-            <app-faction-badge faction="nature" />
-            <app-faction-badge faction="god" />
-            <app-faction-badge faction="universe" />
-        </div>
-    </app-panel>
+    <div class="cluster">
+      <app-faction-badge faction="superman" />
+      <app-faction-badge faction="technology" />
+      <app-faction-badge faction="dark" />
+      <app-faction-badge faction="nature" />
+      <app-faction-badge faction="god" />
+      <app-faction-badge faction="universe" />
+    </div>
+  </app-panel>
 
-    <app-panel>
-        <h2>Generic badges</h2>
+  <app-panel>
+    <h2>Generic badges</h2>
 
-        <div class="cluster">
-            <app-badge>Default</app-badge>
-            <app-badge variant="primary">Primary</app-badge>
-            <app-badge variant="success">Success</app-badge>
-            <app-badge variant="warning">Warning</app-badge>
-            <app-badge variant="error">Error</app-badge>
-        </div>
-    </app-panel>
+    <div class="cluster">
+      <app-badge>Default</app-badge>
+      <app-badge variant="primary">Primary</app-badge>
+      <app-badge variant="success">Success</app-badge>
+      <app-badge variant="warning">Warning</app-badge>
+      <app-badge variant="error">Error</app-badge>
+    </div>
+  </app-panel>
 
-    <app-panel>
-        <h2>Chips</h2>
+  <app-panel>
+    <h2>Chips</h2>
 
-        <div class="cluster">
-            <app-chip>HP</app-chip>
-            <app-chip>Damage Immune</app-chip>
-            <app-chip>Crit Res</app-chip>
-            <app-chip>Armor PEN</app-chip>
-        </div>
-    </app-panel>
+    <div class="cluster">
+      <app-chip>HP</app-chip>
+      <app-chip>Damage Immune</app-chip>
+      <app-chip>Crit Res</app-chip>
+      <app-chip>Armor PEN</app-chip>
+    </div>
+  </app-panel>
 
-    <app-panel>
-        <h2>Buttons</h2>
+  <app-panel>
+    <h2>Buttons</h2>
 
-        <div class="cluster">
-            <button class="button">
-                Default
-            </button>
+    <div class="cluster">
+      <button class="button">Default</button>
 
-            <button class="button button--primary">
-                Primary
-            </button>
+      <button class="button button--primary">Primary</button>
 
-            <button class="button button--ghost">
-                Ghost
-            </button>
+      <button class="button button--ghost">Ghost</button>
 
-            <button class="button" disabled>
-                Disabled
-            </button>
-        </div>
-    </app-panel>
+      <button class="button" disabled>Disabled</button>
+    </div>
+  </app-panel>
 
-    <section class="style-guide__statuses">
-        <app-status-message type="loading" title="Loading heroes"
-            message="Please wait while the hero data is loaded." />
+  <section class="style-guide__statuses">
+    <app-status-message
+      type="loading"
+      title="Loading heroes"
+      message="Please wait while the hero data is loaded."
+    />
 
-        <app-status-message type="empty" title="No heroes found" message="Try changing your filters." />
+    <app-status-message type="empty" title="No heroes found" message="Try changing your filters." />
 
-        <app-status-message type="error" title="Unable to load heroes"
-            message="Something went wrong while loading the data." />
-    </section>
+    <app-status-message
+      type="error"
+      title="Unable to load heroes"
+      message="Something went wrong while loading the data."
+    />
+  </section>
 </main>

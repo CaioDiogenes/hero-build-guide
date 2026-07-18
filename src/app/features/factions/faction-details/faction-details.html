@@ -1,100 +1,97 @@
 <section class="faction-detail page-container">
-    @if (viewModel$ | async; as viewModel) {
+  @if (viewModel$ | async; as viewModel) {
     @if (viewModel.error) {
-    <app-status-message type="error" title="Unable to load faction"
-        message="The faction hero data could not be loaded.">
-        <a class="button button--primary" routerLink="/heroes">
-            Browse all heroes
-        </a>
-    </app-status-message>
+      <app-status-message
+        type="error"
+        title="Unable to load faction"
+        message="The faction hero data could not be loaded."
+      >
+        <a class="button button--primary" routerLink="/heroes"> Browse all heroes </a>
+      </app-status-message>
     } @else if (viewModel.faction; as faction) {
-    <header class="faction-detail__header" [attr.data-faction]="faction.id">
+      <header class="faction-detail__header" [attr.data-faction]="faction.id">
         <div class="faction-detail__header-content">
-            <app-faction-badge [faction]="faction.id" />
+          <app-faction-badge [faction]="faction.id" />
 
-            <h1>{{ faction.name }}</h1>
+          <h1>{{ faction.name }}</h1>
 
-            <p>{{ faction.description }}</p>
+          <p>{{ faction.description }}</p>
         </div>
 
         <div class="faction-detail__hero-count">
-            <strong>{{ viewModel.heroes.length }}</strong>
+          <strong>{{ viewModel.heroes.length }}</strong>
 
-            <span>
-                {{
-                viewModel.heroes.length === 1
-                ? 'hero'
-                : 'heroes'
-                }}
-            </span>
+          <span>
+            {{ viewModel.heroes.length === 1 ? 'hero' : 'heroes' }}
+          </span>
         </div>
-    </header>
+      </header>
 
-    <section class="faction-detail__tier-summary" aria-label="Tier distribution">
-        @for (
-        summary of viewModel.tierSummary;
-        track summary.tier
-        ) {
-        <article class="faction-detail__tier-item">
+      <section class="faction-detail__tier-summary" aria-label="Tier distribution">
+        @for (summary of viewModel.tierSummary; track summary.tier) {
+          <article class="faction-detail__tier-item">
             <app-tier-badge [tier]="summary.tier" />
 
             <div>
-                <strong>{{ summary.count }}</strong>
-                <span>heroes</span>
+              <strong>{{ summary.count }}</strong>
+              <span>heroes</span>
             </div>
-        </article>
+          </article>
         }
-    </section>
+      </section>
 
-    <section class="faction-detail__results-header">
+      <section class="faction-detail__results-header">
         <div>
-            <h2>Faction heroes</h2>
+          <h2>Faction heroes</h2>
 
-            <p>
-                Recommended builds currently available
-                for this faction.
-            </p>
+          <p>Recommended builds currently available for this faction.</p>
         </div>
 
-        <a class="button button--ghost" routerLink="/heroes" [queryParams]="{
-            faction: faction.id
-          }">
-            View in directory
+        <a
+          class="button button--ghost"
+          routerLink="/heroes"
+          [queryParams]="{
+            faction: faction.id,
+          }"
+        >
+          View in directory
         </a>
-    </section>
+      </section>
 
-    @if (viewModel.heroes.length > 0) {
-    <section class="faction-detail__grid" [attr.aria-label]="
-            faction.shortName + ' faction heroes'
-          ">
-        @for (
-        hero of viewModel.heroes;
-        track hero.id
-        ) {
-        <app-hero-card [hero]="hero" />
-        }
-    </section>
+      @if (viewModel.heroes.length > 0) {
+        <section
+          class="faction-detail__grid"
+          [attr.aria-label]="faction.shortName + ' faction heroes'"
+        >
+          @for (hero of viewModel.heroes; track hero.id) {
+            <app-hero-card [hero]="hero" />
+          }
+        </section>
+      } @else {
+        <app-status-message
+          type="empty"
+          title="No heroes available yet"
+          [message]="
+            'The ' + faction.shortName + ' faction has not been added to the sample dataset yet.'
+          "
+        >
+          <a class="button button--primary" routerLink="/heroes"> Browse available heroes </a>
+        </app-status-message>
+      }
     } @else {
-    <app-status-message type="empty" title="No heroes available yet" [message]="
-            'The ' +
-            faction.shortName +
-            ' faction has not been added to the sample dataset yet.'
-          ">
-        <a class="button button--primary" routerLink="/heroes">
-            Browse available heroes
-        </a>
-    </app-status-message>
+      <app-status-message
+        type="empty"
+        title="Faction not found"
+        message="The requested faction does not exist in the current guide."
+      >
+        <a class="button button--primary" routerLink="/heroes"> Browse all heroes </a>
+      </app-status-message>
     }
-    } @else {
-    <app-status-message type="empty" title="Faction not found"
-        message="The requested faction does not exist in the current guide.">
-        <a class="button button--primary" routerLink="/heroes">
-            Browse all heroes
-        </a>
-    </app-status-message>
-    }
-    } @else {
-    <app-status-message type="loading" title="Loading faction"
-        message="Please wait while the faction data is loaded." />
-    }
+  } @else {
+    <app-status-message
+      type="loading"
+      title="Loading faction"
+      message="Please wait while the faction data is loaded."
+    />
+  }
 </section>

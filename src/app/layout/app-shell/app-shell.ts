@@ -1,26 +1,19 @@
 import { Component, DestroyRef, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { FooterComponent } from '../footer/footer';
-import { HeaderComponent } from '../header/header';
-import { MobileNavigationComponent } from '../mobile-navigation/mobile-navigation';
-import { SidebarComponent } from '../sidebar/sidebar';
+import { Footer } from '../footer/footer';
+import { Header } from '../header/header';
+import { MobileNavigation } from '../mobile-navigation/mobile-navigation';
+import { Sidebar } from '../sidebar/sidebar';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-shell',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    FooterComponent,
-    HeaderComponent,
-    MobileNavigationComponent,
-    SidebarComponent,
-  ],
+  imports: [RouterOutlet, Footer, Header, MobileNavigation, Sidebar],
   templateUrl: './app-shell.html',
   styleUrl: './app-shell.scss',
 })
-export class AppShellComponent {
+export class AppShell {
   private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
 
@@ -29,10 +22,7 @@ export class AppShellComponent {
   constructor() {
     this.router.events
       .pipe(
-        filter(
-          (event): event is NavigationEnd =>
-            event instanceof NavigationEnd,
-        ),
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
         takeUntilDestroyed(this.destroyRef),
       )
       .subscribe(() => {
@@ -47,5 +37,4 @@ export class AppShellComponent {
   closeMobileMenu(): void {
     this.mobileMenuOpen = false;
   }
-
 }

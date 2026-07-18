@@ -1,10 +1,9 @@
 import { Component, input } from '@angular/core';
-import { ChipComponent } from '../chip/chip';
+import { Chip } from '../chip/chip';
 
 @Component({
   selector: 'app-build-section',
-  standalone: true,
-  imports: [ChipComponent],
+  imports: [Chip],
   templateUrl: './build-section.html',
   styleUrl: './build-section.scss',
 })

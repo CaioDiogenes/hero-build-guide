@@ -1,39 +1,19 @@
+@use 'mixins' as *;
+
 .faction-badge {
-    display: inline-flex;
-    align-items: center;
+  display: inline-flex;
+  align-items: center;
 
-    padding: 0.35rem 0.7rem;
+  padding: 0.35rem 0.7rem;
 
-    color: var(--color-text);
-    background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.06);
 
-    border: 1px solid currentColor;
-    border-radius: var(--radius-pill);
+  border: 1px solid currentColor;
+  border-radius: var(--radius-pill);
 
-    font-size: 0.75rem;
-    font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 700;
 
-    &[data-faction='superman'] {
-        color: var(--faction-superman);
-    }
-
-    &[data-faction='technology'] {
-        color: var(--faction-technology);
-    }
-
-    &[data-faction='dark'] {
-        color: var(--faction-dark);
-    }
-
-    &[data-faction='nature'] {
-        color: var(--faction-nature);
-    }
-
-    &[data-faction='god'] {
-        color: var(--faction-god);
-    }
-
-    &[data-faction='universe'] {
-        color: var(--faction-universe);
-    }
+  @include faction-variants(color);
 }

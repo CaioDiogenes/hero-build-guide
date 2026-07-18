@@ -1,82 +1,134 @@
 @if (open()) {
-<div class="mobile-navigation" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-    <button type="button" class="mobile-navigation__backdrop" aria-label="Close navigation" (click)="close()"></button>
+  <div class="mobile-navigation" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button
+      type="button"
+      class="mobile-navigation__backdrop"
+      aria-label="Close navigation"
+      (click)="close()"
+    ></button>
 
     <aside class="mobile-navigation__panel">
-        <header class="mobile-navigation__header">
-            <strong>Navigation</strong>
+      <header class="mobile-navigation__header">
+        <strong>Navigation</strong>
 
-            <button type="button" class="mobile-navigation__close" aria-label="Close navigation" (click)="close()">
-                ×
-            </button>
-        </header>
+        <button
+          type="button"
+          class="mobile-navigation__close"
+          aria-label="Close navigation"
+          (click)="close()"
+        >
+          ×
+        </button>
+      </header>
 
-        <nav class="mobile-navigation__links">
-            <a routerLink="/" routerLinkActive="mobile-navigation__link--active"
-                [routerLinkActiveOptions]="{ exact: true }" class="mobile-navigation__link" (click)="close()">
-                Home
-            </a>
+      <nav class="mobile-navigation__links">
+        <a
+          routerLink="/"
+          routerLinkActive="mobile-navigation__link--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="mobile-navigation__link"
+          (click)="close()"
+        >
+          Home
+        </a>
 
-            <a routerLink="/heroes" routerLinkActive="mobile-navigation__link--active" class="mobile-navigation__link"
-                (click)="close()">
-                All heroes
-            </a>
+        <a
+          routerLink="/heroes"
+          routerLinkActive="mobile-navigation__link--active"
+          class="mobile-navigation__link"
+          (click)="close()"
+        >
+          All heroes
+        </a>
 
-            <a routerLink="/about" routerLinkActive="mobile-navigation__link--active" class="mobile-navigation__link"
-                (click)="close()">
-                About
-            </a>
+        <a
+          routerLink="/about"
+          routerLinkActive="mobile-navigation__link--active"
+          class="mobile-navigation__link"
+          (click)="close()"
+        >
+          About
+        </a>
 
-            <p class="mobile-navigation__section-title">
-                Factions
-            </p>
+        <p class="mobile-navigation__section-title">Factions</p>
 
-            <p class="mobile-navigation__section-title">
-                Guide
-            </p>
+        <p class="mobile-navigation__section-title">Guide</p>
 
-            <a routerLink="/guide" routerLinkActive="mobile-navigation__link--active"
-                [routerLinkActiveOptions]="{ exact: true }" class="mobile-navigation__link" (click)="close()">
-                Guide library
-            </a>
+        <a
+          routerLink="/guide"
+          routerLinkActive="mobile-navigation__link--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="mobile-navigation__link"
+          (click)="close()"
+        >
+          Guide library
+        </a>
 
-            <a routerLink="/about" routerLinkActive="mobile-navigation__link--active" class="mobile-navigation__link"
-                (click)="close()">
-                Introduction
-            </a>
+        <a
+          routerLink="/about"
+          routerLinkActive="mobile-navigation__link--active"
+          class="mobile-navigation__link"
+          (click)="close()"
+        >
+          Introduction
+        </a>
 
-            <a routerLink="/guide/team-building" routerLinkActive="mobile-navigation__link--active"
-                class="mobile-navigation__link" (click)="close()">
-                Team building
-            </a>
+        <a
+          routerLink="/guide/team-building"
+          routerLinkActive="mobile-navigation__link--active"
+          class="mobile-navigation__link"
+          (click)="close()"
+        >
+          Team building
+        </a>
 
-            <a routerLink="/guide/a-hero-pve" routerLinkActive="mobile-navigation__link--active"
-                class="mobile-navigation__link" (click)="close()">
-                A-Hero PVE
-            </a>
+        <a
+          routerLink="/guide/a-hero-pve"
+          routerLinkActive="mobile-navigation__link--active"
+          class="mobile-navigation__link"
+          (click)="close()"
+        >
+          A-Hero PVE
+        </a>
 
-            <a routerLink="/guide/cc-dot" routerLinkActive="mobile-navigation__link--active"
-                class="mobile-navigation__link" (click)="close()">
-                CC and DOT
-            </a>
+        <a
+          routerLink="/guide/cc-dot"
+          routerLinkActive="mobile-navigation__link--active"
+          class="mobile-navigation__link"
+          (click)="close()"
+        >
+          CC and DOT
+        </a>
 
-            <a routerLink="/guide/acronyms-faq" routerLinkActive="mobile-navigation__link--active"
-                class="mobile-navigation__link" (click)="close()">
-                Acronyms and FAQ
-            </a>
+        <a
+          routerLink="/guide/acronyms-faq"
+          routerLinkActive="mobile-navigation__link--active"
+          class="mobile-navigation__link"
+          (click)="close()"
+        >
+          Acronyms and FAQ
+        </a>
 
-            <a routerLink="/guide/credits" routerLinkActive="mobile-navigation__link--active"
-                class="mobile-navigation__link" (click)="close()">
-                Credits
-            </a>
+        <a
+          routerLink="/guide/credits"
+          routerLinkActive="mobile-navigation__link--active"
+          class="mobile-navigation__link"
+          (click)="close()"
+        >
+          Credits
+        </a>
 
-            @for (faction of factions; track faction.id) {
-            <a [routerLink]="faction.route" routerLinkActive="mobile-navigation__link--active"
-                class="mobile-navigation__link" (click)="close()">
-                {{ faction.label }}
-            </a>
-            }
-        </nav>
+        @for (faction of factions; track faction.id) {
+          <a
+            [routerLink]="faction.route"
+            routerLinkActive="mobile-navigation__link--active"
+            class="mobile-navigation__link"
+            (click)="close()"
+          >
+            {{ faction.label }}
+          </a>
+        }
+      </nav>
     </aside>
-</div>
+  </div>
 }

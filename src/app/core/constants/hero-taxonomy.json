@@ -1,0 +1,5 @@
+{
+  "factions": ["superman", "technology", "dark", "nature", "god", "universe"],
+  "tiers": ["S+", "S", "A", "B"],
+  "types": ["Tank", "DPS", "Support", "Buffer", "Debuffer", "CC", "Healer", "True DMG", "Holy DMG"]
+}
