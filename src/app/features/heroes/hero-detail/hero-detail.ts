@@ -1,10 +1,11 @@
 import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, DestroyRef } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ChangeDetectionStrategy, Component, inject, signal, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { Title } from '@angular/platform-browser';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { map, switchMap, catchError, of, tap } from 'rxjs';
 import { ArtifactImageService } from '../../../core/services/artifact-image.service';
+import { AuthService } from '../../../core/services/auth.service';
 import { CollectionImageService } from '../../../core/services/collection-image.service';
 import { GemImageService } from '../../../core/services/gem-image.service';
 import { HeroImageService } from '../../../core/services/hero-image.service';
@@ -17,6 +18,7 @@ import { FactionBadge } from '../../../shared/components/faction-badge/faction-b
 import { Panel } from '../../../shared/components/panel/panel';
 import { StatusMessage } from '../../../shared/components/status-message/status-message';
 import { TierBadge } from '../../../shared/components/tier-badge/tier-badge';
+import { HeroEdit } from '../hero-edit/hero-edit';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -27,6 +29,7 @@ import { TierBadge } from '../../../shared/components/tier-badge/tier-badge';
     BuildSection,
     Chip,
     FactionBadge,
+    HeroEdit,
     Panel,
     StatusMessage,
     TierBadge,
@@ -39,7 +42,10 @@ export class HeroDetail {
   private readonly heroService = inject(HeroService);
   private readonly title = inject(Title);
   private readonly destroyRef = inject(DestroyRef);
+  private readonly authService = inject(AuthService);
 
+  readonly isEditor = toSignal(this.authService.isEditor$, { initialValue: false });
+  readonly showEditModal = signal(false);
   readonly heroImageService = inject(HeroImageService);
   readonly fallback = createImageFallback();
 

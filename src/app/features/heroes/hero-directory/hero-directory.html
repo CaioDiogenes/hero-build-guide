@@ -7,7 +7,17 @@
 
       <p>Browse recommended builds, equipment, stigmata, artifacts, talents and gems.</p>
     </div>
+
+    @if (isEditor()) {
+      <button type="button" class="button button--primary" (click)="showAddModal.set(true)">
+        Add hero
+      </button>
+    }
   </header>
+
+  @if (showAddModal()) {
+    <app-hero-add (created)="showAddModal.set(false)" (cancelled)="showAddModal.set(false)" />
+  }
 
   @if (viewModel$ | async; as viewModel) {
     <app-hero-filters [filters]="viewModel.filters" (filtersChanged)="onFiltersChanged($event)" />

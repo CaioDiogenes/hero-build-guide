@@ -60,8 +60,24 @@
           </div>
         </div>
 
-        <app-tier-badge [tier]="hero.tier" />
+        <div class="hero-detail__actions">
+          <app-tier-badge [tier]="hero.tier" />
+
+          @if (isEditor()) {
+            <button type="button" class="button button--ghost" (click)="showEditModal.set(true)">
+              Edit hero
+            </button>
+          }
+        </div>
       </header>
+
+      @if (showEditModal()) {
+        <app-hero-edit
+          [hero]="hero"
+          (saved)="showEditModal.set(false)"
+          (cancelled)="showEditModal.set(false)"
+        />
+      }
 
       <section class="hero-detail__overview">
         <article class="hero-detail__overview-item">

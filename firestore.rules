@@ -1,0 +1,52 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Allowlist: only users with a doc at /editors/{uid} can write hero data.
+    // Managed via scripts/manage-editors.mjs (firebase-admin), never client-writable.
+    function isEditor() {
+      return isSignedIn() && exists(/databases/$(database)/documents/editors/$(request.auth.uid));
+    }
+
+    // Hero data: publicly readable (the site itself needs no login to browse),
+    // writable only by allowlisted editors. There is no review queue — see
+    // /heroEdits below for the audit trail that offsets that risk.
+    match /heroes/{heroId} {
+      allow read: if true;
+
+      allow create, update: if isEditor()
+        && request.resource.data.slug == heroId
+        && request.resource.data.id is string && request.resource.data.id.size() > 0
+        && request.resource.data.slug is string && request.resource.data.slug.size() > 0
+        && request.resource.data.name is string && request.resource.data.name.size() > 0
+        && request.resource.data.faction in
+             ['superman', 'technology', 'dark', 'nature', 'god', 'universe']
+        && request.resource.data.tier in ['S+', 'S', 'A', 'B']
+        && request.resource.data.types is list
+        && request.resource.data.minimumExclusiveEquipment is number
+        && request.resource.data.minimumExclusiveEquipment >= 0;
+
+      allow delete: if false;
+    }
+
+    // Append-only audit log written alongside every hero create/update
+    // (see HeroService.logEdit). No UI reads this yet; it exists so a bad
+    // edit can be traced and manually rolled back.
+    match /heroEdits/{editId} {
+      allow create: if isEditor();
+      allow read, update, delete: if false;
+    }
+
+    // Editor allowlist. A signed-in user may only read their OWN slot (to check
+    // their own status in the app) — never the full list. Only managed via
+    // scripts/manage-editors.mjs using the Admin SDK, which bypasses these rules.
+    match /editors/{uid} {
+      allow read: if isSignedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+  }
+}

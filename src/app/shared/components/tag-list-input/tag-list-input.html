@@ -1,0 +1,57 @@
+<div class="tag-list-input">
+  <ul class="tag-list-input__tags">
+    @for (value of values(); track value; let index = $index) {
+      <li class="tag-list-input__tag">
+        <span>{{ value }}</span>
+
+        <button
+          type="button"
+          class="tag-list-input__remove"
+          [disabled]="disabled()"
+          (click)="remove(index)"
+          [attr.aria-label]="'Remove ' + value"
+        >
+          &times;
+        </button>
+      </li>
+    }
+  </ul>
+
+  <div class="tag-list-input__editor">
+    <div class="tag-list-input__input-wrap">
+      <input
+        type="text"
+        class="tag-list-input__input"
+        [ngModel]="draft()"
+        (ngModelChange)="draft.set($event)"
+        [disabled]="disabled()"
+        (keydown.enter)="$event.preventDefault(); addFromDraft()"
+        (focus)="focused.set(true)"
+        (blur)="focused.set(false)"
+        placeholder="Add and press Enter"
+        autocomplete="off"
+      />
+
+      @if (showSuggestions()) {
+        <ul class="tag-list-input__suggestions">
+          @for (option of filteredOptions(); track option) {
+            <li>
+              <button type="button" (mousedown)="$event.preventDefault(); selectOption(option)">
+                {{ option }}
+              </button>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+
+    <button
+      type="button"
+      class="tag-list-input__add"
+      [disabled]="disabled() || !draft().trim()"
+      (click)="addFromDraft()"
+    >
+      Add
+    </button>
+  </div>
+</div>

@@ -83,6 +83,23 @@
     }
   }
 
+  &__auth {
+    display: none;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  &__auth-user {
+    max-width: 10rem;
+    overflow: hidden;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.85rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
   &__menu-button {
     display: grid;
     gap: 0.28rem;
@@ -112,6 +129,10 @@
 @include respond-min(900px) {
   .header {
     &__desktop-navigation {
+      display: flex;
+    }
+
+    &__auth {
       display: flex;
     }
 

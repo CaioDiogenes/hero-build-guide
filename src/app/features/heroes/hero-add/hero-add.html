@@ -1,0 +1,14 @@
+<app-modal label="Add hero" (closed)="cancelled.emit()">
+  <h2>Add hero</h2>
+
+  @if (errorMessage(); as message) {
+    <p class="hero-add__error">{{ message }}</p>
+  }
+
+  <app-hero-form
+    submitLabel="Add hero"
+    [saving]="saving()"
+    (submitHero)="onSave($event)"
+    (cancelled)="cancelled.emit()"
+  />
+</app-modal>

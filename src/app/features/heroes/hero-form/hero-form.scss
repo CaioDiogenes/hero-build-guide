@@ -1,0 +1,145 @@
+@use 'mixins' as *;
+
+.hero-form {
+  display: grid;
+  gap: var(--space-5);
+
+  label {
+    display: block;
+
+    margin-bottom: var(--space-2);
+
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+
+  input,
+  select {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.65rem 0.8rem;
+
+    color: var(--color-text);
+    background: var(--color-background-soft);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    outline: none;
+
+    transition:
+      border-color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      background var(--transition-fast);
+
+    &:hover {
+      border-color: var(--color-border-strong);
+    }
+
+    &:focus {
+      border-color: var(--color-primary);
+
+      box-shadow: 0 0 0 3px var(--color-primary-soft);
+    }
+  }
+
+  select {
+    cursor: pointer;
+  }
+
+  option {
+    color: var(--color-text);
+    background: var(--color-background-soft);
+  }
+
+  &__grid {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  &__field {
+    display: grid;
+  }
+
+  &__checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  &__checkbox {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 0;
+    padding: 0.5rem 0.9rem;
+
+    color: var(--color-text-muted);
+    background: rgba(255, 255, 255, 0.03);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+      color var(--transition-fast),
+      background var(--transition-fast),
+      border-color var(--transition-fast);
+
+    &:hover {
+      border-color: var(--color-border-strong);
+    }
+
+    &--active {
+      color: var(--color-text);
+      background: var(--color-primary-soft);
+      border-color: var(--color-primary);
+    }
+
+    &:focus-within {
+      border-color: var(--color-primary);
+
+      box-shadow: 0 0 0 3px var(--color-primary-soft);
+    }
+  }
+
+  &__checkbox-input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    border: 0;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  &__error {
+    margin: var(--space-2) 0 0;
+
+    color: var(--color-error);
+    font-size: 0.8rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-3);
+  }
+}
+
+@include respond-min(700px) {
+  .hero-form__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

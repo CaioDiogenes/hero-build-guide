@@ -1,10 +1,13 @@
 import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BehaviorSubject, map, catchError, of, combineLatest } from 'rxjs';
 import { HeroFilterState, HeroSortOption } from '../../../core/models/hero-filter.model';
 import { Hero } from '../../../core/models/hero.model';
+import { AuthService } from '../../../core/services/auth.service';
 import { HeroService } from '../../../core/services/hero.service';
+import { HeroAdd } from '../hero-add/hero-add';
 import { HeroCard } from '../hero-card/hero-card';
 import { HeroFilters } from '../hero-filters/hero-filters';
 import { StatusMessage } from '../../../shared/components/status-message/status-message';
@@ -12,15 +15,18 @@ import { StatusMessage } from '../../../shared/components/status-message/status-
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-hero-directory',
-  imports: [AsyncPipe, HeroCard, HeroFilters, StatusMessage],
+  imports: [AsyncPipe, HeroAdd, HeroCard, HeroFilters, StatusMessage],
   templateUrl: './hero-directory.html',
   styleUrl: './hero-directory.scss',
 })
 export class HeroDirectory {
   private readonly heroService = inject(HeroService);
+  private readonly authService = inject(AuthService);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
 
+  readonly isEditor = toSignal(this.authService.isEditor$, { initialValue: false });
+  readonly showAddModal = signal(false);
   readonly initialFilters = this.readFiltersFromQueryParams();
 
   private readonly filtersSubject = new BehaviorSubject<HeroFilterState>(this.initialFilters);

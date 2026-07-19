@@ -1,0 +1,136 @@
+<form class="hero-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="hero-form__grid">
+    <div class="hero-form__field">
+      <label for="hero-name">Name</label>
+      <input id="hero-name" type="text" formControlName="name" autocomplete="off" />
+    </div>
+
+    <div class="hero-form__field">
+      <label for="hero-title">Title</label>
+      <input id="hero-title" type="text" formControlName="title" autocomplete="off" />
+    </div>
+
+    <div class="hero-form__field">
+      <label for="hero-faction">Faction</label>
+
+      <select id="hero-faction" formControlName="faction">
+        <option value="" disabled>Select a faction</option>
+
+        @for (option of factionOptions; track option.value) {
+          <option [value]="option.value">{{ option.label }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="hero-form__field">
+      <label for="hero-tier">Tier</label>
+
+      <select id="hero-tier" formControlName="tier">
+        <option value="" disabled>Select a tier</option>
+
+        @for (option of tierOptions; track option.value) {
+          <option [value]="option.value">{{ option.label }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="hero-form__field">
+      <label for="hero-min-equipment">Minimum exclusive equipment</label>
+
+      <input
+        id="hero-min-equipment"
+        type="number"
+        min="0"
+        formControlName="minimumExclusiveEquipment"
+      />
+    </div>
+
+    <div class="hero-form__field">
+      <label for="hero-min-relics">Minimum relics</label>
+      <input id="hero-min-relics" type="number" min="0" formControlName="minimumRelics" />
+    </div>
+
+    <div class="hero-form__field">
+      <label for="hero-placement">Placement</label>
+      <input id="hero-placement" type="text" formControlName="placement" autocomplete="off" />
+    </div>
+  </div>
+
+  <div class="hero-form__field">
+    <label>Types</label>
+
+    <div class="hero-form__checkbox-group">
+      @for (option of typeOptions; track option.value) {
+        <label
+          class="hero-form__checkbox"
+          [class.hero-form__checkbox--active]="isTypeSelected(option.value)"
+        >
+          <input
+            type="checkbox"
+            class="hero-form__checkbox-input"
+            [checked]="isTypeSelected(option.value)"
+            (change)="toggleType(option.value, $any($event.target).checked)"
+          />
+          {{ option.label }}
+        </label>
+      }
+    </div>
+
+    @if (hasNoTypeSelected && form.controls.types.touched) {
+      <p class="hero-form__error">Select at least one type.</p>
+    }
+  </div>
+
+  <div class="hero-form__field">
+    <label>Stat focus</label>
+    <app-tag-list-input formControlName="statFocus" />
+  </div>
+
+  <div class="hero-form__field">
+    <label>Stigmata (4-set)</label>
+    <app-tag-list-input formControlName="stigmataFourSet" [options]="stigmaOptions()" />
+  </div>
+
+  <div class="hero-form__field">
+    <label>Stigmata (2-set)</label>
+    <app-tag-list-input formControlName="stigmataTwoSet" [options]="stigmaOptions()" />
+  </div>
+
+  <div class="hero-form__field">
+    <label>Collections</label>
+    <app-tag-list-input formControlName="collections" [options]="collectionOptions()" />
+  </div>
+
+  <div class="hero-form__field">
+    <label>Artifacts</label>
+    <app-tag-list-input formControlName="artifacts" [options]="artifactOptions()" />
+  </div>
+
+  <div class="hero-form__field">
+    <label>General PvP talents</label>
+    <app-tag-list-input formControlName="generalTalentsPvp" />
+  </div>
+
+  <div class="hero-form__field">
+    <label>Gems</label>
+    <app-tag-list-input formControlName="gems" [options]="gemOptions()" />
+  </div>
+
+  <div class="hero-form__field">
+    <label>Gem talents</label>
+    <app-tag-list-input formControlName="gemTalents" />
+  </div>
+
+  <div class="hero-form__field">
+    <label>Notes</label>
+    <app-tag-list-input formControlName="notes" />
+  </div>
+
+  <div class="hero-form__actions">
+    <button type="button" class="button button--ghost" (click)="cancelled.emit()">Cancel</button>
+
+    <button type="submit" class="button button--primary" [disabled]="saving()">
+      {{ saving() ? 'Saving…' : submitLabel() }}
+    </button>
+  </div>
+</form>

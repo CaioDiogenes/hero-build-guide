@@ -1,0 +1,26 @@
+@use 'mixins' as *;
+
+.modal {
+  width: min(40rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 4rem);
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.68);
+    backdrop-filter: blur(4px);
+  }
+
+  &__panel {
+    @include card-surface;
+
+    max-height: calc(100vh - 4rem);
+    padding: var(--space-6);
+
+    background: var(--color-background-soft);
+
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,15 @@
+<app-modal [label]="'Edit ' + hero().name" (closed)="cancelled.emit()">
+  <h2>Edit {{ hero().name }}</h2>
+
+  @if (errorMessage(); as message) {
+    <p class="hero-edit__error">{{ message }}</p>
+  }
+
+  <app-hero-form
+    [hero]="hero()"
+    submitLabel="Save changes"
+    [saving]="saving()"
+    (submitHero)="onSave($event)"
+    (cancelled)="cancelled.emit()"
+  />
+</app-modal>

@@ -1,0 +1,11 @@
+<dialog
+  #dialog
+  class="modal"
+  [attr.aria-label]="label()"
+  (close)="onDialogClose()"
+  (click)="onBackdropClick($event)"
+>
+  <div class="modal__panel" (click)="$event.stopPropagation()">
+    <ng-content />
+  </div>
+</dialog>
