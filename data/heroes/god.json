@@ -6,34 +6,15 @@
     "name": "Anubis",
     "title": "God of Egypt",
     "faction": "god",
-    "types": [
-      "Tank",
-      "CC"
-    ],
+    "types": ["Tank", "CC"],
     "tier": "A",
     "minimumRelics": 9,
     "minimumExclusiveEquipment": 20,
     "placement": "Front",
-    "statFocus": [
-      "HP",
-      "Damage Immune",
-      "Crit Res",
-      "Effect Hit"
-    ],
-    "stigmataFourSet": [
-      "Phantom",
-      "Bulwark",
-      "Sacred Guardian",
-      "Holy Shield"
-    ],
-    "stigmataTwoSet": [
-      "Evolution",
-      "Sanctity"
-    ],
-    "collections": [
-      "Undying Symbol",
-      "Priest's Knot"
-    ],
+    "statFocus": ["HP", "Damage Immune", "Crit Res", "Effect Hit"],
+    "stigmataFourSet": ["Phantom", "Bulwark", "Sacred Guardian", "Holy Shield"],
+    "stigmataTwoSet": ["Evolution", "Sanctity"],
+    "collections": ["Undying Symbol", "Priest's Knot"],
     "artifacts": [
       "Bow of Doom",
       "Devouring Wand",
@@ -41,17 +22,9 @@
       "Radiance Tribute",
       "Heart of Calamity"
     ],
-    "generalTalentsPvp": [
-      "3415"
-    ],
-    "gems": [
-      "Topaz",
-      "Kallaite",
-      "Alexandrite"
-    ],
-    "gemTalents": [
-      "121"
-    ]
+    "generalTalentsPvp": ["3415"],
+    "gems": ["Topaz", "Kallaite", "Alexandrite"],
+    "gemTalents": ["121"]
   },
   {
     "id": "astraea",
@@ -60,18 +33,12 @@
     "name": "Astraea",
     "title": "Mother of Stars",
     "faction": "god",
-    "types": [
-      "Support"
-    ],
+    "types": ["Support"],
     "tier": "S+",
     "minimumRelics": 9,
     "minimumExclusiveEquipment": 40,
     "placement": "Back row",
-    "statFocus": [
-      "HP",
-      "Damage Immune",
-      "Crit Res"
-    ],
+    "statFocus": ["HP", "Damage Immune", "Crit Res"],
     "stigmataFourSet": [
       "Redemption",
       "Phantom",
@@ -81,16 +48,8 @@
       "Armor Shred",
       "Holy Shield"
     ],
-    "stigmataTwoSet": [
-      "Evolution",
-      "Sanctity",
-      "Zealot"
-    ],
-    "collections": [
-      "Undying Symbol",
-      "Priest's Knot",
-      "Genesis Dagger"
-    ],
+    "stigmataTwoSet": ["Evolution", "Sanctity", "Zealot"],
+    "collections": ["Undying Symbol", "Priest's Knot", "Genesis Dagger"],
     "artifacts": [
       "Nether Gloves",
       "Devouring Wand",
@@ -98,18 +57,9 @@
       "Life Source",
       "Fictional Reality"
     ],
-    "generalTalentsPvp": [
-      "3452"
-    ],
-    "gems": [
-      "Amethyst",
-      "Kallaite",
-      "Cat's Eye",
-      "Alexandrite"
-    ],
-    "gemTalents": [
-      "311"
-    ]
+    "generalTalentsPvp": ["3452"],
+    "gems": ["Amethyst", "Kallaite", "Cat's Eye", "Alexandrite"],
+    "gemTalents": ["311"]
   },
   {
     "id": "asura",
@@ -118,49 +68,19 @@
     "name": "Asura",
     "title": "Anti-god",
     "faction": "god",
-    "types": [
-      "DPS"
-    ],
+    "types": ["DPS"],
     "tier": "S+",
     "minimumRelics": 18,
     "minimumExclusiveEquipment": 40,
     "placement": "Back row",
-    "statFocus": [
-      "Crit",
-      "Crit DMG",
-      "Armor PEN"
-    ],
-    "stigmataFourSet": [
-      "Berserk",
-      "Broken Blade"
-    ],
-    "stigmataTwoSet": [
-      "Zealot",
-      "Sin",
-      "Judgement"
-    ],
-    "collections": [
-      "Genesis Dagger"
-    ],
-    "artifacts": [
-      "Pit Spear",
-      "Tyrant's Hammer",
-      "Hunter's Scythe",
-      "Miracle Dawn"
-    ],
-    "generalTalentsPvp": [
-      "1341"
-    ],
-    "gems": [
-      "White Onyx",
-      "Kallaite",
-      "Alexandrite",
-      "Amethyst",
-      "Bloodstone"
-    ],
-    "gemTalents": [
-      "333"
-    ]
+    "statFocus": ["Crit", "Crit DMG", "Armor PEN"],
+    "stigmataFourSet": ["Berserk", "Broken Blade"],
+    "stigmataTwoSet": ["Zealot", "Sin", "Judgement"],
+    "collections": ["Genesis Dagger"],
+    "artifacts": ["Pit Spear", "Tyrant's Hammer", "Hunter's Scythe", "Miracle Dawn"],
+    "generalTalentsPvp": ["1341"],
+    "gems": ["White Onyx", "Kallaite", "Alexandrite", "Amethyst", "Bloodstone"],
+    "gemTalents": ["333"]
   },
   {
     "id": "hera",
@@ -169,34 +89,15 @@
     "name": "Hera",
     "title": "Queen of Heaven",
     "faction": "god",
-    "types": [
-      "Tank"
-    ],
+    "types": ["Tank"],
     "tier": "S+",
     "minimumRelics": 9,
     "minimumExclusiveEquipment": 31,
     "placement": "Slot 1",
-    "statFocus": [
-      "HP",
-      "Damage Immune",
-      "Crit Res"
-    ],
-    "stigmataFourSet": [
-      "Banshee",
-      "Guardian",
-      "Sacred Guardian",
-      "Armor Shred"
-    ],
-    "stigmataTwoSet": [
-      "Evolution",
-      "Sanctity",
-      "Zealot",
-      "Sin"
-    ],
-    "collections": [
-      "Undying Symbol",
-      "Priest's Knot"
-    ],
+    "statFocus": ["HP", "Damage Immune", "Crit Res"],
+    "stigmataFourSet": ["Banshee", "Guardian", "Sacred Guardian", "Armor Shred"],
+    "stigmataTwoSet": ["Evolution", "Sanctity", "Zealot", "Sin"],
+    "collections": ["Undying Symbol", "Priest's Knot"],
     "artifacts": [
       "Devil's Eye",
       "Immortal Shield",
@@ -206,18 +107,9 @@
       "Radiance Tribute",
       "Heart of Calamity"
     ],
-    "generalTalentsPvp": [
-      "3412"
-    ],
-    "gems": [
-      "Amethyst",
-      "Kallaite",
-      "Cat's Eye",
-      "Alexandrite"
-    ],
-    "gemTalents": [
-      "131"
-    ]
+    "generalTalentsPvp": ["3412"],
+    "gems": ["Amethyst", "Kallaite", "Cat's Eye", "Alexandrite"],
+    "gemTalents": ["131"]
   },
   {
     "id": "life",
@@ -226,18 +118,12 @@
     "name": "Life",
     "title": "Goddess of Life",
     "faction": "god",
-    "types": [
-      "Support"
-    ],
+    "types": ["Support"],
     "tier": "S",
     "minimumRelics": 9,
     "minimumExclusiveEquipment": 40,
     "placement": "Back row",
-    "statFocus": [
-      "HP",
-      "Damage Immune",
-      "Crit Res"
-    ],
+    "statFocus": ["HP", "Damage Immune", "Crit Res"],
     "stigmataFourSet": [
       "Redemption",
       "Phantom",
@@ -247,16 +133,8 @@
       "Armor Shred",
       "Holy Shield"
     ],
-    "stigmataTwoSet": [
-      "Evolution",
-      "Sanctity",
-      "Zealot"
-    ],
-    "collections": [
-      "Undying Symbol",
-      "Priest's Knot",
-      "Genesis Dagger"
-    ],
+    "stigmataTwoSet": ["Evolution", "Sanctity", "Zealot"],
+    "collections": ["Undying Symbol", "Priest's Knot", "Genesis Dagger"],
     "artifacts": [
       "Nether Gloves",
       "Devouring Wand",
@@ -266,18 +144,9 @@
       "Bow of Doom",
       "Heart of Calamity"
     ],
-    "generalTalentsPvp": [
-      "3452"
-    ],
-    "gems": [
-      "Amethyst",
-      "Kallaite",
-      "Cat's Eye",
-      "Alexandrite"
-    ],
-    "gemTalents": [
-      "332"
-    ]
+    "generalTalentsPvp": ["3452"],
+    "gems": ["Amethyst", "Kallaite", "Cat's Eye", "Alexandrite"],
+    "gemTalents": ["332"]
   },
   {
     "id": "lucadia",
@@ -286,31 +155,15 @@
     "name": "Lucadia",
     "title": "Goddess of War",
     "faction": "god",
-    "types": [
-      "Buffer"
-    ],
+    "types": ["Buffer"],
     "tier": "S+",
     "minimumRelics": 3,
     "minimumExclusiveEquipment": 31,
     "placement": "Front",
-    "statFocus": [
-      "HP",
-      "Damage Immune",
-      "Crit Res"
-    ],
-    "stigmataFourSet": [
-      "Phantom",
-      "Bulwark",
-      "Armor Shred"
-    ],
-    "stigmataTwoSet": [
-      "Sanctity",
-      "Evolution"
-    ],
-    "collections": [
-      "Undying Symbol",
-      "Priest's Knot"
-    ],
+    "statFocus": ["HP", "Damage Immune", "Crit Res"],
+    "stigmataFourSet": ["Phantom", "Bulwark", "Armor Shred"],
+    "stigmataTwoSet": ["Sanctity", "Evolution"],
+    "collections": ["Undying Symbol", "Priest's Knot"],
     "artifacts": [
       "Bow of Doom",
       "Immortal Shield",
@@ -318,18 +171,9 @@
       "Armor of Destruction",
       "Luminous Beacon"
     ],
-    "generalTalentsPvp": [
-      "3422"
-    ],
-    "gems": [
-      "Amethyst",
-      "Kallaite",
-      "Cat's Eye",
-      "Alexandrite"
-    ],
-    "gemTalents": [
-      "122"
-    ]
+    "generalTalentsPvp": ["3422"],
+    "gems": ["Amethyst", "Kallaite", "Cat's Eye", "Alexandrite"],
+    "gemTalents": ["122"]
   },
   {
     "id": "orochi",
@@ -337,32 +181,15 @@
     "image": "data/assets/heroes/orochi.webp",
     "name": "Orochi",
     "faction": "god",
-    "types": [
-      "DPS"
-    ],
+    "types": ["DPS"],
     "tier": "A",
     "minimumRelics": 9,
     "minimumExclusiveEquipment": 31,
     "placement": "Slot 1",
-    "statFocus": [
-      "Skill DMG",
-      "Crit",
-      "Crit DMG",
-      "Armor PEN"
-    ],
-    "stigmataFourSet": [
-      "Striker",
-      "Withering"
-    ],
-    "stigmataTwoSet": [
-      "Zealot",
-      "Sin",
-      "Annihilation"
-    ],
-    "collections": [
-      "Genesis Dagger",
-      "Chaos Axe"
-    ],
+    "statFocus": ["Skill DMG", "Crit", "Crit DMG", "Armor PEN"],
+    "stigmataFourSet": ["Striker", "Withering"],
+    "stigmataTwoSet": ["Zealot", "Sin", "Annihilation"],
+    "collections": ["Genesis Dagger", "Chaos Axe"],
     "artifacts": [
       "Evil Dreadsword",
       "Hunter's Scythe",
@@ -372,20 +199,9 @@
       "Pit Spear",
       "Sacred Radiance Codex"
     ],
-    "generalTalentsPvp": [
-      "1322"
-    ],
-    "gems": [
-      "Kallaite",
-      "Alexandrite",
-      "Malachite",
-      "Amethyst",
-      "Bloodstone",
-      "Emerald"
-    ],
-    "gemTalents": [
-      "333"
-    ]
+    "generalTalentsPvp": ["1322"],
+    "gems": ["Kallaite", "Alexandrite", "Malachite", "Amethyst", "Bloodstone", "Emerald"],
+    "gemTalents": ["333"]
   },
   {
     "id": "poseidon",
@@ -394,50 +210,19 @@
     "name": "Poseidon",
     "title": "Goddess of Ocean",
     "faction": "god",
-    "types": [
-      "DPS",
-      "Debuffer",
-      "Holy DMG"
-    ],
+    "types": ["DPS", "Debuffer", "Holy DMG"],
     "tier": "S",
     "minimumRelics": 0,
     "minimumExclusiveEquipment": 40,
     "placement": "Back",
-    "statFocus": [
-      "Crit",
-      "Crit DMG"
-    ],
-    "stigmataFourSet": [
-      "Vital",
-      "Thorn",
-      "Enflame"
-    ],
-    "stigmataTwoSet": [
-      "Zealot"
-    ],
-    "collections": [
-      "Genesis Dagger",
-      "Chaos Axe"
-    ],
-    "artifacts": [
-      "Baleful Axe",
-      "Hunter's Scythe",
-      "Miracle Dawn",
-      "Meteorite Dust"
-    ],
-    "generalTalentsPvp": [
-      "1122"
-    ],
-    "gems": [
-      "Kallaite",
-      "Alexandrite",
-      "Malachite",
-      "Amethyst",
-      "Bloodstone"
-    ],
-    "gemTalents": [
-      "311"
-    ]
+    "statFocus": ["Crit", "Crit DMG"],
+    "stigmataFourSet": ["Vital", "Thorn", "Enflame"],
+    "stigmataTwoSet": ["Zealot"],
+    "collections": ["Genesis Dagger", "Chaos Axe"],
+    "artifacts": ["Baleful Axe", "Hunter's Scythe", "Miracle Dawn", "Meteorite Dust"],
+    "generalTalentsPvp": ["1122"],
+    "gems": ["Kallaite", "Alexandrite", "Malachite", "Amethyst", "Bloodstone"],
+    "gemTalents": ["311"]
   },
   {
     "id": "sun-wukong",
@@ -446,48 +231,19 @@
     "name": "Sun Wukong",
     "title": "Great Sage",
     "faction": "god",
-    "types": [
-      "DPS"
-    ],
+    "types": ["DPS"],
     "tier": "A",
     "minimumRelics": 9,
     "minimumExclusiveEquipment": 31,
     "placement": "Back",
-    "statFocus": [
-      "Crit",
-      "Crit DMG",
-      "Armor PEN"
-    ],
-    "stigmataFourSet": [
-      "Thorn",
-      "Broken Blade",
-      "Berserk"
-    ],
-    "stigmataTwoSet": [
-      "Zealot"
-    ],
-    "collections": [
-      "Genesis Dagger",
-      "Chaos Axe"
-    ],
-    "artifacts": [
-      "Pit Spear",
-      "Tyrant's Hammer",
-      "Hunter's Scythe"
-    ],
-    "generalTalentsPvp": [
-      "1332"
-    ],
-    "gems": [
-      "White Onyx",
-      "Kallaite",
-      "Alexandrite",
-      "Amethyst",
-      "Bloodstone"
-    ],
-    "gemTalents": [
-      "333"
-    ]
+    "statFocus": ["Crit", "Crit DMG", "Armor PEN"],
+    "stigmataFourSet": ["Thorn", "Broken Blade", "Berserk"],
+    "stigmataTwoSet": ["Zealot"],
+    "collections": ["Genesis Dagger", "Chaos Axe"],
+    "artifacts": ["Pit Spear", "Tyrant's Hammer", "Hunter's Scythe"],
+    "generalTalentsPvp": ["1332"],
+    "gems": ["White Onyx", "Kallaite", "Alexandrite", "Amethyst", "Bloodstone"],
+    "gemTalents": ["333"]
   },
   {
     "id": "vesperia",
@@ -496,51 +252,19 @@
     "name": "Vesperia",
     "title": "Goddess of Joy",
     "faction": "god",
-    "types": [
-      "Buffer",
-      "DPS"
-    ],
+    "types": ["Buffer", "DPS"],
     "tier": "S",
     "minimumRelics": 9,
     "minimumExclusiveEquipment": 31,
     "placement": "Back",
-    "statFocus": [
-      "Crit",
-      "Crit DMG",
-      "Armor PEN"
-    ],
-    "stigmataFourSet": [
-      "Vital",
-      "Enflame",
-      "Broken Blade"
-    ],
-    "stigmataTwoSet": [
-      "Zealot",
-      "Sin",
-      "Judgement"
-    ],
-    "collections": [
-      "Genesis Dagger",
-      "Chaos Axe"
-    ],
-    "artifacts": [
-      "Baleful Axe",
-      "Pit Spear",
-      "Tyrant's Hammer",
-      "Hunter's Scythe"
-    ],
-    "generalTalentsPvp": [
-      "2322"
-    ],
-    "gems": [
-      "White Onyx",
-      "Kallaite",
-      "Alexandrite",
-      "Bloodstone"
-    ],
-    "gemTalents": [
-      "131"
-    ]
+    "statFocus": ["Crit", "Crit DMG", "Armor PEN"],
+    "stigmataFourSet": ["Vital", "Enflame", "Broken Blade"],
+    "stigmataTwoSet": ["Zealot", "Sin", "Judgement"],
+    "collections": ["Genesis Dagger", "Chaos Axe"],
+    "artifacts": ["Baleful Axe", "Pit Spear", "Tyrant's Hammer", "Hunter's Scythe"],
+    "generalTalentsPvp": ["2322"],
+    "gems": ["White Onyx", "Kallaite", "Alexandrite", "Bloodstone"],
+    "gemTalents": ["131"]
   },
   {
     "id": "yi",
@@ -549,53 +273,19 @@
     "name": "Yi",
     "title": "Dimension Emperor",
     "faction": "god",
-    "types": [
-      "Tank"
-    ],
+    "types": ["Tank"],
     "tier": "S",
     "minimumRelics": 3,
     "minimumExclusiveEquipment": 31,
     "placement": "Front",
-    "statFocus": [
-      "HP",
-      "Damage Immune",
-      "Crit Res"
-    ],
-    "stigmataFourSet": [
-      "Phantom",
-      "Bulwark",
-      "Mirage",
-      "Banshee",
-      "Guardian",
-      "Sacred Guardian"
-    ],
-    "stigmataTwoSet": [
-      "Evolution",
-      "Sanctity"
-    ],
-    "collections": [
-      "Undying Symbol",
-      "Priest's Knot"
-    ],
-    "artifacts": [
-      "Immortal Shield",
-      "Armor of Destruction",
-      "Glorious Crown",
-      "Light of Faith"
-    ],
-    "generalTalentsPvp": [
-      "3415"
-    ],
-    "gems": [
-      "Amethyst",
-      "Kallaite",
-      "Cat's Eye",
-      "Alexandrite",
-      "Labradorite"
-    ],
-    "gemTalents": [
-      "111"
-    ]
+    "statFocus": ["HP", "Damage Immune", "Crit Res"],
+    "stigmataFourSet": ["Phantom", "Bulwark", "Mirage", "Banshee", "Guardian", "Sacred Guardian"],
+    "stigmataTwoSet": ["Evolution", "Sanctity"],
+    "collections": ["Undying Symbol", "Priest's Knot"],
+    "artifacts": ["Immortal Shield", "Armor of Destruction", "Glorious Crown", "Light of Faith"],
+    "generalTalentsPvp": ["3415"],
+    "gems": ["Amethyst", "Kallaite", "Cat's Eye", "Alexandrite", "Labradorite"],
+    "gemTalents": ["111"]
   },
   {
     "id": "zeus",
@@ -604,51 +294,18 @@
     "name": "Zeus",
     "title": "God of Sky",
     "faction": "god",
-    "types": [
-      "CC"
-    ],
+    "types": ["CC"],
     "tier": "A",
     "minimumRelics": 3,
     "minimumExclusiveEquipment": 31,
     "placement": "Above DPS",
-    "statFocus": [
-      "Effect Hit",
-      "Crit"
-    ],
-    "stigmataFourSet": [
-      "Succubus",
-      "Phantom",
-      "Vital",
-      "Sage",
-      "Devil Spirit"
-    ],
-    "stigmataTwoSet": [
-      "Sanctity",
-      "Zealot",
-      "Sin",
-      "Evolution"
-    ],
-    "collections": [
-      "Genesis Dagger",
-      "Chaos Axe"
-    ],
-    "artifacts": [
-      "Turbid Orb",
-      "Genesis",
-      "Bell of Chaos",
-      "Time Cycle",
-      "Eternal Oath"
-    ],
-    "generalTalentsPvp": [
-      "3333"
-    ],
-    "gems": [
-      "Topaz",
-      "Kallaite",
-      "Alexandrite"
-    ],
-    "gemTalents": [
-      "123"
-    ]
+    "statFocus": ["Effect Hit", "Crit"],
+    "stigmataFourSet": ["Succubus", "Phantom", "Vital", "Sage", "Devil Spirit"],
+    "stigmataTwoSet": ["Sanctity", "Zealot", "Sin", "Evolution"],
+    "collections": ["Genesis Dagger", "Chaos Axe"],
+    "artifacts": ["Turbid Orb", "Genesis", "Bell of Chaos", "Time Cycle", "Eternal Oath"],
+    "generalTalentsPvp": ["3333"],
+    "gems": ["Topaz", "Kallaite", "Alexandrite"],
+    "gemTalents": ["123"]
   }
 ]

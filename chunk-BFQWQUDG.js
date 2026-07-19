@@ -1,1 +1,0 @@
-import{L as n,Q as o,Y as a}from"./chunk-RMH3JXPJ.js";var i=class t{document=o(a);getUrl(r){let e=r.replace(/^\/+/,"");return new URL(e,this.document.baseURI).toString()}static \u0275fac=function(e){return new(e||t)};static \u0275prov=n({token:t,factory:t.\u0275fac,providedIn:"root"})};export{i as a};
